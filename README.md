@@ -1,45 +1,32 @@
 # Forbidden Memories Mod 13 DB
 
-A small, static lookup utility for searching Yu-Gi-Oh! Forbidden Memories Mod 13 drops by card or duelist. The interface is optimized for quick use on a phone while playing.
+An unofficial static database for browsing Yu-Gi-Oh! Forbidden Memories Mod 13 cards, duelists, and drop rates. The app is built with React, TypeScript, and Vite.
 
-The checked-in JSON is generated from local Mod 13 game files. The source binaries remain local and are excluded by `.gitignore`.
+## Requirements
 
-## Purpose
+- Node.js 24 LTS and npm
+- Python 3 for the data and image import scripts
+- Pillow only when converting PNG, JPEG, or BMP images to WebP: `python -m pip install Pillow`
 
-Search Mod 13 card drops either by card or by duelist, compare per-reward and per-duel probabilities, and switch among S/A POW, B/C/D, and S/A TEC rank pools.
+## Run locally
 
-## Development
+Install dependencies and start the Vite development server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Production
+Create and preview a production build with:
 
 ```bash
 npm run build
+npm run preview
 ```
-
-The output in `dist/` is a static SPA. `public/_redirects` supports Netlify-style SPA routing. Cloudflare Pages can use `npm run build` with `dist` as its output directory.
-
-## Deployment
-
-The site deploys to GitHub Pages automatically whenever `main` is pushed, using the workflow in `.github/workflows/deploy-pages.yml`. Configure the repository's Pages source as **GitHub Actions** before the first deployment.
-
-GitHub Pages builds derive the correct project base path from `GITHUB_REPOSITORY`. Navigation uses hash routes so deep links and refreshes work without server rewrites, for example `#/cards/337` and `#/duelists/seto-2nd`.
-
-## Validate data
-
-```bash
-npm run validate:data
-```
-
-Validation checks card and duelist references, supported ranks, weight bounds, and unique card IDs, duelist IDs, and duelist slugs.
 
 ## Extract Mod 13 data
 
-Place the locally owned game files at:
+Place your locally owned game files at:
 
 ```text
 mod13/SLUS_014.11
@@ -52,121 +39,67 @@ Then run:
 npm run data:extract
 ```
 
-The extractor reads 722 card names and 39 duelists from the SLUS file and reads the S/A POW, B/C/D, and S/A TEC weight pools from the MRG file. It writes:
+The extractor reads the 722 card names, 39 duelists, and S/A POW, B/C/D, and S/A TEC drop pools. It generates:
 
 - `src/data/extracted-card-names.json`
 - `src/data/duelists.json`
 - `src/data/drops.json`
 
-`mod13/` is ignored and must never be committed or copied into the public application. The exporter is implemented locally in `scripts/extract-mod13.py`; its binary layout is based on the public `lundylizard/fm-drop-extractor` project.
+The `mod13/` directory is gitignored. Never commit or copy the game binaries into the public application.
 
 ## Import card metadata
 
-After extracting the Mod 13 names, import complete card metadata from the open-source `sg4e/YGOFM-gamedata` dataset:
+After extracting the Mod 13 names, import type, ATK, DEF, attribute, level, and Guardian Star metadata:
 
 ```bash
 npm run data:cards
 ```
 
-The importer downloads `sqlite/json/cardinfo.json`, validates all 722 numeric IDs, and rewrites `src/data/cards.json`. It joins strictly by numeric card ID, preserves the extracted Mod 13 names, normalizes Magic/Trap ATK and DEF to `null`, and never reads or writes `drops.json`. A local upstream file can be supplied with `python scripts/import-card-metadata.py --source path/to/cardinfo.json`.
-
-## Card artwork
-
-Card artwork is served as regular static WebP files using zero-padded card IDs:
-
-```text
-public/cards/001.webp
-public/cards/082.webp
-public/cards/337.webp
-public/cards/722.webp
-```
-
-The UI displays a CSS fallback whenever an image is absent. Check artwork coverage independently from the normal build with:
+The script downloads `cardinfo.json` from the open-source `sg4e/YGOFM-gamedata` dataset and merges it strictly by numeric card ID. To use a local source file instead:
 
 ```bash
+python scripts/import-card-metadata.py --source path/to/cardinfo.json
+```
+
+The importer preserves the extracted Mod 13 card names and does not modify `drops.json`.
+
+## Import images
+
+Import a local directory of ID-named card images:
+
+```bash
+npm run data:images -- path/to/card-images
+```
+
+Images are normalized to `public/cards/001.webp` through `public/cards/722.webp`.
+
+Import a local directory of duelist portraits:
+
+```bash
+npm run data:duelist-images -- path/to/duelist-images
+```
+
+Portrait filenames may use an exact duelist slug, numeric duelist ID, or normalized duelist name. Final files are written to `public/duelists/<slug>.webp`.
+
+Neither image importer modifies card, duelist, or drop JSON.
+
+## Validate and test
+
+```bash
+npm run validate:data
 npm run validate:images
-```
-
-Import an explicitly supplied local image directory with:
-
-```bash
-npm run data:images -- ../fm-images
-```
-
-The importer recognizes `.webp`, `.png`, `.jpg`, and `.jpeg` files whose names begin with a card ID, normalizes output names, and reports missing IDs. Existing WebP files are copied directly. Converting other formats or resizing images over 1600 pixels requires Pillow (`python -m pip install Pillow`). The importer never downloads artwork and never modifies card or drop JSON.
-
-## Duelist portraits
-
-Duelist portraits are regular static WebP files named from the canonical duelist slug:
-
-```text
-public/duelists/simon-muran.webp
-public/duelists/seto-2nd.webp
-public/duelists/heishin-2nd.webp
-```
-
-Check coverage independently from the build with:
-
-```bash
 npm run validate:duelist-images
-```
-
-Import an explicitly supplied local directory with:
-
-```bash
-npm run data:duelist-images -- ../duelist-images
-```
-
-The importer first matches an exact slug, then a numeric duelist ID, then a safely normalized duelist name. Unmatched or conflicting files are reported and never assigned speculatively. It supports WebP, PNG, JPEG, and BMP; non-WebP conversion and resizing over 1024 pixels require Pillow. It never downloads portraits or modifies `duelists.json`, `cards.json`, or `drops.json`.
-
-## Tests
-
-```bash
 npm test
+npm run lint
+npm run build
 ```
 
-## Data files
+The image validators require complete committed artwork and portrait sets. Data extraction itself does not require the images.
 
-The complete runtime dataset lives in:
+## Deployment
 
-- `src/data/extracted-card-names.json`
-- `src/data/duelists.json`
-- `src/data/drops.json`
+Pushes to `main` deploy automatically to GitHub Pages through `.github/workflows/deploy-pages.yml`. The application uses hash routes such as `#/cards/337` so deep links work on static hosting.
 
-`src/data/cards.json` contains the complete imported type, ATK, DEF, attribute, level, and guardian-star metadata. Extracted Mod 13 IDs and names remain canonical.
+## License
 
-## Drop format
-
-Each drop record associates one duelist, card, and rank pool with a raw weight:
-
-```json
-{
-  "duelistId": 32,
-  "cardId": 337,
-  "rank": "SA_TEC",
-  "weight": 52
-}
-```
-
-The single-reward probability is `weight / 2048`. Percentages are derived at runtime and are never stored in JSON.
-
-## Reward probability
-
-```text
-P(at least one copy) = 1 - (1 - weight/2048)^rewardCount
-```
-
-The selected reward count (1, 5, 10, or 15) is stored in `localStorage` and defaults to 15.
-
-## Project structure
-
-```text
-src/
-├── components/   Shared search, navigation, rank, sort, and rate UI
-├── context/      Persisted global reward-count state
-├── data/         Generated Mod 13 JSON and optional card metadata
-├── pages/        Cards and duelists list/detail routes
-├── types/        Shared TypeScript data contracts
-└── utils/        Data lookup, search, probability, sorting, and tests
-scripts/          Dataset validation and static-host build helpers
-```
+Original application source code and scripts are available under the [MIT License](LICENSE). Yu-Gi-Oh! artwork, portraits, names, trademarks, game-derived data, and other third-party content are excluded from that license. See [NOTICE.md](NOTICE.md).
