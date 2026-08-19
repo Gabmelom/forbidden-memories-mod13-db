@@ -52,8 +52,8 @@ export function DuelistDetailPage() {
   }
 
   return (
-    <article>
-      <Link className="back-link" to="/duelists">← All duelists</Link>
+    <article className="workspace-detail-content">
+      <Link className="back-link mobile-workspace-back" to="/duelists">← Duelists</Link>
       <header className="duelist-heading">
         <button ref={previewTriggerRef} type="button" className="duelist-image-trigger" aria-label={`View larger portrait of ${duelist.name}`} onClick={() => setIsPreviewOpen(true)}>
           <DuelistImage slug={duelist.slug} name={duelist.name} size="large" loading="eager" />

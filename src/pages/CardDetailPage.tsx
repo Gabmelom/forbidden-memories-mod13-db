@@ -26,8 +26,8 @@ export function CardDetailPage() {
   }
 
   return (
-    <article>
-      <Link className="back-link" to="/cards">← All cards</Link>
+    <article className="workspace-detail-content">
+      <Link className="back-link mobile-workspace-back" to="/cards">← Cards</Link>
       <header className="detail-heading">
         <button ref={previewTriggerRef} type="button" className="card-image-trigger" aria-label={`View larger image of ${card.name}`} onClick={() => setIsPreviewOpen(true)}>
           <CardImage cardId={card.id} cardName={card.name} size="large" loading="eager" />
