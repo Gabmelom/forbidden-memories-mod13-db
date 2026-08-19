@@ -111,7 +111,7 @@ Import an explicitly supplied local directory with:
 npm run data:duelist-images -- ../duelist-images
 ```
 
-The importer first matches an exact slug, then a safely normalized duelist name. Unmatched or conflicting files are reported and never assigned speculatively. It supports WebP, PNG, JPEG, and BMP; non-WebP conversion and resizing over 1024 pixels require Pillow. It never downloads portraits or modifies `duelists.json`, `cards.json`, or `drops.json`.
+The importer first matches an exact slug, then a numeric duelist ID, then a safely normalized duelist name. Unmatched or conflicting files are reported and never assigned speculatively. It supports WebP, PNG, JPEG, and BMP; non-WebP conversion and resizing over 1024 pixels require Pillow. It never downloads portraits or modifies `duelists.json`, `cards.json`, or `drops.json`.
 
 ## Tests
 

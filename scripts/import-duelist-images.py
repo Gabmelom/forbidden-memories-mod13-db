@@ -57,6 +57,11 @@ def discover_matches(
     duelists: list[dict[str, Any]],
 ) -> tuple[dict[str, Path], list[tuple[Path, str]], dict[str, list[Path]]]:
     slug_lookup = {duelist["slug"].casefold(): duelist["slug"] for duelist in duelists}
+    id_lookup = {
+        duelist["id"]: duelist["slug"]
+        for duelist in duelists
+        if isinstance(duelist.get("id"), int)
+    }
     normalized_name_lookup: dict[str, list[str]] = {}
     for duelist in duelists:
         normalized_name_lookup.setdefault(normalize_label(duelist["name"]), []).append(
@@ -72,6 +77,16 @@ def discover_matches(
         exact_slug = slug_lookup.get(path.stem.casefold())
         if exact_slug:
             candidates.setdefault(exact_slug, []).append(path)
+            continue
+
+        numeric_match = re.fullmatch(r"0*(\d+)", path.stem)
+        if numeric_match:
+            duelist_id = int(numeric_match.group(1))
+            id_slug = id_lookup.get(duelist_id)
+            if id_slug:
+                candidates.setdefault(id_slug, []).append(path)
+            else:
+                unmatched.append((path, f"no duelist with numeric ID {duelist_id}"))
             continue
 
         normalized_matches = normalized_name_lookup.get(normalize_label(path.stem), [])
