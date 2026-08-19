@@ -55,24 +55,51 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .search-field input:hover, .search-field input:focus { border-color: #566270; }
 .search-icon { position: absolute; left: 17px; top: 50%; color: var(--muted); font-size: 1.25rem; transform: translateY(-53%); pointer-events: none; }
 .result-list { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.result-row { min-height: 76px; padding: 13px 18px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: inherit; text-decoration: none; background: var(--panel); border-bottom: 1px solid var(--border-soft); }
+.result-row { min-height: 98px; padding: 9px 18px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: inherit; text-decoration: none; background: var(--panel); border-bottom: 1px solid var(--border-soft); }
 .result-row:last-child { border-bottom: 0; }
 .result-row:hover { background: var(--panel-raised); }
-.card-summary { display: grid; grid-template-columns: 90px 1fr; gap: 18px; align-items: center; }
-.card-summary.compact { grid-template-columns: 60px 1fr; gap: 14px; }
+.card-summary { display: grid; grid-template-columns: 64px 1fr; gap: 16px; align-items: center; }
+.card-summary.compact { grid-template-columns: 64px 1fr; gap: 14px; }
+.card-summary-text { min-width: 0; }
 .card-summary strong, .result-row strong { display: block; color: var(--text); font-size: .96rem; }
-.card-id { color: var(--gold); font: 700 .78rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.card-id { display: block; margin-bottom: 3px; color: var(--gold); font: 700 .72rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .card-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 5px; color: var(--muted); font-size: .76rem; }
 .row-arrow { color: var(--gold); font-size: 1.15rem; transition: transform .15s ease; }
 .result-row:hover .row-arrow { transform: translateX(3px); }
 .duelist-list .result-row > div { display: flex; flex-direction: column; gap: 5px; }
+.duelist-list .result-row > .duelist-result { flex-direction: row; align-items: center; gap: 14px; }
+.duelist-result-text { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
 .list-subtitle { color: var(--muted); font-size: .76rem; }
 
 .back-link { min-height: 40px; display: inline-flex; align-items: center; color: var(--muted); font-size: .83rem; font-weight: 700; text-decoration: none; }
 .back-link:hover { color: var(--gold); }
-.detail-heading { margin-top: 22px; display: flex; align-items: center; gap: 24px; }
-.image-placeholder { width: 82px; aspect-ratio: .7; flex: 0 0 auto; display: grid; place-items: center; color: #b19658; border: 1px solid #51452b; background: var(--gold-soft); }
-.image-placeholder span { font: 800 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.detail-heading { margin-top: 22px; display: flex; align-items: center; gap: 32px; }
+.card-image { position: relative; width: 100%; aspect-ratio: 59 / 86; flex: 0 0 auto; display: inline-grid; place-items: center; overflow: hidden; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; background: #0d1117; }
+.card-image-small { width: 42px; }
+.card-image-medium { width: 64px; }
+.card-image-large { width: clamp(200px, 23vw, 240px); }
+.card-image img { width: 100%; height: 100%; display: block; object-fit: contain; }
+.card-image-fallback { position: absolute; inset: 0; padding: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; color: #8e98a6; text-align: center; background: var(--panel-raised); }
+.card-image-fallback span { font-size: .65rem; }
+.card-image-fallback strong { color: var(--gold); font: 700 .68rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.card-image-small .card-image-fallback { gap: 1px; padding: 2px; }
+.card-image-small .card-image-fallback span { font-size: .45rem; }
+.card-image-small .card-image-fallback strong { font-size: .48rem; }
+.card-image-trigger { padding: 0; display: inline-flex; border: 0; border-radius: 5px; background: transparent; cursor: zoom-in; }
+.card-image-trigger:hover .card-image { border-color: var(--gold); }
+.duelist-image { position: relative; width: 100%; aspect-ratio: 4 / 5; flex: 0 0 auto; display: inline-grid; place-items: center; overflow: hidden; color: var(--muted); border: 1px solid var(--border); border-radius: 6px; background: #0d1117; }
+.duelist-image-small { width: 44px; }
+.duelist-image-medium { width: 68px; }
+.duelist-image-large { width: clamp(180px, 22vw, 220px); }
+.duelist-image img { width: 100%; height: 100%; display: block; object-fit: contain; }
+.duelist-image-fallback { position: absolute; inset: 0; padding: 7px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--muted); text-align: center; background: var(--panel-raised); }
+.duelist-image-fallback strong { color: var(--gold); font-size: clamp(1rem, 4vw, 2rem); line-height: 1; }
+.duelist-image-fallback span { max-width: 100%; font-size: .62rem; line-height: 1.15; overflow-wrap: anywhere; }
+.duelist-image-small .duelist-image-fallback { padding: 2px; }
+.duelist-image-small .duelist-image-fallback strong { font-size: 1rem; }
+.duelist-image-small .duelist-image-fallback span { display: none; }
+.duelist-image-trigger { padding: 0; display: inline-flex; border: 0; border-radius: 7px; background: transparent; cursor: zoom-in; }
+.duelist-image-trigger:hover .duelist-image { border-color: var(--gold); }
 .detail-meta { margin-top: 12px; font-size: .86rem; }
 .detail-section { margin-top: 48px; }
 .section-heading { padding-bottom: 14px; }
@@ -88,9 +115,11 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .rank-bcd { color: #c7b5e9; border-color: #4e4365; background: #211b2d; }
 .rank-sa_tec { color: #a9d8c1; border-color: #365d4d; background: #14261f; }
 .best-badge { min-height: 20px; margin-left: 9px; color: var(--gold); border-color: #665329; background: var(--gold-soft); font-size: .58rem; }
+.duelist-source { display: flex; align-items: center; gap: 9px; }
+.duelist-source-link { display: inline-flex; align-items: center; gap: 10px; }
 .rate-weight { color: var(--gold); font: 700 .82rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 
-.duelist-heading { margin-top: 22px; }
+.duelist-heading { margin-top: 22px; display: flex; align-items: center; gap: 30px; }
 .rank-tabs { margin-top: 28px; display: flex; gap: 6px; border-bottom: 1px solid var(--border); }
 .rank-tabs button { min-height: 44px; padding: 0 18px; color: var(--muted); border: 0; border-bottom: 2px solid transparent; background: transparent; font-size: .78rem; font-weight: 800; cursor: pointer; }
 .rank-tabs button:hover { color: var(--text); }
@@ -101,13 +130,21 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .filter-row { display: flex; gap: 10px; }
 .select-control { display: flex; flex-direction: column; gap: 5px; color: var(--muted); font-size: .66rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .select-control select { min-width: 130px; min-height: 42px; padding: 0 34px 0 11px; color: var(--text); border: 1px solid var(--border); border-radius: 6px; background: var(--panel); cursor: pointer; }
-.table-card-link { display: flex; flex-direction: column; gap: 4px; }
+.table-card-link { display: flex; align-items: center; gap: 12px; }
+.table-card-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .table-card-name { font-weight: 750; }
 .table-card-meta { color: var(--muted); font-size: .69rem; font-weight: 500; text-decoration: none; }
 .empty-state { margin-top: 18px; padding: 42px 20px; color: var(--muted); text-align: center; border: 1px dashed var(--border); border-radius: 8px; background: var(--panel); }
 .not-found { margin-top: 50px; }
 .not-found h1 { margin-bottom: 24px; font-size: 2rem; }
 .button-link { min-height: 42px; padding: 0 16px; display: inline-flex; align-items: center; color: #15120a; border-radius: 5px; background: var(--gold); font-weight: 800; text-decoration: none; }
+.image-dialog-backdrop { position: fixed; z-index: 100; inset: 0; padding: 24px; display: grid; place-items: center; background: rgba(3, 5, 8, .88); }
+.image-dialog { position: relative; width: min(480px, 100%); max-height: calc(100vh - 48px); padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; overflow: auto; border: 1px solid var(--border); border-radius: 9px; background: var(--panel); box-shadow: 0 24px 80px rgba(0, 0, 0, .55); }
+.image-dialog .card-image-large { width: min(380px, 75vw); }
+.image-dialog .duelist-image-large { width: min(420px, 78vw); }
+.image-dialog p { margin: 0; color: var(--muted); font-size: .82rem; text-align: center; }
+.image-dialog-close { position: absolute; z-index: 1; top: 8px; right: 8px; width: 42px; height: 42px; color: var(--text); border: 1px solid var(--border); border-radius: 50%; background: rgba(11, 14, 19, .9); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.image-dialog-close:hover { color: var(--gold); border-color: var(--gold); }
 
 @media (max-width: 780px) {
   .header-inner { padding: 9px 14px; grid-template-columns: 1fr auto; gap: 8px 14px; }
@@ -132,8 +169,13 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .reward-label { display: inline; }
   .reward-label span { display: inline; }
   .page-heading { align-items: start; }
-  .detail-heading { gap: 16px; }
-  .image-placeholder { width: 61px; }
+  .detail-heading { flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .detail-heading .card-meta { justify-content: center; }
+  .card-image-large { width: min(220px, 68vw); }
+  .card-image-small { width: 50px; }
+  .duelist-heading { flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .duelist-image-large { width: min(210px, 68vw); }
+  .duelist-image-small { width: 48px; }
   .detail-section { margin-top: 36px; }
   .rank-tabs { overflow-x: auto; }
   .rank-tabs button { flex: 1 0 auto; min-width: 100px; padding: 0 10px; }
@@ -149,14 +191,20 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .drop-table td:first-child { grid-column: 1 / -1; padding-bottom: 10px; border-bottom: 1px solid var(--border-soft); }
   .drop-table td:first-child a { font-size: 1rem; }
   .best-badge { align-self: flex-start; margin: 6px 0 0; }
+  .duelist-source { align-items: flex-start; flex-direction: column; }
   .duelist-drops td:first-child { grid-column: 1 / -1; }
   .duelist-drops td:last-child { grid-column: 2; }
+  .table-card-link { align-items: flex-start; }
+  .image-dialog-backdrop { padding: 12px; }
+  .image-dialog { max-height: calc(100vh - 24px); padding: 22px 14px 18px; }
 }
 
 @media (max-width: 410px) {
   .reward-label { font-size: .62rem; }
   .segmented-control button { min-width: 32px; padding: 0 5px; }
-  .card-summary.compact { grid-template-columns: 48px 1fr; }
+  .card-summary.compact { grid-template-columns: 56px 1fr; gap: 11px; }
+  .card-image-medium { width: 56px; }
+  .result-row { min-height: 88px; }
   .card-meta { flex-direction: column; gap: 2px; }
   .result-row { padding-inline: 13px; }
 }

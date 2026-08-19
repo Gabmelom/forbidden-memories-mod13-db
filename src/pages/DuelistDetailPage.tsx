@@ -1,6 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { DropRate } from '../components/DropRate'
+import { CardImage } from '../components/CardImage'
+import { DuelistImage } from '../components/DuelistImage'
+import { ImagePreviewModal } from '../components/ImagePreviewModal'
 import { SearchInput } from '../components/SearchInput'
 import { SortSelect } from '../components/SortSelect'
 import { DROP_RANKS, type CardTypeFilter, type DropRank, type DropSort } from '../types'
@@ -21,6 +24,8 @@ export function DuelistDetailPage() {
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<DropSort>('rate')
   const [typeFilter, setTypeFilter] = useState<CardTypeFilter>('all')
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
+  const previewTriggerRef = useRef<HTMLButtonElement>(null)
 
   const rows = useMemo(() => {
     if (!duelist) return []
@@ -41,11 +46,20 @@ export function DuelistDetailPage() {
   if (!duelist) return <div className="empty-state not-found"><h1>Duelist not found</h1><Link className="button-link" to="/duelists">Back to duelists</Link></div>
 
   const selectRank = (rank: DropRank) => { setSearchParams({ rank }); setQuery('') }
+  const closePreview = () => {
+    setIsPreviewOpen(false)
+    requestAnimationFrame(() => previewTriggerRef.current?.focus())
+  }
 
   return (
     <article>
       <Link className="back-link" to="/duelists">← All duelists</Link>
-      <header className="duelist-heading"><p className="eyebrow">Duelist drops</p><h1>{duelist.name}</h1></header>
+      <header className="duelist-heading">
+        <button ref={previewTriggerRef} type="button" className="duelist-image-trigger" aria-label={`View larger portrait of ${duelist.name}`} onClick={() => setIsPreviewOpen(true)}>
+          <DuelistImage slug={duelist.slug} name={duelist.name} size="large" loading="eager" />
+        </button>
+        <div><p className="eyebrow">Duelist drops</p><h1>{duelist.name}</h1></div>
+      </header>
       <div className="rank-tabs" role="tablist" aria-label="Drop rank">
         {DROP_RANKS.map((rank) => <button type="button" role="tab" aria-selected={rank === selectedRank} className={rank === selectedRank ? 'active' : ''} key={rank} onClick={() => selectRank(rank)}>{RANK_LABELS[rank]}</button>)}
       </div>
@@ -61,12 +75,17 @@ export function DuelistDetailPage() {
           <div className="table-frame"><table className="drop-table duelist-drops">
             <thead><tr><th>Card</th><th>Weight</th><th>Per reward</th><th>Per duel</th></tr></thead>
             <tbody>{rows.map(({ card, drop }) => <tr key={card.id}>
-              <td data-label="Card"><Link className="table-card-link" to={`/cards/${card.id}`}><span className="table-card-name">{card.name}</span><span className="table-card-meta">#{card.id} · {card.type}{card.atk !== null ? ` · ATK ${card.atk}` : ''}</span></Link></td>
+              <td data-label="Card"><Link className="table-card-link" to={`/cards/${card.id}`}><CardImage cardId={card.id} cardName={card.name} size="small" decorative /><span className="table-card-text"><span className="table-card-name">{card.name}</span><span className="table-card-meta">#{card.id} · {card.type}{card.atk !== null ? ` · ATK ${card.atk}` : ''}</span></span></Link></td>
               <td data-label="Weight"><DropRate weight={drop.weight} part="weight" /></td><td data-label="Per reward"><DropRate weight={drop.weight} part="single" /></td><td data-label="Per duel"><DropRate weight={drop.weight} part="duel" /></td>
             </tr>)}</tbody>
           </table></div>
         ) : <div className="empty-state">No drops found for this rank.</div>}
       </section>
+      {isPreviewOpen && (
+        <ImagePreviewModal title={`${duelist.name} portrait preview`} caption={duelist.name} onClose={closePreview}>
+          <DuelistImage slug={duelist.slug} name={duelist.name} size="large" loading="eager" />
+        </ImagePreviewModal>
+      )}
     </article>
   )
 }

@@ -64,6 +64,55 @@ npm run data:cards
 
 The importer downloads `sqlite/json/cardinfo.json`, validates all 722 numeric IDs, and rewrites `src/data/cards.json`. It joins strictly by numeric card ID, preserves the extracted Mod 13 names, normalizes Magic/Trap ATK and DEF to `null`, and never reads or writes `drops.json`. A local upstream file can be supplied with `python scripts/import-card-metadata.py --source path/to/cardinfo.json`.
 
+## Card artwork
+
+Card artwork is served as regular static WebP files using zero-padded card IDs:
+
+```text
+public/cards/001.webp
+public/cards/082.webp
+public/cards/337.webp
+public/cards/722.webp
+```
+
+The UI displays a CSS fallback whenever an image is absent. Check artwork coverage independently from the normal build with:
+
+```bash
+npm run validate:images
+```
+
+Import an explicitly supplied local image directory with:
+
+```bash
+npm run data:images -- ../fm-images
+```
+
+The importer recognizes `.webp`, `.png`, `.jpg`, and `.jpeg` files whose names begin with a card ID, normalizes output names, and reports missing IDs. Existing WebP files are copied directly. Converting other formats or resizing images over 1600 pixels requires Pillow (`python -m pip install Pillow`). The importer never downloads artwork and never modifies card or drop JSON.
+
+## Duelist portraits
+
+Duelist portraits are regular static WebP files named from the canonical duelist slug:
+
+```text
+public/duelists/simon-muran.webp
+public/duelists/seto-2nd.webp
+public/duelists/heishin-2nd.webp
+```
+
+Check coverage independently from the build with:
+
+```bash
+npm run validate:duelist-images
+```
+
+Import an explicitly supplied local directory with:
+
+```bash
+npm run data:duelist-images -- ../duelist-images
+```
+
+The importer first matches an exact slug, then a safely normalized duelist name. Unmatched or conflicting files are reported and never assigned speculatively. It supports WebP, PNG, JPEG, and BMP; non-WebP conversion and resizing over 1024 pixels require Pillow. It never downloads portraits or modifies `duelists.json`, `cards.json`, or `drops.json`.
+
 ## Tests
 
 ```bash

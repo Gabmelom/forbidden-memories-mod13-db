@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { DuelistImage } from '../components/DuelistImage'
 import { SearchInput } from '../components/SearchInput'
 import { duelists } from '../utils/dataLookup'
 import { normalizeSearch } from '../utils/search'
@@ -17,7 +18,7 @@ export function DuelistsPage() {
       <SearchInput id="duelist-search" label="Search duelists" placeholder="Search duelists..." value={query} onChange={setQuery} />
       {results.length ? (
         <div className="result-list duelist-list">
-          {results.map((duelist) => <Link className="result-row" key={duelist.id} to={`/duelists/${duelist.slug}`}><div><strong>{duelist.name}</strong><span className="list-subtitle">View rank pools and drops</span></div><span className="row-arrow" aria-hidden="true">→</span></Link>)}
+          {results.map((duelist) => <Link className="result-row" key={duelist.id} to={`/duelists/${duelist.slug}`}><div className="duelist-result"><DuelistImage slug={duelist.slug} name={duelist.name} size="medium" decorative /><span className="duelist-result-text"><strong>{duelist.name}</strong><span className="list-subtitle">View rank pools and drops</span></span></div><span className="row-arrow" aria-hidden="true">→</span></Link>)}
         </div>
       ) : <div className="empty-state">No duelists found.</div>}
     </section>
