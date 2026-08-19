@@ -1,0 +1,117 @@
+# Forbidden Memories Mod 13 DB
+
+A small, static lookup utility for searching Yu-Gi-Oh! Forbidden Memories Mod 13 drops by card or duelist. The interface is optimized for quick use on a phone while playing.
+
+The checked-in JSON is generated from local Mod 13 game files. The source binaries remain local and are excluded by `.gitignore`.
+
+## Purpose
+
+Search Mod 13 card drops either by card or by duelist, compare per-reward and per-duel probabilities, and switch among S/A POW, B/C/D, and S/A TEC rank pools.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Production
+
+```bash
+npm run build
+```
+
+The output in `dist/` is a static SPA. `public/_redirects` supports Netlify-style SPA routing, while the post-build script creates `dist/404.html` for GitHub Pages. For a project-site GitHub Pages deployment, set `BASE_URL` to the repository base path before building (for example, `/my-repo/`). Cloudflare Pages can use `npm run build` with `dist` as its output directory.
+
+## Validate data
+
+```bash
+npm run validate:data
+```
+
+Validation checks card and duelist references, supported ranks, weight bounds, and unique card IDs, duelist IDs, and duelist slugs.
+
+## Extract Mod 13 data
+
+Place the locally owned game files at:
+
+```text
+mod13/SLUS_014.11
+mod13/WA_MRG.MRG
+```
+
+Then run:
+
+```bash
+npm run data:extract
+```
+
+The extractor reads 722 card names and 39 duelists from the SLUS file and reads the S/A POW, B/C/D, and S/A TEC weight pools from the MRG file. It writes:
+
+- `src/data/extracted-card-names.json`
+- `src/data/duelists.json`
+- `src/data/drops.json`
+
+`mod13/` is ignored and must never be committed or copied into the public application. The exporter is implemented locally in `scripts/extract-mod13.py`; its binary layout is based on the public `lundylizard/fm-drop-extractor` project.
+
+## Import card metadata
+
+After extracting the Mod 13 names, import complete card metadata from the open-source `sg4e/YGOFM-gamedata` dataset:
+
+```bash
+npm run data:cards
+```
+
+The importer downloads `sqlite/json/cardinfo.json`, validates all 722 numeric IDs, and rewrites `src/data/cards.json`. It joins strictly by numeric card ID, preserves the extracted Mod 13 names, normalizes Magic/Trap ATK and DEF to `null`, and never reads or writes `drops.json`. A local upstream file can be supplied with `python scripts/import-card-metadata.py --source path/to/cardinfo.json`.
+
+## Tests
+
+```bash
+npm test
+```
+
+## Data files
+
+The complete runtime dataset lives in:
+
+- `src/data/extracted-card-names.json`
+- `src/data/duelists.json`
+- `src/data/drops.json`
+
+`src/data/cards.json` contains the complete imported type, ATK, DEF, attribute, level, and guardian-star metadata. Extracted Mod 13 IDs and names remain canonical.
+
+## Drop format
+
+Each drop record associates one duelist, card, and rank pool with a raw weight:
+
+```json
+{
+  "duelistId": 32,
+  "cardId": 337,
+  "rank": "SA_TEC",
+  "weight": 52
+}
+```
+
+The single-reward probability is `weight / 2048`. Percentages are derived at runtime and are never stored in JSON.
+
+## Reward probability
+
+```text
+P(at least one copy) = 1 - (1 - weight/2048)^rewardCount
+```
+
+The selected reward count (1, 5, 10, or 15) is stored in `localStorage` and defaults to 15.
+
+## Project structure
+
+```text
+src/
+├── components/   Shared search, navigation, rank, sort, and rate UI
+├── context/      Persisted global reward-count state
+├── data/         Generated Mod 13 JSON and optional card metadata
+├── pages/        Cards and duelists list/detail routes
+├── types/        Shared TypeScript data contracts
+└── utils/        Data lookup, search, probability, sorting, and tests
+scripts/          Dataset validation and static-host build helpers
+```

@@ -1,0 +1,32 @@
+{
+  "name": "yfm13db",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "postbuild": "node scripts/create-github-pages-fallback.mjs",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "validate:data": "node scripts/validate-data.mjs",
+    "data:extract": "python scripts/extract-mod13.py",
+    "data:cards": "python scripts/import-card-metadata.py"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0",
+    "vitest": "^4.0.9"
+  }
+}

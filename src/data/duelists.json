@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "name": "Simon Muran",
+    "slug": "simon-muran"
+  },
+  {
+    "id": 2,
+    "name": "Teana",
+    "slug": "teana"
+  },
+  {
+    "id": 3,
+    "name": "Jono",
+    "slug": "jono"
+  },
+  {
+    "id": 4,
+    "name": "Villager1",
+    "slug": "villager1"
+  },
+  {
+    "id": 5,
+    "name": "Villager2",
+    "slug": "villager2"
+  },
+  {
+    "id": 6,
+    "name": "Villager3",
+    "slug": "villager3"
+  },
+  {
+    "id": 7,
+    "name": "Seto",
+    "slug": "seto"
+  },
+  {
+    "id": 8,
+    "name": "Heishin",
+    "slug": "heishin"
+  },
+  {
+    "id": 9,
+    "name": "Rex Raptor",
+    "slug": "rex-raptor"
+  },
+  {
+    "id": 10,
+    "name": "Weevil Underwood",
+    "slug": "weevil-underwood"
+  },
+  {
+    "id": 11,
+    "name": "Mai Valentine",
+    "slug": "mai-valentine"
+  },
+  {
+    "id": 12,
+    "name": "Bandit Keith",
+    "slug": "bandit-keith"
+  },
+  {
+    "id": 13,
+    "name": "Shadi",
+    "slug": "shadi"
+  },
+  {
+    "id": 14,
+    "name": "Yami Bakura",
+    "slug": "yami-bakura"
+  },
+  {
+    "id": 15,
+    "name": "Pegasus",
+    "slug": "pegasus"
+  },
+  {
+    "id": 16,
+    "name": "Isis",
+    "slug": "isis"
+  },
+  {
+    "id": 17,
+    "name": "Kaiba",
+    "slug": "kaiba"
+  },
+  {
+    "id": 18,
+    "name": "Mage Soldier",
+    "slug": "mage-soldier"
+  },
+  {
+    "id": 19,
+    "name": "Jono 2nd",
+    "slug": "jono-2nd"
+  },
+  {
+    "id": 20,
+    "name": "Teana 2nd",
+    "slug": "teana-2nd"
+  },
+  {
+    "id": 21,
+    "name": "Ocean Mage",
+    "slug": "ocean-mage"
+  },
+  {
+    "id": 22,
+    "name": "High Mage Secmeton",
+    "slug": "high-mage-secmeton"
+  },
+  {
+    "id": 23,
+    "name": "Forest Mage",
+    "slug": "forest-mage"
+  },
+  {
+    "id": 24,
+    "name": "High Mage Anubisius",
+    "slug": "high-mage-anubisius"
+  },
+  {
+    "id": 25,
+    "name": "Mountain Mage",
+    "slug": "mountain-mage"
+  },
+  {
+    "id": 26,
+    "name": "High Mage Atenza",
+    "slug": "high-mage-atenza"
+  },
+  {
+    "id": 27,
+    "name": "Desert Mage",
+    "slug": "desert-mage"
+  },
+  {
+    "id": 28,
+    "name": "High Mage Martis",
+    "slug": "high-mage-martis"
+  },
+  {
+    "id": 29,
+    "name": "Meadow Mage",
+    "slug": "meadow-mage"
+  },
+  {
+    "id": 30,
+    "name": "High Mage Kepura",
+    "slug": "high-mage-kepura"
+  },
+  {
+    "id": 31,
+    "name": "Labyrinth Mage",
+    "slug": "labyrinth-mage"
+  },
+  {
+    "id": 32,
+    "name": "Seto 2nd",
+    "slug": "seto-2nd"
+  },
+  {
+    "id": 33,
+    "name": "Guardian Sebek",
+    "slug": "guardian-sebek"
+  },
+  {
+    "id": 34,
+    "name": "Guardian Neku",
+    "slug": "guardian-neku"
+  },
+  {
+    "id": 35,
+    "name": "Heishin 2nd",
+    "slug": "heishin-2nd"
+  },
+  {
+    "id": 36,
+    "name": "Seto 3rd",
+    "slug": "seto-3rd"
+  },
+  {
+    "id": 37,
+    "name": "DarkNite",
+    "slug": "darknite"
+  },
+  {
+    "id": 38,
+    "name": "Nitemare",
+    "slug": "nitemare"
+  },
+  {
+    "id": 39,
+    "name": "Duel Master K",
+    "slug": "duel-master-k"
+  }
+]
