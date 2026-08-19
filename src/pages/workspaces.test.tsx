@@ -62,6 +62,91 @@ describe('Cards workspace', () => {
     const catalog = screen.getByRole('complementary', { name: 'Card catalog' })
     expect(within(catalog).getByRole('link', { name: /Raigeki/ }).getAttribute('aria-current')).toBe('page')
     expect(screen.getByRole('heading', { name: 'Raigeki', level: 1 })).toBeTruthy()
+  }, 10_000)
+
+  it('starts advanced filters collapsed and exposes dynamic metadata controls', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/cards')
+    const toggle = screen.getByRole('button', { name: /Advanced filters/ })
+    expect(toggle.getAttribute('aria-expanded')).toBe('false')
+    expect(screen.queryByRole('combobox', { name: 'Attribute' })).toBeNull()
+
+    await user.click(toggle)
+    expect(toggle.getAttribute('aria-expanded')).toBe('true')
+    expect(screen.getByRole('combobox', { name: 'Attribute' })).toBeTruthy()
+    expect(screen.getByRole('combobox', { name: 'Guardian star' })).toBeTruthy()
+    expect(screen.getByRole('group', { name: 'ATK' })).toBeTruthy()
+    expect(screen.getByRole('group', { name: 'DEF' })).toBeTruthy()
+    expect(screen.getByRole('group', { name: 'Level' })).toBeTruthy()
+  })
+
+  it('counts advanced categories, removes one chip, and preserves filters on card selection', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/cards')
+    const catalog = screen.getByRole('complementary', { name: 'Card catalog' })
+    const toggle = screen.getByRole('button', { name: /Advanced filters/ })
+    await user.click(toggle)
+
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Attribute' }), 'Light')
+    const atkGroup = screen.getByRole('group', { name: 'ATK' })
+    const minAtk = within(atkGroup).getByRole('spinbutton', { name: 'Min' })
+    const maxAtk = within(atkGroup).getByRole('spinbutton', { name: 'Max' })
+    await user.type(minAtk, '2500')
+    await user.type(maxAtk, '3500')
+
+    expect(toggle.textContent).toContain('2')
+    expect(screen.getByRole('button', { name: 'Remove ATK filter' })).toBeTruthy()
+    await user.click(screen.getByRole('button', { name: 'Remove ATK filter' }))
+    expect((minAtk as HTMLInputElement).value).toBe('')
+    expect((maxAtk as HTMLInputElement).value).toBe('')
+    expect(toggle.textContent).toContain('1')
+
+    const blueEyesLink = within(catalog).getByRole('link', { name: /Blue-eyes White Dragon/ })
+    await user.click(blueEyesLink)
+    expect(screen.getByTestId('location').textContent).toBe('/cards/1')
+    expect((screen.getByRole('combobox', { name: 'Attribute' }) as HTMLSelectElement).value).toBe('Light')
+    expect(toggle.getAttribute('aria-expanded')).toBe('true')
+  })
+
+  it('shows invalid range feedback without applying the invalid range', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/cards')
+    await user.click(screen.getByRole('button', { name: /Advanced filters/ }))
+    const atkGroup = screen.getByRole('group', { name: 'ATK' })
+    await user.type(within(atkGroup).getByRole('spinbutton', { name: 'Min' }), '2500')
+    await user.type(within(atkGroup).getByRole('spinbutton', { name: 'Max' }), '1000')
+    expect(within(atkGroup).getByText('Minimum cannot be greater than maximum.')).toBeTruthy()
+    expect(screen.getByText('722 / 722')).toBeTruthy()
+  })
+
+  it('resets only advanced criteria without changing search, type, or sort', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/cards')
+    await user.type(screen.getByRole('searchbox', { name: 'Search cards' }), 'dragon')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Type' }), 'Dragon')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Sort' }), 'name')
+    await user.click(screen.getByRole('button', { name: /Advanced filters/ }))
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Attribute' }), 'Dark')
+    await user.click(screen.getByRole('button', { name: 'Reset advanced filters' }))
+
+    expect((screen.getByRole('searchbox', { name: 'Search cards' }) as HTMLInputElement).value).toBe('dragon')
+    expect((screen.getByRole('combobox', { name: 'Type' }) as HTMLSelectElement).value).toBe('Dragon')
+    expect((screen.getByRole('combobox', { name: 'Sort' }) as HTMLSelectElement).value).toBe('name')
+    expect((screen.getByRole('combobox', { name: 'Attribute' }) as HTMLSelectElement).value).toBe('')
+  })
+
+  it('clears all catalog filters from the no-results state while preserving sort', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/cards')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Sort' }), 'name')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Type' }), 'Dragon')
+    await user.type(screen.getByRole('searchbox', { name: 'Search cards' }), 'definitely-not-a-card')
+    await user.click(screen.getByRole('button', { name: 'Clear filters' }))
+
+    expect((screen.getByRole('searchbox', { name: 'Search cards' }) as HTMLInputElement).value).toBe('')
+    expect((screen.getByRole('combobox', { name: 'Type' }) as HTMLSelectElement).value).toBe('all')
+    expect((screen.getByRole('combobox', { name: 'Sort' }) as HTMLSelectElement).value).toBe('name')
+    expect(screen.getByText('722')).toBeTruthy()
   })
 })
 
