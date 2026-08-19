@@ -21,7 +21,13 @@ npm run dev
 npm run build
 ```
 
-The output in `dist/` is a static SPA. `public/_redirects` supports Netlify-style SPA routing, while the post-build script creates `dist/404.html` for GitHub Pages. For a project-site GitHub Pages deployment, set `BASE_URL` to the repository base path before building (for example, `/my-repo/`). Cloudflare Pages can use `npm run build` with `dist` as its output directory.
+The output in `dist/` is a static SPA. `public/_redirects` supports Netlify-style SPA routing. Cloudflare Pages can use `npm run build` with `dist` as its output directory.
+
+## Deployment
+
+The site deploys to GitHub Pages automatically whenever `main` is pushed, using the workflow in `.github/workflows/deploy-pages.yml`. Configure the repository's Pages source as **GitHub Actions** before the first deployment.
+
+GitHub Pages builds derive the correct project base path from `GITHUB_REPOSITORY`. Navigation uses hash routes so deep links and refreshes work without server rewrites, for example `#/cards/337` and `#/duelists/seto-2nd`.
 
 ## Validate data
 

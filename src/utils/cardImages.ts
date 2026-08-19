@@ -1,3 +1,3 @@
 export function getCardImageUrl(cardId: number): string {
-  return `/cards/${String(cardId).padStart(3, '0')}.webp`
+  return `${import.meta.env.BASE_URL}cards/${String(cardId).padStart(3, '0')}.webp`
 }

@@ -1,3 +1,3 @@
 export function getDuelistImageUrl(slug: string): string {
-  return `/duelists/${slug}.webp`
+  return `${import.meta.env.BASE_URL}duelists/${slug}.webp`
 }
