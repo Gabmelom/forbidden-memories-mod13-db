@@ -2,6 +2,8 @@
 
 An unofficial static database for browsing Yu-Gi-Oh! Forbidden Memories Mod 13 cards, duelists, and drop rates. The app is built with React, TypeScript, and Vite.
 
+Browse the Forbidden Memories MOD13 card database online: **[YFM13 Card Database](https://gabmelom.github.io/forbidden-memories-mod13-db/#/cards)**
+
 ## Requirements
 
 - Node.js 24 LTS and npm
