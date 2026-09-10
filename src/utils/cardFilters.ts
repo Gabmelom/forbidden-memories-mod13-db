@@ -71,7 +71,7 @@ export function matchesAdvancedFilters(card: Card, filters: CardAdvancedFilters)
 export function matchesCardType(card: Card, selectedType: string): boolean {
   if (selectedType === 'all') return true
   if (selectedType === 'monsters') return card.atk !== null || card.def !== null
-  return normalizeSearch(card.type) === normalizeSearch(selectedType)
+  return normalizeSearch(card.type ?? '') === normalizeSearch(selectedType)
 }
 
 export function matchesCardCatalogFilters(card: Card, filters: CardCatalogFilters): boolean {

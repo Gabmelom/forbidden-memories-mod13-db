@@ -9,7 +9,7 @@ export function CardSummary({ card, compact = false }: { card: Card; compact?: b
       <div className="card-summary-text">
         <span className="card-id">#{card.id}</span>
         <strong>{card.name}</strong>
-        <div className="card-meta"><span>{card.type}</span>{isMonster && <span>ATK {card.atk ?? '—'} / DEF {card.def ?? '—'}</span>}</div>
+        <div className="card-meta"><span>{card.type ?? 'Unknown type'}</span>{isMonster && <span>ATK {card.atk ?? '—'} / DEF {card.def ?? '—'}</span>}</div>
       </div>
     </div>
   )

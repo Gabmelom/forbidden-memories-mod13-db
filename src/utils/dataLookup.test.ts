@@ -13,11 +13,12 @@ describe('data lookups', () => {
     expect(data.getDropsForDuelist(32).length).toBeGreaterThan(0)
     expect(data.getDropsForDuelistAndRank(32, 'SA_TEC').every((drop) => drop.rank === 'SA_TEC')).toBe(true)
   })
-  it('handles an empty mod dataset', () => {
-    const emptyData = createDataLookup(fm2Ghost)
-    expect(emptyData.cards).toEqual([])
-    expect(emptyData.getCardById(337)).toBeUndefined()
-    expect(emptyData.getDropsForCard(337)).toEqual([])
+  it('indexes the imported FM2 Ghost dataset independently', () => {
+    const ghostData = createDataLookup(fm2Ghost)
+    expect(ghostData.cards).toHaveLength(722)
+    expect(ghostData.getCardById(1)?.atk).toBe(3000)
+    expect(ghostData.getCardById(1)?.guardianStar1).toBe('Sun')
+    expect(ghostData.getDropsForCard(337).length).toBeGreaterThan(0)
   })
   it('sorts card drops by descending weight', () => {
     const lower = { card: data.getCardById(337)!, drop: { duelistId: 1, cardId: 337, rank: 'SA_TEC' as const, weight: 40 } }

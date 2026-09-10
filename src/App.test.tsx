@@ -39,13 +39,11 @@ describe('mod routing', () => {
     expect(screen.getByTestId('location').textContent).toBe('/mod13/cards')
   })
 
-  it('shows empty Ghost cards and duelists without crashing', () => {
-    const { unmount } = renderApp('/fm2-ghost/cards')
-    expect(screen.getAllByText('FM2 Ghost data has not been imported yet.').length).toBeGreaterThan(0)
-    unmount()
-    renderApp('/fm2-ghost/duelists')
-    expect(screen.getAllByText('FM2 Ghost data has not been imported yet.').length).toBeGreaterThan(0)
-  })
+  it('loads imported Ghost card metadata from a deep link', () => {
+    renderApp('/fm2-ghost/cards/1')
+    expect(screen.getByRole('heading', { name: 'Blue-eyes White Dragon', level: 1 })).toBeTruthy()
+    expect(screen.getAllByText('ATK 3000 / DEF 2500').length).toBeGreaterThan(0)
+  }, 10_000)
 
   it('switches mods from a card detail to the target card catalog', async () => {
     const user = userEvent.setup()

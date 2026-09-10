@@ -12,10 +12,11 @@
     "validate:data": "node scripts/validate-data.mjs",
     "validate:images": "node scripts/validate-images.mjs",
     "validate:duelist-images": "node scripts/validate-duelist-images.mjs",
-    "data:extract": "python scripts/extract-mod13.py",
-    "data:cards": "python scripts/import-card-metadata.py",
-    "data:images": "python scripts/import-card-images.py",
-    "data:duelist-images": "python scripts/import-duelist-images.py"
+    "data:extract": "python \"scripts/mod13/extract-mod13.py\"",
+    "data:cards": "python \"scripts/mod13/import-card-metadata.py\"",
+    "data:images": "python \"scripts/mod13/import-card-images.py\"",
+    "data:duelist-images": "python \"scripts/mod13/import-duelist-images.py\"",
+    "data:fm2-ghost:cards": "python \"scripts/fm2 ghost/import_tea_card_metadata.py\""
   },
   "dependencies": {
     "react": "^19.2.8",

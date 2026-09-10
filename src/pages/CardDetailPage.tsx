@@ -34,7 +34,7 @@ export function CardDetailPage() {
         <button ref={previewTriggerRef} type="button" className="card-image-trigger" aria-label={`View larger image of ${card.name}`} onClick={() => setIsPreviewOpen(true)}>
           <CardImage cardId={card.id} cardName={card.name} size="large" loading="eager" />
         </button>
-        <div><p className="eyebrow">#{card.id}</p><h1>{card.name}</h1><div className="card-meta detail-meta"><span>{card.type}</span>{(card.atk !== null || card.def !== null) && <span>ATK {card.atk ?? '—'} / DEF {card.def ?? '—'}</span>}</div></div>
+        <div><p className="eyebrow">#{card.id}</p><h1>{card.name}</h1><div className="card-meta detail-meta"><span>{card.type ?? 'Unknown type'}</span>{(card.atk !== null || card.def !== null) && <span>ATK {card.atk ?? '—'} / DEF {card.def ?? '—'}</span>}</div></div>
       </header>
       <section className="detail-section">
         <div className="section-heading"><div><p className="eyebrow">Drop sources</p><h2>Where to farm</h2></div><span>{sources.length} {sources.length === 1 ? 'source' : 'sources'}</span></div>

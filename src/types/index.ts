@@ -1,13 +1,18 @@
 export interface Card {
   id: number
   name: string
-  type: string
+  type: string | null
   atk: number | null
   def: number | null
   attribute?: string | null
   level?: number | null
   guardianStar1?: string | null
   guardianStar2?: string | null
+  password?: string | null
+  cost?: number | null
+  description?: string | null
+  hasEffect?: boolean | null
+  color?: number | null
 }
 
 export interface Duelist {

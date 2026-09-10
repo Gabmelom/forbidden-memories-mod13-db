@@ -43,7 +43,7 @@ export function CardsPage() {
     const filtered = filterCards(cards, { search: query, type: typeFilter, advanced: advancedFilters })
     return [...filtered].sort((left, right) => {
       if (sort === 'name') return left.name.localeCompare(right.name)
-      if (sort === 'type') return left.type.localeCompare(right.type) || left.name.localeCompare(right.name)
+      if (sort === 'type') return (left.type ?? '').localeCompare(right.type ?? '') || left.name.localeCompare(right.name)
       if (sort === 'atk') {
         if (left.atk === null) return right.atk === null ? left.name.localeCompare(right.name) : 1
         if (right.atk === null) return -1

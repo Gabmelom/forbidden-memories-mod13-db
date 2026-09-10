@@ -1,8 +1,8 @@
 # Forbidden Memories DB
 
-An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. Mod 13 is fully available; FM2 Ghost is registered as an empty placeholder ready for future data. The app is built with React, TypeScript, and Vite.
+An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. The app currently includes Mod 13 and FM2 Ghost data and is built with React, TypeScript, and Vite.
 
-Browse the Forbidden Memories MOD13 card database online: **[YFM13 Card Database](https://gabmelom.github.io/forbidden-memories-mod13-db/#/cards)**
+Browse the Forbidden Memories database online: **[Forbidden Memories DB](https://gabmelom.github.io/forbidden-memories-mod13-db/#/mod13/cards)**
 
 ## Requirements
 
@@ -60,10 +60,24 @@ npm run data:cards
 The script downloads `cardinfo.json` from the open-source `sg4e/YGOFM-gamedata` dataset and merges it strictly by numeric card ID. To use a local source file instead:
 
 ```bash
-python scripts/import-card-metadata.py --source path/to/cardinfo.json
+python "scripts/mod13/import-card-metadata.py" --source path/to/cardinfo.json
 ```
 
 The importer preserves the extracted Mod 13 card names and does not modify `drops.json`.
+
+## Import FM2 Ghost card metadata
+
+After harvesting TEA card responses into `scripts/fm2 ghost/tea_getdata_raw.json`, merge the supported metadata into the normalized Ghost card list:
+
+```bash
+npm run data:fm2-ghost:cards
+```
+
+The importer joins records by numeric card ID and populates type, ATK/DEF, Guardian Stars, password, cost, description, effect status, and TEA's numeric color code. It preserves the canonical names from the Ghost workbook, stores the game's maximum card cost of `999999`, and treats TEA's non-decimal `FFFFFFFE` password value as unavailable. Verify that the generated dataset is current without writing it using:
+
+```bash
+npm run data:fm2-ghost:cards -- --check
+```
 
 ## Import images
 
