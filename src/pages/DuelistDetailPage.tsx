@@ -6,8 +6,8 @@ import { DuelistImage } from '../components/DuelistImage'
 import { ImagePreviewModal } from '../components/ImagePreviewModal'
 import { SearchInput } from '../components/SearchInput'
 import { SortSelect } from '../components/SortSelect'
+import { useMod } from '../context/ModContext'
 import { DROP_RANKS, type CardTypeFilter, type DropRank, type DropSort } from '../types'
-import { getCardById, getDropsForDuelistAndRank, getDuelistBySlug, sortCardDropRows } from '../utils/dataLookup'
 import { normalizeSearch } from '../utils/search'
 import { RANK_LABELS } from '../utils/rankLabels'
 
@@ -17,6 +17,8 @@ function isDropRank(value: string | null): value is DropRank {
 
 export function DuelistDetailPage() {
   const { duelistSlug = '' } = useParams()
+  const { mod, data } = useMod()
+  const { getCardById, getDropsForDuelistAndRank, getDuelistBySlug, sortCardDropRows } = data
   const [searchParams, setSearchParams] = useSearchParams()
   const duelist = getDuelistBySlug(duelistSlug)
   const rankParam = searchParams.get('rank')
@@ -41,9 +43,9 @@ export function DuelistDetailPage() {
         return true
       })
     return sortCardDropRows(joined, sort)
-  }, [duelist, query, selectedRank, sort, typeFilter])
+  }, [duelist, getCardById, getDropsForDuelistAndRank, query, selectedRank, sort, sortCardDropRows, typeFilter])
 
-  if (!duelist) return <div className="empty-state not-found"><h1>Duelist not found</h1><Link className="button-link" to="/duelists">Back to duelists</Link></div>
+  if (!duelist) return <div className="empty-state not-found"><h1>Duelist not found</h1><Link className="button-link" to={`/${mod.id}/duelists`}>Back to duelists</Link></div>
 
   const selectRank = (rank: DropRank) => { setSearchParams({ rank }); setQuery('') }
   const closePreview = () => {
@@ -53,7 +55,7 @@ export function DuelistDetailPage() {
 
   return (
     <article className="workspace-detail-content">
-      <Link className="back-link mobile-workspace-back" to="/duelists">← Duelists</Link>
+      <Link className="back-link mobile-workspace-back" to={`/${mod.id}/duelists`}>← Duelists</Link>
       <header className="duelist-heading">
         <button ref={previewTriggerRef} type="button" className="duelist-image-trigger" aria-label={`View larger portrait of ${duelist.name}`} onClick={() => setIsPreviewOpen(true)}>
           <DuelistImage slug={duelist.slug} name={duelist.name} size="large" loading="eager" />
@@ -75,7 +77,7 @@ export function DuelistDetailPage() {
           <div className="table-frame"><table className="drop-table duelist-drops">
             <thead><tr><th>Card</th><th>Weight</th><th>Per reward</th><th>Per duel</th></tr></thead>
             <tbody>{rows.map(({ card, drop }) => <tr key={card.id}>
-              <td data-label="Card"><Link className="table-card-link" to={`/cards/${card.id}`}><CardImage cardId={card.id} cardName={card.name} size="small" decorative /><span className="table-card-text"><span className="table-card-name">{card.name}</span><span className="table-card-meta">#{card.id} · {card.type}{card.atk !== null ? ` · ATK ${card.atk}` : ''}</span></span></Link></td>
+              <td data-label="Card"><Link className="table-card-link" to={`/${mod.id}/cards/${card.id}`}><CardImage cardId={card.id} cardName={card.name} size="small" decorative /><span className="table-card-text"><span className="table-card-name">{card.name}</span><span className="table-card-meta">#{card.id} · {card.type}{card.atk !== null ? ` · ATK ${card.atk}` : ''}</span></span></Link></td>
               <td data-label="Weight"><DropRate weight={drop.weight} part="weight" /></td><td data-label="Per reward"><DropRate weight={drop.weight} part="single" /></td><td data-label="Per duel"><DropRate weight={drop.weight} part="duel" /></td>
             </tr>)}</tbody>
           </table></div>

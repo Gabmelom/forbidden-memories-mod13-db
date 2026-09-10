@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import type { RewardCount } from '../types'
 import { RewardCountContext } from './RewardCountContext'
 
-const STORAGE_KEY = 'fm-mod-13-reward-count'
+const STORAGE_KEY = 'fm-db-reward-count'
 const VALID_REWARD_COUNTS: RewardCount[] = [1, 5, 10, 15]
 
 function getStoredRewardCount(): RewardCount {

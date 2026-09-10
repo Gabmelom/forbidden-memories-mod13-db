@@ -24,6 +24,8 @@ export interface Drop {
   cardId: number
   rank: DropRank
   weight: number
+  condition?: string
+  denominator?: number
 }
 
 export type RewardCount = 1 | 5 | 10 | 15

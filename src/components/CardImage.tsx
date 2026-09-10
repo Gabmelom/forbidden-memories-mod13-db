@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useMod } from '../context/ModContext'
 import { getCardImageUrl } from '../utils/cardImages'
 
 interface CardImageProps {
@@ -16,7 +17,8 @@ export function CardImage({
   loading = 'lazy',
   decorative = false,
 }: CardImageProps) {
-  const source = getCardImageUrl(cardId)
+  const { mod } = useMod()
+  const source = getCardImageUrl(mod.assetBase, cardId)
   const [failedSource, setFailedSource] = useState<string | null>(null)
   const failed = failedSource === source
 

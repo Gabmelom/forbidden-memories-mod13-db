@@ -35,6 +35,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 nav { display: flex; align-self: stretch; align-items: center; gap: 4px; }
 nav a { min-height: 42px; padding: 0 14px; display: inline-flex; align-items: center; color: var(--muted); font-size: .9rem; font-weight: 700; text-decoration: none; border-radius: 5px; }
 nav a:hover, nav a.active { color: var(--text); background: var(--panel-raised); }
+.header-controls { display: flex; align-items: center; gap: 20px; }
+.mod-selector { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: .63rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.mod-selector select { min-width: 126px; min-height: 40px; padding: 0 32px 0 10px; color: var(--text); border: 1px solid var(--border); border-radius: 6px; background: var(--panel); cursor: pointer; }
 .reward-selector { display: flex; align-items: center; gap: 10px; }
 .reward-label { color: var(--muted); font-size: .68rem; line-height: 1.15; text-transform: uppercase; letter-spacing: .08em; }
 .reward-label span { display: block; }
@@ -205,7 +208,7 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .subtitle { display: none; }
   nav { grid-column: 1; grid-row: 2; }
   nav a { min-height: 38px; padding: 0 12px; }
-  .reward-selector { grid-column: 2; grid-row: 1 / span 2; }
+  .header-controls { grid-column: 2; grid-row: 1 / span 2; gap: 12px; }
   .reward-label { display: none; }
   .segmented-control button { min-width: 34px; min-height: 36px; }
   .page-shell { padding: 30px 14px 60px; }
@@ -215,10 +218,13 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 @media (max-width: 640px) {
   .app-header { position: static; }
   .header-inner { grid-template-columns: 1fr; }
-  .brand-block, nav, .reward-selector { grid-column: 1; grid-row: auto; }
+  .brand-block, nav, .header-controls { grid-column: 1; grid-row: auto; }
   .brand-block { align-items: center; }
   nav { justify-content: center; }
+  .header-controls { justify-content: center; flex-wrap: wrap; padding-top: 6px; border-top: 1px solid var(--border-soft); }
+  .mod-selector { flex-direction: row; align-items: center; }
   .reward-selector { justify-content: center; padding-top: 6px; border-top: 1px solid var(--border-soft); }
+  .header-controls .reward-selector { padding-top: 0; border-top: 0; }
   .reward-label { display: inline; }
   .reward-label span { display: inline; }
   .page-heading { align-items: start; }

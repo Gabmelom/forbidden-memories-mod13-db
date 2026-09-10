@@ -3,13 +3,15 @@ import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { DuelistImage } from '../components/DuelistImage'
 import { MasterDetailLayout } from '../components/MasterDetailLayout'
 import { SearchInput } from '../components/SearchInput'
+import { useMod } from '../context/ModContext'
 import { DROP_RANKS } from '../types'
-import { duelists } from '../utils/dataLookup'
 import { normalizeSearch } from '../utils/search'
 import { DuelistDetailPage } from './DuelistDetailPage'
 
 export function DuelistsPage() {
   const { duelistSlug } = useParams()
+  const { mod, data } = useMod()
+  const { duelists } = data
   const [searchParams] = useSearchParams()
   const [query, setQuery] = useState('')
   const selectedRowRef = useRef<HTMLAnchorElement>(null)
@@ -23,7 +25,7 @@ export function DuelistsPage() {
     return normalizedQuery
       ? duelists.filter((duelist) => normalizeSearch(duelist.name).includes(normalizedQuery))
       : duelists
-  }, [query])
+  }, [duelists, query])
 
   useEffect(() => {
     if (
@@ -47,7 +49,7 @@ export function DuelistsPage() {
         <div className="catalog-list" aria-label="Duelist results">
           {results.map((duelist) => {
             const isSelected = duelist.slug === duelistSlug
-            const destination = `/duelists/${duelist.slug}${preservedRank ? `?rank=${preservedRank}` : ''}`
+            const destination = `/${mod.id}/duelists/${duelist.slug}${preservedRank ? `?rank=${preservedRank}` : ''}`
             return (
               <Link
                 ref={isSelected ? selectedRowRef : undefined}
@@ -63,14 +65,14 @@ export function DuelistsPage() {
             )
           })}
         </div>
-      ) : <div className="catalog-empty">No duelists found.</div>}
+      ) : <div className="catalog-empty">{duelists.length === 0 ? (mod.emptyDataMessage ?? `No duelist data is available for ${mod.label}.`) : 'No duelists found.'}</div>}
     </div>
   )
 
   const detail = duelistSlug ? (
     <DuelistDetailPage />
   ) : (
-    <div className="workspace-empty-state"><div><span aria-hidden="true">♙</span><h2>Select a duelist</h2><p>Choose a duelist from the catalog to inspect their Mod 13 drop pools.</p></div></div>
+    <div className="workspace-empty-state"><div><span aria-hidden="true">♙</span><h2>{duelists.length ? 'Select a duelist' : `${mod.label} duelists`}</h2><p>{duelists.length ? `Choose a duelist from the catalog to inspect their ${mod.label} drop pools.` : (mod.emptyDataMessage ?? `No duelist data is available for ${mod.label}.`)}</p></div></div>
   )
 
   return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(duelistSlug)} selectionKey={duelistSlug} masterLabel="Duelist catalog" detailLabel="Duelist details" />

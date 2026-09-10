@@ -4,7 +4,7 @@ import { CardSummary } from '../components/CardSummary'
 import { MasterDetailLayout } from '../components/MasterDetailLayout'
 import { SearchInput } from '../components/SearchInput'
 import { AdvancedCardFilters } from '../components/cards/AdvancedCardFilters'
-import { cards } from '../utils/dataLookup'
+import { useMod } from '../context/ModContext'
 import {
   EMPTY_ADVANCED_CARD_FILTERS,
   countActiveAdvancedFilters,
@@ -20,6 +20,8 @@ type CardCatalogSort = 'id' | 'name' | 'atk' | 'type'
 
 export function CardsPage() {
   const { cardId } = useParams()
+  const { mod, data } = useMod()
+  const { cards } = data
   const selectedCardId = Number(cardId)
   const [query, setQuery] = useState('')
   const [typeFilter, setTypeFilter] = useState('all')
@@ -28,12 +30,12 @@ export function CardsPage() {
   const selectedRowRef = useRef<HTMLAnchorElement>(null)
   const initialSelectedId = useRef(cardId)
   const revealedInitialSelection = useRef(false)
-  const attributes = useMemo(() => getAvailableAttributes(cards), [])
-  const guardianStars = useMemo(() => getAvailableGuardianStars(cards), [])
-  const cardTypes = useMemo(() => getAvailableCardTypes(cards), [])
-  const attackRange = useMemo(() => getNumericRange(cards, 'atk'), [])
-  const defenseRange = useMemo(() => getNumericRange(cards, 'def'), [])
-  const levelRange = useMemo(() => getNumericRange(cards, 'level'), [])
+  const attributes = useMemo(() => getAvailableAttributes(cards), [cards])
+  const guardianStars = useMemo(() => getAvailableGuardianStars(cards), [cards])
+  const cardTypes = useMemo(() => getAvailableCardTypes(cards), [cards])
+  const attackRange = useMemo(() => getNumericRange(cards, 'atk'), [cards])
+  const defenseRange = useMemo(() => getNumericRange(cards, 'def'), [cards])
+  const levelRange = useMemo(() => getNumericRange(cards, 'level'), [cards])
   const activeAdvancedCount = countActiveAdvancedFilters(advancedFilters)
   const hasActiveFilters = Boolean(query.trim()) || typeFilter !== 'all' || activeAdvancedCount > 0
 
@@ -49,7 +51,7 @@ export function CardsPage() {
       }
       return left.id - right.id
     })
-  }, [advancedFilters, query, sort, typeFilter])
+  }, [advancedFilters, cards, query, sort, typeFilter])
 
   useEffect(() => {
     if (
@@ -97,7 +99,7 @@ export function CardsPage() {
                 ref={isSelected ? selectedRowRef : undefined}
                 className={`catalog-row${isSelected ? ' selected' : ''}`}
                 key={card.id}
-                to={`/cards/${card.id}`}
+                to={`/${mod.id}/cards/${card.id}`}
                 aria-current={isSelected ? 'page' : undefined}
               >
                 <CardSummary card={card} compact />
@@ -106,6 +108,8 @@ export function CardsPage() {
             )
           })}
         </div>
+      ) : cards.length === 0 ? (
+        <div className="catalog-empty">{mod.emptyDataMessage ?? `No card data is available for ${mod.label}.`}</div>
       ) : <div className="catalog-empty"><p>No cards match these filters.</p><button type="button" className="clear-catalog-filters" onClick={clearAllFilters}>Clear filters</button></div>}
     </div>
   )
@@ -113,7 +117,7 @@ export function CardsPage() {
   const detail = cardId ? (
     <CardDetailPage />
   ) : (
-    <div className="workspace-empty-state"><div><span aria-hidden="true">▱</span><h2>Select a card</h2><p>Choose a card from the catalog to see its stats, artwork, and Mod 13 drop sources.</p></div></div>
+    <div className="workspace-empty-state"><div><span aria-hidden="true">▱</span><h2>{cards.length ? 'Select a card' : `${mod.label} cards`}</h2><p>{cards.length ? `Choose a card from the catalog to see its stats, artwork, and ${mod.label} drop sources.` : (mod.emptyDataMessage ?? `No card data is available for ${mod.label}.`)}</p></div></div>
   )
 
   return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(cardId)} selectionKey={cardId} masterLabel="Card catalog" detailLabel="Card details" />

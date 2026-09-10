@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import locally supplied card images into public/cards as normalized WebP."""
+"""Import locally supplied Mod 13 card images as normalized WebP."""
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ except ImportError:
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Import a local card-image directory into public/cards"
+        description="Import a local card-image directory into public/mods/mod13/cards"
     )
     parser.add_argument("source_directory", help="Directory containing ID-named images")
     return parser.parse_args()
@@ -116,7 +116,7 @@ def convert_to_webp(source: Path, destination: Path) -> bool:
 def read_card_names(cards_path: Path) -> dict[int, str]:
     records: Any = json.loads(cards_path.read_text(encoding="utf-8"))
     if not isinstance(records, list):
-        raise ValueError("src/data/cards.json must be an array")
+        raise ValueError("src/data/mod13/cards.json must be an array")
     return {
         record["id"]: record["name"]
         for record in records
@@ -130,13 +130,13 @@ def main() -> int:
     arguments = parse_arguments()
     project_root = Path(__file__).resolve().parents[1]
     source_directory = Path(arguments.source_directory).expanduser().resolve()
-    destination_directory = project_root / "public" / "cards"
+    destination_directory = project_root / "public" / "mods" / "mod13" / "cards"
 
     if not source_directory.is_dir():
         print(f"Source directory does not exist: {source_directory}", file=sys.stderr)
         return 1
     if source_directory == destination_directory.resolve():
-        print("Source directory must be different from public/cards", file=sys.stderr)
+        print("Source directory must be different from public/mods/mod13/cards", file=sys.stderr)
         return 1
 
     try:
@@ -152,7 +152,7 @@ def main() -> int:
             destination = destination_directory / f"{card_id:03d}.webp"
             resized += int(convert_to_webp(source, destination))
 
-        card_names = read_card_names(project_root / "src" / "data" / "cards.json")
+        card_names = read_card_names(project_root / "src" / "data" / "mod13" / "cards.json")
         present_ids = {
             card_id
             for card_id in range(1, CARD_COUNT + 1)

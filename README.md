@@ -1,6 +1,6 @@
-# Forbidden Memories Mod 13 DB
+# Forbidden Memories DB
 
-An unofficial static database for browsing Yu-Gi-Oh! Forbidden Memories Mod 13 cards, duelists, and drop rates. The app is built with React, TypeScript, and Vite.
+An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. Mod 13 is fully available; FM2 Ghost is registered as an empty placeholder ready for future data. The app is built with React, TypeScript, and Vite.
 
 ## Requirements
 
@@ -41,9 +41,9 @@ npm run data:extract
 
 The extractor reads the 722 card names, 39 duelists, and S/A POW, B/C/D, and S/A TEC drop pools. It generates:
 
-- `src/data/extracted-card-names.json`
-- `src/data/duelists.json`
-- `src/data/drops.json`
+- `src/data/mod13/extracted-card-names.json`
+- `src/data/mod13/duelists.json`
+- `src/data/mod13/drops.json`
 
 The `mod13/` directory is gitignored. Never commit or copy the game binaries into the public application.
 
@@ -71,7 +71,7 @@ Import a local directory of ID-named card images:
 npm run data:images -- path/to/card-images
 ```
 
-Images are normalized to `public/cards/001.webp` through `public/cards/722.webp`.
+Images are normalized to `public/mods/mod13/cards/001.webp` through `public/mods/mod13/cards/722.webp`.
 
 Import a local directory of duelist portraits:
 
@@ -79,7 +79,7 @@ Import a local directory of duelist portraits:
 npm run data:duelist-images -- path/to/duelist-images
 ```
 
-Portrait filenames may use an exact duelist slug, numeric duelist ID, or normalized duelist name. Final files are written to `public/duelists/<slug>.webp`.
+Portrait filenames may use an exact duelist slug, numeric duelist ID, or normalized duelist name. Final files are written to `public/mods/mod13/duelists/<slug>.webp`.
 
 Neither image importer modifies card, duelist, or drop JSON.
 
@@ -98,7 +98,7 @@ The image validators require complete committed artwork and portrait sets. Data 
 
 ## Deployment
 
-Pushes to `main` deploy automatically to GitHub Pages through `.github/workflows/deploy-pages.yml`. The application uses hash routes such as `#/cards/337` so deep links work on static hosting.
+Pushes to `main` deploy automatically to GitHub Pages through `.github/workflows/deploy-pages.yml`. The application uses mod-scoped hash routes such as `#/mod13/cards/337` so deep links work on static hosting.
 
 ## License
 

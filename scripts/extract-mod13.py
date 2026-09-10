@@ -172,7 +172,7 @@ def main() -> int:
     project_root = Path(__file__).resolve().parents[1]
     slus_path = project_root / "mod13" / "SLUS_014.11"
     mrg_path = project_root / "mod13" / "WA_MRG.MRG"
-    data_directory = project_root / "src" / "data"
+    data_directory = project_root / "src" / "data" / "mod13"
 
     missing = [path for path in (slus_path, mrg_path) if not path.is_file()]
     if missing:

@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 
-const dataDirectory = new URL('../src/data/', import.meta.url)
+const dataDirectory = new URL('../src/data/mod13/', import.meta.url)
 const readJson = async (name) => JSON.parse(await readFile(new URL(name, dataDirectory), 'utf8'))
 const [cards, cardNames, duelists, drops] = await Promise.all([
   readJson('cards.json'),

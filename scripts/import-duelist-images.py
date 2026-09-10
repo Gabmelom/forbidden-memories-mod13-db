@@ -26,7 +26,7 @@ except ImportError:
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Import a local duelist-portrait directory into public/duelists"
+        description="Import a local duelist-portrait directory into public/mods/mod13/duelists"
     )
     parser.add_argument("source_directory", help="Directory containing duelist portraits")
     return parser.parse_args()
@@ -41,7 +41,7 @@ def normalize_label(value: str) -> str:
 def read_duelists(path: Path) -> list[dict[str, Any]]:
     records: Any = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(records, list) or len(records) != 39:
-        raise ValueError("src/data/duelists.json must contain exactly 39 duelists")
+        raise ValueError("src/data/mod13/duelists.json must contain exactly 39 duelists")
     for record in records:
         if (
             not isinstance(record, dict)
@@ -159,17 +159,17 @@ def main() -> int:
     arguments = parse_arguments()
     project_root = Path(__file__).resolve().parents[1]
     source_directory = Path(arguments.source_directory).expanduser().resolve()
-    destination_directory = project_root / "public" / "duelists"
+    destination_directory = project_root / "public" / "mods" / "mod13" / "duelists"
 
     if not source_directory.is_dir():
         print(f"Source directory does not exist: {source_directory}", file=sys.stderr)
         return 1
     if source_directory == destination_directory.resolve():
-        print("Source directory must be different from public/duelists", file=sys.stderr)
+        print("Source directory must be different from public/mods/mod13/duelists", file=sys.stderr)
         return 1
 
     try:
-        duelists = read_duelists(project_root / "src" / "data" / "duelists.json")
+        duelists = read_duelists(project_root / "src" / "data" / "mod13" / "duelists.json")
         matches, unmatched, conflicts = discover_matches(source_directory, duelists)
         if not matches and not unmatched and not conflicts:
             raise ValueError("No supported portrait files were found")

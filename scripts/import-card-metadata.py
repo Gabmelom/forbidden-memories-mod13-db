@@ -219,7 +219,7 @@ def write_json_atomically(path: Path, value: object) -> None:
 def main() -> int:
     arguments = parse_arguments()
     project_root = Path(__file__).resolve().parents[1]
-    data_directory = project_root / "src" / "data"
+    data_directory = project_root / "src" / "data" / "mod13"
     extracted_names_path = data_directory / "extracted-card-names.json"
     cards_path = data_directory / "cards.json"
 

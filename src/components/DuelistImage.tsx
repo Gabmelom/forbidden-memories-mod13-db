@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useMod } from '../context/ModContext'
 import { getDuelistImageUrl } from '../utils/duelistImages'
 
 interface DuelistImageProps {
@@ -16,7 +17,8 @@ export function DuelistImage({
   loading = 'lazy',
   decorative = false,
 }: DuelistImageProps) {
-  const source = getDuelistImageUrl(slug)
+  const { mod } = useMod()
+  const source = getDuelistImageUrl(mod.assetBase, slug)
   const [failedSource, setFailedSource] = useState<string | null>(null)
   const failed = failedSource === source
 

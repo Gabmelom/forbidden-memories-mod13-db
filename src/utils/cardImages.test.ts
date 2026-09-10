@@ -3,11 +3,11 @@ import { getCardImageUrl } from './cardImages'
 
 describe('getCardImageUrl', () => {
   it.each([
-    [1, '/cards/001.webp'],
-    [82, '/cards/082.webp'],
-    [337, '/cards/337.webp'],
-    [722, '/cards/722.webp'],
+    [1, '/mods/mod13/cards/001.webp'],
+    [82, '/mods/mod13/cards/082.webp'],
+    [337, '/mods/mod13/cards/337.webp'],
+    [722, '/mods/mod13/cards/722.webp'],
   ])('formats card ID %i as %s', (cardId, expected) => {
-    expect(getCardImageUrl(cardId)).toBe(expected)
+    expect(getCardImageUrl('/mods/mod13/', cardId)).toBe(expected)
   })
 })
