@@ -1,1 +1,197 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Simon Muran",
+    "slug": "simon-muran"
+  },
+  {
+    "id": 2,
+    "name": "Teana",
+    "slug": "teana"
+  },
+  {
+    "id": 3,
+    "name": "Karim",
+    "slug": "karim"
+  },
+  {
+    "id": 4,
+    "name": "Mahad",
+    "slug": "mahad"
+  },
+  {
+    "id": 5,
+    "name": "Ishizu Ishtar",
+    "slug": "ishizu-ishtar"
+  },
+  {
+    "id": 6,
+    "name": "Priest Seto",
+    "slug": "priest-seto"
+  },
+  {
+    "id": 7,
+    "name": "Marik Ishtar",
+    "slug": "marik-ishtar"
+  },
+  {
+    "id": 8,
+    "name": "Thief Bakura",
+    "slug": "thief-bakura"
+  },
+  {
+    "id": 9,
+    "name": "Rex Raptor",
+    "slug": "rex-raptor"
+  },
+  {
+    "id": 10,
+    "name": "Weevil Underwood",
+    "slug": "weevil-underwood"
+  },
+  {
+    "id": 11,
+    "name": "Mai Valentine",
+    "slug": "mai-valentine"
+  },
+  {
+    "id": 12,
+    "name": "Bandit Keith",
+    "slug": "bandit-keith"
+  },
+  {
+    "id": 13,
+    "name": "Mako Tsunami",
+    "slug": "mako-tsunami"
+  },
+  {
+    "id": 14,
+    "name": "Ryo Bakura",
+    "slug": "ryo-bakura"
+  },
+  {
+    "id": 15,
+    "name": "Seto Kaiba",
+    "slug": "seto-kaiba"
+  },
+  {
+    "id": 16,
+    "name": "Joey Wheeler",
+    "slug": "joey-wheeler"
+  },
+  {
+    "id": 17,
+    "name": "Maximillion Pegasus",
+    "slug": "maximillion-pegasus"
+  },
+  {
+    "id": 18,
+    "name": "Guardian Para",
+    "slug": "guardian-para"
+  },
+  {
+    "id": 19,
+    "name": "Karim 2nd",
+    "slug": "karim-2nd"
+  },
+  {
+    "id": 20,
+    "name": "Teana 2nd",
+    "slug": "teana-2nd"
+  },
+  {
+    "id": 21,
+    "name": "Ocean Mage",
+    "slug": "ocean-mage"
+  },
+  {
+    "id": 22,
+    "name": "High Mage Secmeton",
+    "slug": "high-mage-secmeton"
+  },
+  {
+    "id": 23,
+    "name": "Forest Mage",
+    "slug": "forest-mage"
+  },
+  {
+    "id": 24,
+    "name": "High Mage Anubisius",
+    "slug": "high-mage-anubisius"
+  },
+  {
+    "id": 25,
+    "name": "Mountain Mage",
+    "slug": "mountain-mage"
+  },
+  {
+    "id": 26,
+    "name": "High Mage Atenza",
+    "slug": "high-mage-atenza"
+  },
+  {
+    "id": 27,
+    "name": "Desert Mage",
+    "slug": "desert-mage"
+  },
+  {
+    "id": 28,
+    "name": "High Mage Martis",
+    "slug": "high-mage-martis"
+  },
+  {
+    "id": 29,
+    "name": "Meadow Mage",
+    "slug": "meadow-mage"
+  },
+  {
+    "id": 30,
+    "name": "High Mage Kepura",
+    "slug": "high-mage-kepura"
+  },
+  {
+    "id": 31,
+    "name": "Guardian Dox",
+    "slug": "guardian-dox"
+  },
+  {
+    "id": 32,
+    "name": "Yami Marik",
+    "slug": "yami-marik"
+  },
+  {
+    "id": 33,
+    "name": "Aknadin",
+    "slug": "aknadin"
+  },
+  {
+    "id": 34,
+    "name": "Odion Ishtar",
+    "slug": "odion-ishtar"
+  },
+  {
+    "id": 35,
+    "name": "Thief King Bakura",
+    "slug": "thief-king-bakura"
+  },
+  {
+    "id": 36,
+    "name": "Yami Marik 2nd",
+    "slug": "yami-marik-2nd"
+  },
+  {
+    "id": 37,
+    "name": "Diabound",
+    "slug": "diabound"
+  },
+  {
+    "id": 38,
+    "name": "Zorc Necrophades",
+    "slug": "zorc-necrophades"
+  },
+  {
+    "id": 39,
+    "name": "Pharaoh Atem",
+    "slug": "pharaoh-atem"
+  }
+]

@@ -1,0 +1,237 @@
+[
+  {
+    "duelistId": 1,
+    "duelistName": "Simon Muran",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 2988 wins",
+      "No The Creator of Light in trunk",
+      "At least 130 Dragon Manipulators in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 721,
+        "name": "The Creator of Light",
+        "weight": 49.65625
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 570,
+        "name": "Jurrac Aeolo",
+        "weight": 49.65625
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 5,
+    "duelistName": "Ishizu Ishtar",
+    "rank": "SA_POW",
+    "requirements": [
+      "At least 2988 wins",
+      "No Obelisk the Tormentor in trunk",
+      "At least 50 Light-Imprisoning Mirrors in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 698,
+        "name": "Obelisk the Tormentor",
+        "weight": 70.40625
+      }
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "cardId": 129,
+        "name": "Hand of Nephthys",
+        "defaultWeight": 68.34375,
+        "unlockWeight": 3.0
+      },
+      {
+        "cardId": 145,
+        "name": "Old Vindictive Magician",
+        "defaultWeight": 67.1875,
+        "unlockWeight": 62.125
+      }
+    ]
+  },
+  {
+    "duelistId": 16,
+    "duelistName": "Joey Wheeler",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 400 wins",
+      "Less than 3 Red-Eyes B. Metal Dragons in trunk",
+      "At least 1 Maiden of the Aqua in trunk (yes, really)"
+    ],
+    "added": [
+      {
+        "cardId": 87,
+        "name": "Red-eyes B. Metal Dragon",
+        "weight": 3.8125
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 670,
+        "name": "Jinzo",
+        "weight": 3.8125
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 28,
+    "duelistName": "High Mage Martis",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 400 wins",
+      "Less than 3 Berserk Dragons in trunk",
+      "At least 2 Summoned Skulls in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 270,
+        "name": "Berserk Dragon",
+        "weight": 4.125
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 22,
+        "name": "Summoned Skull",
+        "weight": 4.125
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 32,
+    "duelistName": "Yami Marik",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 2988 wins",
+      "No Egyptian God Slime in trunk",
+      "At least 2 Armed Dragon LV10s in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 468,
+        "name": "Egyptian God Slime",
+        "weight": 3.875
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 116,
+        "name": "Armed Dragon LV10",
+        "weight": 3.875
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 36,
+    "duelistName": "Yami Marik 2nd",
+    "rank": "BCD",
+    "requirements": [
+      "At least 2988 wins",
+      "No The Winged Dragon of Ra in trunk",
+      "At least 1 Slifer the Sky Dragon in trunk",
+      "At least 1 Blue-eyes Ultimate Dragon in trunk",
+      "Have Lava Golem in library"
+    ],
+    "added": [
+      {
+        "cardId": 699,
+        "name": "The Winged Dragon of Ra",
+        "weight": 4.03125
+      }
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "cardId": 6,
+        "name": "Feral Imp",
+        "defaultWeight": 95.46875,
+        "unlockWeight": 91.4375
+      }
+    ]
+  },
+  {
+    "duelistId": 37,
+    "duelistName": "Diabound",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 2988 wins",
+      "No Torrential Tribute in trunk",
+      "At least 2 Gate Guardians in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 500,
+        "name": "Torrential Tribute",
+        "weight": 4.15625
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 374,
+        "name": "Gate Guardian",
+        "weight": 4.15625
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 38,
+    "duelistName": "Zorc Necrophades",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 2988 wins",
+      "No Five-Headed Dragon in trunk",
+      "At least 2 Chthonian Blasts in trunk"
+    ],
+    "added": [
+      {
+        "cardId": 720,
+        "name": "Five-Headed Dragon",
+        "weight": 13.875
+      }
+    ],
+    "removed": [
+      {
+        "cardId": 495,
+        "name": "Chthonian Blast",
+        "weight": 13.875
+      }
+    ],
+    "changed": []
+  },
+  {
+    "duelistId": 39,
+    "duelistName": "Pharaoh Atem",
+    "rank": "SA_TEC",
+    "requirements": [
+      "At least 3000 wins",
+      "Have Slifer the Sky Dragon in library"
+    ],
+    "added": [
+      {
+        "cardId": 700,
+        "name": "Slifer the Sky Dragon",
+        "weight": 0.90625
+      }
+    ],
+    "removed": [],
+    "changed": [
+      {
+        "cardId": 184,
+        "name": "Magical Plant Mandragola",
+        "defaultWeight": 1.71875,
+        "unlockWeight": 0.8125
+      }
+    ]
+  }
+]
