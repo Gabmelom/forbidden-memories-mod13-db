@@ -2,6 +2,8 @@
 
 An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. Mod 13 is fully available; FM2 Ghost is registered as an empty placeholder ready for future data. The app is built with React, TypeScript, and Vite.
 
+Browse the Forbidden Memories MOD13 card database online: **[YFM13 Card Database](https://gabmelom.github.io/forbidden-memories-mod13-db/#/cards)**
+
 ## Requirements
 
 - Node.js 24 LTS and npm
