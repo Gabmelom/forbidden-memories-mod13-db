@@ -7,6 +7,7 @@ interface MasterDetailLayoutProps {
   selectionKey?: string
   masterLabel: string
   detailLabel: string
+  className?: string
 }
 
 export function MasterDetailLayout({
@@ -16,6 +17,7 @@ export function MasterDetailLayout({
   selectionKey,
   masterLabel,
   detailLabel,
+  className,
 }: MasterDetailLayoutProps) {
   const detailPaneRef = useRef<HTMLElement>(null)
 
@@ -24,7 +26,7 @@ export function MasterDetailLayout({
   }, [hasSelection, selectionKey])
 
   return (
-    <div className={`master-detail-layout${hasSelection ? ' has-selection' : ''}`}>
+    <div className={`master-detail-layout${hasSelection ? ' has-selection' : ''}${className ? ` ${className}` : ''}`}>
       <aside className="master-pane" aria-label={masterLabel} tabIndex={0}>{master}</aside>
       <section ref={detailPaneRef} className="detail-pane" aria-label={detailLabel} tabIndex={0}>{detail}</section>
     </div>

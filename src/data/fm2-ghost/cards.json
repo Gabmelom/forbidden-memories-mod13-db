@@ -130,18 +130,18 @@
   {
     "id": 9,
     "name": "Chewbone",
-    "type": null,
-    "atk": null,
-    "def": null,
+    "type": "Zombie",
+    "atk": 300,
+    "def": 300,
     "attribute": null,
     "level": null,
-    "guardianStar1": null,
-    "guardianStar2": null,
+    "guardianStar1": "Saturn",
+    "guardianStar2": "Moon",
     "password": "66153667",
     "cost": 225,
-    "description": null,
-    "hasEffect": null,
-    "color": null
+    "description": "A flimsy horned skeletal monster. It protects graveyards.",
+    "hasEffect": false,
+    "color": 0
   },
   {
     "id": 10,

@@ -18,6 +18,19 @@ describe('data lookups', () => {
     expect(ghostData.cards).toHaveLength(722)
     expect(ghostData.getCardById(1)?.atk).toBe(3000)
     expect(ghostData.getCardById(1)?.guardianStar1).toBe('Sun')
+    expect(ghostData.getCardById(9)).toMatchObject({
+      name: 'Chewbone',
+      type: 'Zombie',
+      atk: 300,
+      def: 300,
+      guardianStar1: 'Saturn',
+      guardianStar2: 'Moon',
+      password: '66153667',
+      cost: 225,
+      description: 'A flimsy horned skeletal monster. It protects graveyards.',
+      color: 0,
+    })
+    expect(ghostData.getDropsForCard(9)).toHaveLength(22)
     expect(ghostData.getDropsForCard(337).length).toBeGreaterThan(0)
   })
   it('sorts card drops by descending weight', () => {

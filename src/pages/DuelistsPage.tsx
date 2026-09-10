@@ -46,7 +46,7 @@ export function DuelistsPage() {
         <SearchInput id="duelist-search" label="Search duelists" placeholder="Search duelists..." value={query} onChange={setQuery} />
       </header>
       {results.length ? (
-        <div className="catalog-list" aria-label="Duelist results">
+        <div className="catalog-list duelist-catalog-grid" aria-label="Duelist results">
           {results.map((duelist) => {
             const isSelected = duelist.slug === duelistSlug
             const destination = `/${mod.id}/duelists/${duelist.slug}${preservedRank ? `?rank=${preservedRank}` : ''}`
@@ -75,5 +75,5 @@ export function DuelistsPage() {
     <div className="workspace-empty-state"><div><span aria-hidden="true">♙</span><h2>{duelists.length ? 'Select a duelist' : `${mod.label} duelists`}</h2><p>{duelists.length ? `Choose a duelist from the catalog to inspect their ${mod.label} drop pools.` : (mod.emptyDataMessage ?? `No duelist data is available for ${mod.label}.`)}</p></div></div>
   )
 
-  return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(duelistSlug)} selectionKey={duelistSlug} masterLabel="Duelist catalog" detailLabel="Duelist details" />
+  return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(duelistSlug)} selectionKey={duelistSlug} masterLabel="Duelist catalog" detailLabel="Duelist details" className="duelist-workspace" />
 }

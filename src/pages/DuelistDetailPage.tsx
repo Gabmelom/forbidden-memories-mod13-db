@@ -75,10 +75,10 @@ export function DuelistDetailPage() {
         </div>
         {rows.length ? (
           <div className="table-frame"><table className="drop-table duelist-drops">
-            <thead><tr><th>Card</th><th>Weight</th><th>Per reward</th><th>Per duel</th></tr></thead>
+            <thead><tr><th>Card</th><th>Weight</th><th>Per duel</th></tr></thead>
             <tbody>{rows.map(({ card, drop }) => <tr key={card.id}>
               <td data-label="Card"><Link className="table-card-link" to={`/${mod.id}/cards/${card.id}`}><CardImage cardId={card.id} cardName={card.name} size="small" decorative /><span className="table-card-text"><span className="table-card-name">{card.name}</span><span className="table-card-meta">#{card.id} · {card.type ?? 'Unknown type'}{card.atk !== null ? ` · ATK ${card.atk}` : ''}</span></span></Link></td>
-              <td data-label="Weight"><DropRate weight={drop.weight} part="weight" /></td><td data-label="Per reward"><DropRate weight={drop.weight} part="single" /></td><td data-label="Per duel"><DropRate weight={drop.weight} part="duel" /></td>
+              <td data-label="Weight"><DropRate weight={drop.weight} part="weight" /></td><td data-label="Per duel"><DropRate weight={drop.weight} part="duel" /></td>
             </tr>)}</tbody>
           </table></div>
         ) : <div className="empty-state">No drops found for this rank.</div>}

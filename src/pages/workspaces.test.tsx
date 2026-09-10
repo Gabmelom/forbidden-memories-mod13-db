@@ -157,7 +157,10 @@ describe('Cards workspace', () => {
 describe('Duelists workspace', () => {
   it('renders the catalog and restrained empty detail at /duelists', () => {
     renderWorkspace('/mod13/duelists')
-    expect(screen.getByRole('complementary', { name: 'Duelist catalog' })).toBeTruthy()
+    const catalog = screen.getByRole('complementary', { name: 'Duelist catalog' })
+    expect(catalog).toBeTruthy()
+    expect(catalog.parentElement?.classList.contains('duelist-workspace')).toBe(true)
+    expect(within(catalog).getByLabelText('Duelist results').classList.contains('duelist-catalog-grid')).toBe(true)
     expect(screen.getByRole('region', { name: 'Duelist details' })).toBeTruthy()
     expect(screen.getByRole('heading', { name: 'Select a duelist' })).toBeTruthy()
   })

@@ -14,22 +14,22 @@ export function AppHeader() {
     <header className="app-header">
       <div className="header-inner">
         <div className="brand-block">
-          <NavLink className="brand" to={`/${mod.id}/cards`}>{mod.title}</NavLink>
+          <div className="brand-title-row">
+            <NavLink className="brand" to={`/${mod.id}/cards`}>{mod.title}</NavLink>
+            <label className="mod-selector">
+              <span className="sr-only">Database</span>
+              <select aria-label="Database" value={mod.id} onChange={(event) => switchMod(event.target.value)}>
+                {MODS.map((availableMod) => <option key={availableMod.id} value={availableMod.id}>{availableMod.label}</option>)}
+              </select>
+            </label>
+          </div>
           <span className="subtitle">{mod.subtitle}</span>
         </div>
         <nav aria-label="Primary navigation">
           <NavLink to={`/${mod.id}/cards`} className={({ isActive }) => isActive ? 'active' : ''}>Cards</NavLink>
           <NavLink to={`/${mod.id}/duelists`} className={({ isActive }) => isActive ? 'active' : ''}>Duelists</NavLink>
         </nav>
-        <div className="header-controls">
-          <label className="mod-selector">
-            <span>Database</span>
-            <select aria-label="Database" value={mod.id} onChange={(event) => switchMod(event.target.value)}>
-              {MODS.map((availableMod) => <option key={availableMod.id} value={availableMod.id}>{availableMod.label}</option>)}
-            </select>
-          </label>
-          <RewardCountSelector />
-        </div>
+        <RewardCountSelector />
       </div>
     </header>
   )
