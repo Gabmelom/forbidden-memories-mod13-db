@@ -212,6 +212,37 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .duelist-source { display: flex; align-items: center; gap: 9px; }
 .duelist-source-link { display: inline-flex; align-items: center; gap: 10px; }
 .rate-weight { color: var(--gold); font: 700 .82rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.card-drop-notes-cell { min-width: 170px; max-width: 360px; }
+.drop-note-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.drop-note-chip { min-height: 24px; padding: 3px 7px; display: inline-flex; align-items: center; color: #e7c879; border: 1px solid #665329; border-radius: 12px; background: var(--gold-soft); font-size: .62rem; font-weight: 800; line-height: 1.2; white-space: nowrap; }
+.drop-note-library { color: #c7b5e9; border-color: #4e4365; background: #211b2d; }
+.drop-note-chest { color: #a9d8c1; border-color: #365d4d; background: #14261f; }
+.drop-note-status { color: #b6c0cc; border-color: #46515f; background: #1a2029; }
+.drop-notes-empty { color: #66717f; }
+.ritual-recipe-groups { display: grid; gap: 28px; }
+.ritual-recipe-group h3 { margin: 0 0 10px; color: var(--text); font-size: .92rem; }
+.ritual-recipe-list { display: grid; gap: 10px; }
+.ritual-recipe-card { padding: 12px; display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
+.ritual-recipe-part { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.ritual-recipe-role { color: var(--muted); font-size: .61rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.ritual-material-list { display: grid; gap: 6px; }
+.ritual-card-link { position: relative; min-width: 0; min-height: 58px; padding: 7px; display: flex; align-items: center; gap: 9px; color: var(--text); border: 1px solid var(--border-soft); border-radius: 6px; background: #0f141b; text-decoration: none; }
+.ritual-card-link:hover { color: var(--gold); border-color: #566270; background: var(--panel-raised); }
+.ritual-card-link.current { border-color: #665329; background: var(--gold-soft); }
+.ritual-card-link .card-image-small { width: 34px; }
+.ritual-card-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ritual-card-text > span { color: var(--gold); font: 700 .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.ritual-card-text strong { font-size: .72rem; line-height: 1.25; overflow-wrap: anywhere; }
+.ritual-card-quantity { margin-left: auto; align-self: flex-start; color: var(--gold); font-size: .68rem; font-weight: 850; }
+.ritual-empty-state { margin-top: 0; }
+.equip-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 8px; }
+.equip-card-link { min-width: 0; min-height: 58px; padding: 7px; display: flex; align-items: center; gap: 9px; color: var(--text); border: 1px solid var(--border-soft); border-radius: 6px; background: #0f141b; text-decoration: none; }
+.equip-card-link:hover { color: var(--gold); border-color: #566270; background: var(--panel-raised); }
+.equip-card-link .card-image-small { width: 34px; }
+.equip-card-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.equip-card-text > span { color: var(--gold); font: 700 .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.equip-card-text strong { font-size: .72rem; line-height: 1.25; overflow-wrap: anywhere; }
+.equip-empty-state { margin-top: 0; }
 
 .duelist-heading { margin-top: 22px; display: flex; align-items: center; gap: 30px; }
 .rank-tabs { margin-top: 28px; display: flex; gap: 6px; border-bottom: 1px solid var(--border); }
@@ -289,6 +320,7 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .drop-table td:first-child a { font-size: 1rem; }
   .best-badge { align-self: flex-start; margin: 6px 0 0; }
   .duelist-source { align-items: flex-start; flex-direction: column; }
+  .card-drop-notes-cell { grid-column: 1 / -1; max-width: none; }
   .duelist-drops td:first-child { grid-column: 1 / -1; }
   .duelist-drops td:last-child { grid-column: 2; }
   .table-card-link { align-items: flex-start; }

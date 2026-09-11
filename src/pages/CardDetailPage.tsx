@@ -4,14 +4,17 @@ import { CardImage } from '../components/CardImage'
 import { CardImagePreview } from '../components/CardImagePreview'
 import { CardInformation } from '../components/CardInformation'
 import { DropRate } from '../components/DropRate'
+import { DropNotes } from '../components/DropNotes'
 import { DuelistImage } from '../components/DuelistImage'
+import { EquipInformation } from '../components/EquipInformation'
 import { RankBadge } from '../components/RankBadge'
+import { RitualInformation } from '../components/RitualInformation'
 import { useMod } from '../context/ModContext'
 
 export function CardDetailPage() {
   const { cardId } = useParams()
   const { mod, data } = useMod()
-  const { getCardById, getDropsForCard, getDuelistById } = data
+  const { getCardById, getDropsForCard, getDuelistById, getRitualsForResult, getRitualsUsingCard, getEquipsForCard } = data
   const [isPreviewOpen, setIsPreviewOpen] = useState(false)
   const previewTriggerRef = useRef<HTMLButtonElement>(null)
   const card = getCardById(Number(cardId))
@@ -23,6 +26,7 @@ export function CardDetailPage() {
     .sort((left, right) => right.drop.weight - left.drop.weight || left.duelist.name.localeCompare(right.duelist.name))
   const highestWeight = sources[0]?.drop.weight
   const bestCount = sources.filter((source) => source.drop.weight === highestWeight).length
+  const showNotes = mod.id === 'fm2-ghost'
   const closePreview = () => {
     setIsPreviewOpen(false)
     requestAnimationFrame(() => previewTriggerRef.current?.focus())
@@ -45,17 +49,28 @@ export function CardDetailPage() {
         <div className="section-heading"><div><p className="eyebrow">Drop sources</p><h2>Where to farm</h2></div><span>{sources.length} {sources.length === 1 ? 'source' : 'sources'}</span></div>
         {sources.length ? (
           <div className="table-frame"><table className="drop-table">
-            <thead><tr><th>Duelist</th><th>Rank</th><th>Weight</th><th>Per duel</th></tr></thead>
+            <thead><tr><th>Duelist</th><th>Rank</th><th>Weight</th><th>Per duel</th>{showNotes && <th>Requirements</th>}</tr></thead>
             <tbody>{sources.map(({ drop, duelist }) => {
               const isBest = drop.weight === highestWeight
-              return <tr key={`${drop.duelistId}-${drop.rank}`} className={isBest ? 'best-row' : ''}>
+              return <tr key={`${drop.duelistId}-${drop.rank}-${drop.weight}-${drop.condition ?? 'base'}`} className={isBest ? 'best-row' : ''}>
                 <td data-label="Duelist"><div className="duelist-source"><Link className="duelist-source-link" to={`/${mod.id}/duelists/${duelist.slug}?rank=${drop.rank}`}><DuelistImage slug={duelist.slug} name={duelist.name} size="small" decorative /><span>{duelist.name}</span></Link>{isBest && <span className="best-badge">{bestCount > 1 ? 'BEST RATE' : 'BEST FARM'}</span>}</div></td>
                 <td data-label="Rank"><RankBadge rank={drop.rank} /></td><td data-label="Weight"><DropRate weight={drop.weight} part="weight" /></td><td data-label="Per duel"><DropRate weight={drop.weight} part="duel" /></td>
+                {showNotes && <td className="card-drop-notes-cell" data-label="Requirements"><DropNotes notes={drop.notes} /></td>}
               </tr>
             })}</tbody>
           </table></div>
         ) : <div className="empty-state">No {mod.label} drop sources found for this card.</div>}
       </section>
+      {mod.rituals && (
+        <RitualInformation
+          card={card}
+          modId={mod.id}
+          recipesForResult={getRitualsForResult(card.id)}
+          recipesUsingCard={getRitualsUsingCard(card.id)}
+          getCardById={getCardById}
+        />
+      )}
+      {mod.equips && <EquipInformation cards={getEquipsForCard(card.id)} modId={mod.id} />}
       {isPreviewOpen && <CardImagePreview cardId={card.id} cardName={card.name} onClose={closePreview} />}
     </article>
   )

@@ -10,6 +10,8 @@ Generated:
 - duelists.json: 39 duelists from Drop Pools, in workbook/game order
 - drops.json: 4,860 compact drop records (workbook rows plus TEA fallbacks)
 - drop-unlock-requirements.json: 9 alternate unlock-pool definitions
+- rituals.json: 47 unique TEA ritual recipes
+- equips.json: 4,082 equip relations across 604 cards
 
 TEA handling:
 - all 722 cards currently have a complete TEA card object
@@ -21,8 +23,11 @@ TEA handling:
 - TEA ranks 1/2/3 backfill entirely missing duelist/card/rank reward tuples;
   their integer probability weights are stored with denominator 2048
 - all 722 cards have at least one normalized reward drop
-- fusion, equip, ritual, initial-deck, special, and tower sections remain in the
-  raw TEA file until dedicated normalized datasets and UI are introduced
+- special requirements from TEA, workbook conditions, and the documented
+  Kuriboh chest progression are normalized into drop-row requirements for wins,
+  Library registration, chest inventory, and pool state
+- fusion, initial-deck, and tower sections remain in the raw TEA file
+  until dedicated normalized datasets and UI are introduced
 
 Drop handling:
 - weight is preserved as the workbook's fractional effective weight

@@ -65,12 +65,30 @@ describe('mod routing', () => {
     expect(within(information).getByText('65814155')).toBeTruthy()
     expect(within(information).getByText('14,604')).toBeTruthy()
     expect(within(information).getByText('[Ritual] - An extremely rare card with unsurpassed attack and defense power.')).toBeTruthy()
+    const equips = screen.getByRole('region', { name: 'Equips' })
+    expect(within(equips).getByRole('link', { name: /Dragon Treasure/ })).toBeTruthy()
+    expect(within(equips).getAllByRole('link')).toHaveLength(6)
   }, 10_000)
 
   it('loads Ghost duelist artwork from a slug-based path', () => {
     renderApp('/fm2-ghost/duelists/simon-muran')
     expect(screen.getByRole('heading', { name: 'Simon Muran', level: 1 })).toBeTruthy()
     expect(screen.getByRole('img', { name: 'Simon Muran' }).getAttribute('src')).toBe('/mods/fm2-ghost/duelists/simon-muran.webp')
+  }, 10_000)
+
+  it('shows normalized Ghost drop requirements as note chips', () => {
+    renderApp('/fm2-ghost/cards/698')
+    expect(screen.getByRole('columnheader', { name: 'Requirements' })).toBeTruthy()
+    expect(screen.getByText('2988 wins')).toBeTruthy()
+    expect(screen.getByText('Library')).toBeTruthy()
+    expect(screen.getByText('Chest: 50× Light-Imprisoning Mirrors')).toBeTruthy()
+    expect(screen.getByText('Chest: no Obelisk the Tormentor')).toBeTruthy()
+    expect(screen.queryByText('3000 wins')).toBeNull()
+    const rituals = screen.getByRole('region', { name: 'Rituals' })
+    expect(within(rituals).getByRole('heading', { name: 'How to form this card' })).toBeTruthy()
+    expect(within(rituals).getByRole('heading', { name: 'Used to form other cards' })).toBeTruthy()
+    expect(within(rituals).getByRole('link', { name: /Polymerization/ })).toBeTruthy()
+    expect(within(rituals).getByRole('link', { name: /Horakhty/ })).toBeTruthy()
   }, 10_000)
 
   it('switches mods from a card detail to the target card catalog', async () => {

@@ -39,6 +39,11 @@ describe('data lookups', () => {
       rank: 'BCD',
       weight: 2,
       denominator: 2048,
+      notes: [{
+        type: 'wins',
+        label: '401 wins',
+        detail: 'Requires at least 401 total wins before this card can drop.',
+      }],
     })
     expect(ghostData.getDropsForCard(270)).toContainEqual({
       duelistId: 28,
@@ -46,7 +51,33 @@ describe('data lookups', () => {
       rank: 'SA_POW',
       weight: 2,
       denominator: 2048,
+      notes: [{
+        type: 'wins',
+        label: '400 wins',
+        detail: 'Requires at least 400 total wins before this card can drop.',
+      }],
     })
+    expect(ghostData.getDropsForCard(696)[0].notes?.map((note) => note.label)).toEqual([
+      'Chest: 1× Obelisk the Tormentor',
+      'Chest: 1× Slifer the Sky Dragon',
+      'Chest: 1× The Winged Dragon of Ra',
+    ])
+    expect(ghostData.getDropsForCard(222).every((drop) =>
+      drop.notes?.some((note) => note.label === 'Chest: 250× Kuriboh'),
+    )).toBe(true)
+    expect(ghostData.getDropsForCard(231).every((drop) =>
+      drop.notes?.some((note) => note.label === 'Chest: 250× Kiseitai'),
+    )).toBe(true)
+    expect(ghostData.rituals).toHaveLength(47)
+    expect(ghostData.getRitualsForResult(380)).toContainEqual({
+      ritualCardId: 695,
+      materialCardIds: [1, 1, 1],
+      resultCardId: 380,
+    })
+    expect(ghostData.getRitualsUsingCard(1)).toHaveLength(1)
+    expect(ghostData.getRitualsUsingCard(695)).toHaveLength(46)
+    expect(ghostData.equips).toHaveLength(604)
+    expect(ghostData.getEquipsForCard(1).map((card) => card.id)).toEqual([307, 315, 657, 668, 678, 693])
   })
   it('sorts card drops by descending weight', () => {
     const lower = { card: data.getCardById(337)!, drop: { duelistId: 1, cardId: 337, rank: 'SA_TEC' as const, weight: 40 } }

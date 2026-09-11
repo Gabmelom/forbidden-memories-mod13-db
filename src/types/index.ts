@@ -24,13 +24,31 @@ export interface Duelist {
 export const DROP_RANKS = ['SA_POW', 'BCD', 'SA_TEC'] as const
 export type DropRank = (typeof DROP_RANKS)[number]
 
+export interface DropNote {
+  type: 'wins' | 'library' | 'chest' | 'status'
+  label: string
+  detail: string
+}
+
 export interface Drop {
   duelistId: number
   cardId: number
   rank: DropRank
   weight: number
   condition?: string
+  notes?: DropNote[]
   denominator?: number
+}
+
+export interface RitualRecipe {
+  ritualCardId: number
+  materialCardIds: [number, number, number]
+  resultCardId: number
+}
+
+export interface EquipCompatibility {
+  cardId: number
+  equipCardIds: number[]
 }
 
 export type RewardCount = 1 | 5 | 10 | 15

@@ -1,7 +1,9 @@
 import cardsJson from '../data/fm2-ghost/cards.json'
 import dropsJson from '../data/fm2-ghost/drops.json'
 import duelistsJson from '../data/fm2-ghost/duelists.json'
-import type { Card, Drop, Duelist } from '../types'
+import equipsJson from '../data/fm2-ghost/equips.json'
+import ritualsJson from '../data/fm2-ghost/rituals.json'
+import type { Card, Drop, Duelist, EquipCompatibility, RitualRecipe } from '../types'
 import type { ModDefinition } from './types'
 
 export const fm2Ghost: ModDefinition = {
@@ -13,5 +15,7 @@ export const fm2Ghost: ModDefinition = {
   cards: cardsJson as Card[],
   duelists: duelistsJson as Duelist[],
   drops: dropsJson as Drop[],
+  rituals: ritualsJson as RitualRecipe[],
+  equips: equipsJson as EquipCompatibility[],
   emptyDataMessage: 'FM2 Ghost data has not been imported yet.',
 }

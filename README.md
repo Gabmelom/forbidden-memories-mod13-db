@@ -79,16 +79,31 @@ The importer joins records by numeric card ID and populates type, ATK/DEF, Guard
 npm run data:fm2-ghost:cards -- --check
 ```
 
-Backfill reward entries that are present in TEA but absent from the
-workbook-generated drop data:
+Backfill reward entries and normalize special drop requirements from TEA and
+the workbook-generated drop data:
 
 ```bash
 npm run data:fm2-ghost:drops
 npm run data:fm2-ghost:drops -- --check
 ```
 
-Existing workbook entries remain unchanged. The importer adds only entirely
-missing duelist/card/rank tuples and ignores TEA rank 0 opponent-deck rows.
+Existing workbook weights and conditions remain unchanged. The importer adds
+only entirely missing duelist/card/rank tuples, ignores TEA rank 0 opponent-deck
+rows, and generates the structured requirements displayed on Ghost card drop rows.
+
+Normalize the unique ritual recipes contained in the same TEA harvest:
+
+```bash
+npm run data:fm2-ghost:rituals
+npm run data:fm2-ghost:rituals -- --check
+```
+
+Normalize which equip cards are compatible with each Ghost card:
+
+```bash
+npm run data:fm2-ghost:equips
+npm run data:fm2-ghost:equips -- --check
+```
 
 ## Import images
 
