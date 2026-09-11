@@ -14,6 +14,7 @@ export function DuelistsPage() {
   const { duelists } = data
   const [searchParams] = useSearchParams()
   const [query, setQuery] = useState('')
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const selectedRowRef = useRef<HTMLAnchorElement>(null)
   const initialSelectedSlug = useRef(duelistSlug)
   const revealedInitialSelection = useRef(false)
@@ -39,11 +40,35 @@ export function DuelistsPage() {
     }
   }, [duelistSlug, results])
 
+  const toggleSearch = () => {
+    if (isSearchOpen) setQuery('')
+    setIsSearchOpen(!isSearchOpen)
+  }
+
   const master = (
     <div className="catalog-pane-content">
       <header className="catalog-header">
-        <div className="catalog-title-row"><div><p className="eyebrow">Opponent database</p><h1>Duelists</h1></div><span>{results.length}</span></div>
-        <SearchInput id="duelist-search" label="Search duelists" placeholder="Search duelists..." value={query} onChange={setQuery} />
+        <div className="catalog-title-row">
+          <div><p className="eyebrow">Opponent database</p><h1>Duelists</h1></div>
+          <button
+            type="button"
+            className={`duelist-search-toggle${isSearchOpen ? ' active' : ''}`}
+            aria-label={isSearchOpen ? 'Close duelist search' : 'Open duelist search'}
+            aria-controls="duelist-search-panel"
+            aria-expanded={isSearchOpen}
+            onClick={toggleSearch}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="m16 16 4 4" />
+            </svg>
+          </button>
+        </div>
+        {isSearchOpen && (
+          <div id="duelist-search-panel" className="duelist-search-panel">
+            <SearchInput id="duelist-search" label="Search duelists" placeholder="Search duelists..." value={query} onChange={setQuery} autoFocus />
+          </div>
+        )}
       </header>
       {results.length ? (
         <div className="catalog-list duelist-catalog-grid" aria-label="Duelist results">

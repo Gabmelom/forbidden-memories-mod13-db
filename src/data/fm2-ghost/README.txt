@@ -8,15 +8,19 @@ Generated:
 - cards.json: 722 canonical IDs/names from Cards List, enriched with TEA type,
   ATK/DEF, Guardian Stars, password, cost, description, effect marker, and color
 - duelists.json: 39 duelists from Drop Pools, in workbook/game order
-- drops.json: 4,839 compact drop records
+- drops.json: 4,860 compact drop records (workbook rows plus TEA fallbacks)
 - drop-unlock-requirements.json: 9 alternate unlock-pool definitions
 
 TEA handling:
 - all 722 cards currently have a complete TEA card object
 - TEA rank 0 rows describe opponent deck contents, not card rewards
 - TEA ranks 1/2/3 correspond to SA POW, B/C/D, and SA TEC rewards
-- drops.json remains workbook-authored because it preserves fractional effective
-  weights, unlock variants, and special conditions that TEA does not expose
+- existing drops.json rows remain workbook-authored because they preserve
+  fractional effective weights, unlock variants, and special conditions that
+  TEA does not expose
+- TEA ranks 1/2/3 backfill entirely missing duelist/card/rank reward tuples;
+  their integer probability weights are stored with denominator 2048
+- all 722 cards have at least one normalized reward drop
 - fusion, equip, ritual, initial-deck, special, and tower sections remain in the
   raw TEA file until dedicated normalized datasets and UI are introduced
 
@@ -32,4 +36,4 @@ Name corrections needed to map Drop Pools to Cards List:
 - Botanical Leon -> Botanical Lion
 - Giga Plant -> Gigaplant
 
-All default and unlock pool totals were validated to equal 2048.
+All workbook-authored default and unlock pool totals were validated to equal 2048.

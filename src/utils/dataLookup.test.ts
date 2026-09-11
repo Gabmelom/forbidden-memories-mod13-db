@@ -32,6 +32,21 @@ describe('data lookups', () => {
     })
     expect(ghostData.getDropsForCard(9)).toHaveLength(22)
     expect(ghostData.getDropsForCard(337).length).toBeGreaterThan(0)
+    expect(ghostData.cards.filter((card) => ghostData.getDropsForCard(card.id).length === 0)).toEqual([])
+    expect(ghostData.getDropsForCard(18)).toContainEqual({
+      duelistId: 30,
+      cardId: 18,
+      rank: 'BCD',
+      weight: 2,
+      denominator: 2048,
+    })
+    expect(ghostData.getDropsForCard(270)).toContainEqual({
+      duelistId: 28,
+      cardId: 270,
+      rank: 'SA_POW',
+      weight: 2,
+      denominator: 2048,
+    })
   })
   it('sorts card drops by descending weight', () => {
     const lower = { card: data.getCardById(337)!, drop: { duelistId: 1, cardId: 337, rank: 'SA_TEC' as const, weight: 40 } }

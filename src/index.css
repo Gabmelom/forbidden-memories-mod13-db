@@ -48,7 +48,7 @@ nav a:hover, nav a.active { color: var(--text); background: var(--panel-raised);
 
 .page-shell { width: 100%; min-height: 0; flex: 1; margin: 0; padding: 0; }
 .master-detail-layout { height: 100%; min-height: 0; display: grid; grid-template-columns: clamp(320px, 35vw, 540px) minmax(0, 1fr); overflow: hidden; }
-.master-detail-layout.duelist-workspace { grid-template-columns: clamp(350px, 35vw, 540px) minmax(0, 1fr); }
+.master-detail-layout.duelist-workspace, .master-detail-layout.card-workspace { grid-template-columns: clamp(350px, 35vw, 540px) minmax(0, 1fr); }
 .master-pane, .detail-pane { min-width: 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .master-pane { border-right: 1px solid var(--border); background: #0e1218; }
 .detail-pane { background: var(--bg); }
@@ -58,6 +58,13 @@ nav a:hover, nav a.active { color: var(--text); background: var(--panel-raised);
 .catalog-title-row h1 { font-size: 1.75rem; }
 .catalog-title-row > span { color: var(--muted); font-size: .75rem; }
 .catalog-header .search-field { margin: 16px 0 12px; }
+.duelist-search-toggle { width: 36px; height: 36px; padding: 0; display: inline-grid; place-items: center; color: var(--muted); border: 1px solid var(--border); border-radius: 50%; background: var(--panel); cursor: pointer; }
+.duelist-search-toggle svg { width: 17px; height: 17px; }
+.duelist-search-toggle:hover { color: var(--text); border-color: #566270; background: var(--panel-raised); }
+.duelist-search-toggle.active { color: var(--gold); border-color: #665329; background: var(--gold-soft); }
+.duelist-search-panel .search-field { margin: 12px 0 0; }
+.duelist-search-panel .search-field input { min-height: 40px; padding: 0 12px 0 38px; font-size: .84rem; }
+.duelist-search-panel .search-icon { left: 13px; font-size: 1rem; }
 .catalog-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .catalog-controls .select-control select { width: 100%; min-width: 0; }
 .advanced-filters { margin-top: 10px; }
@@ -92,13 +99,18 @@ nav a:hover, nav a.active { color: var(--text); background: var(--panel-raised);
 .duelist-catalog-row { justify-content: flex-start; }
 .duelist-catalog-row .duelist-result-text { flex: 1; }
 .duelist-catalog-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-content: start; }
-.duelist-catalog-grid .duelist-catalog-row { min-width: 0; min-height: 106px; padding: 6px 1px 8px; flex-direction: column; justify-content: flex-start; gap: 6px; text-align: center; border-right: 1px solid var(--border-soft); }
-.duelist-catalog-grid .duelist-catalog-row:nth-child(5n) { border-right: 0; }
+.duelist-catalog-grid .duelist-catalog-row { min-width: 0; min-height: 106px; padding: 6px 1px 8px; flex-direction: column; justify-content: flex-start; gap: 6px; text-align: center; border: 0; }
 .duelist-catalog-grid .duelist-image-medium { width: min(68px, 100%); }
 .duelist-catalog-grid .duelist-result-text { width: 100%; flex: 0 0 auto; padding-inline: 3px; }
 .duelist-catalog-grid .duelist-result-text strong { display: -webkit-box; color: var(--text); font-size: .67rem; line-height: 1.18; white-space: normal; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .duelist-catalog-grid .list-subtitle, .duelist-catalog-grid .row-arrow { display: none; }
 .duelist-catalog-grid .duelist-catalog-row.selected::before { inset: auto 0 0; width: auto; height: 3px; }
+.card-catalog-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-content: start; }
+.card-catalog-grid .card-catalog-tile { min-width: 0; min-height: 0; padding: 3px 1px; flex-direction: column; justify-content: flex-start; gap: 0; border: 0; }
+.card-catalog-grid .card-summary-grid { width: 100%; min-width: 0; flex: 0 0 auto; display: flex; justify-content: center; }
+.card-catalog-grid .card-catalog-tile .card-image-medium { width: min(104px, calc(100% - 2px)); }
+.card-catalog-grid .row-arrow { display: none; }
+.card-catalog-grid .card-catalog-tile.selected::before { inset: auto 0 0; width: auto; height: 3px; }
 .catalog-empty { margin: 18px; padding: 30px 16px; color: var(--muted); text-align: center; border: 1px dashed var(--border); }
 .catalog-empty p { margin: 0 0 14px; }
 .workspace-detail-content { min-height: 100%; padding: 24px clamp(22px, 3vw, 48px) 60px; }
@@ -311,7 +323,7 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 
 @media (min-width: 821px) and (max-width: 1040px) {
   .master-detail-layout { grid-template-columns: 320px minmax(0, 1fr); }
-  .master-detail-layout.duelist-workspace { grid-template-columns: 350px minmax(0, 1fr); }
+  .master-detail-layout.duelist-workspace, .master-detail-layout.card-workspace { grid-template-columns: 350px minmax(0, 1fr); }
   .catalog-header { padding-inline: 14px; }
   .catalog-row { padding-inline: 11px; }
   .catalog-row .card-image-medium, .duelist-catalog-row .duelist-image-medium { width: 56px; }

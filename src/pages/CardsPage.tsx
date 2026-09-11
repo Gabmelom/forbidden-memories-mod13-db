@@ -91,18 +91,20 @@ export function CardsPage() {
         />
       </header>
       {results.length ? (
-        <div className="catalog-list" aria-label="Card results">
+        <div className="catalog-list card-catalog-grid" aria-label="Card results">
           {results.map((card) => {
             const isSelected = card.id === selectedCardId
             return (
               <Link
                 ref={isSelected ? selectedRowRef : undefined}
-                className={`catalog-row${isSelected ? ' selected' : ''}`}
+                className={`catalog-row card-catalog-tile${isSelected ? ' selected' : ''}`}
                 key={card.id}
                 to={`/${mod.id}/cards/${card.id}`}
                 aria-current={isSelected ? 'page' : undefined}
+                aria-label={`#${card.id} ${card.name}`}
+                title={`#${card.id} ${card.name}`}
               >
-                <CardSummary card={card} compact />
+                <CardSummary card={card} grid />
                 <span className="row-arrow" aria-hidden="true">→</span>
               </Link>
             )
@@ -120,5 +122,5 @@ export function CardsPage() {
     <div className="workspace-empty-state"><div><span aria-hidden="true">▱</span><h2>{cards.length ? 'Select a card' : `${mod.label} cards`}</h2><p>{cards.length ? `Choose a card from the catalog to see its stats, artwork, and ${mod.label} drop sources.` : (mod.emptyDataMessage ?? `No card data is available for ${mod.label}.`)}</p></div></div>
   )
 
-  return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(cardId)} selectionKey={cardId} masterLabel="Card catalog" detailLabel="Card details" />
+  return <MasterDetailLayout master={master} detail={detail} hasSelection={Boolean(cardId)} selectionKey={cardId} masterLabel="Card catalog" detailLabel="Card details" className="card-workspace" />
 }

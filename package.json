@@ -17,6 +17,7 @@
     "data:images": "python \"scripts/mod13/import-card-images.py\"",
     "data:duelist-images": "python \"scripts/mod13/import-duelist-images.py\"",
     "data:fm2-ghost:cards": "python \"scripts/fm2 ghost/import_tea_card_metadata.py\"",
+    "data:fm2-ghost:drops": "python \"scripts/fm2 ghost/import_tea_drop_fallbacks.py\"",
     "data:fm2-ghost:images": "python \"scripts/fm2 ghost/normalize_ghost_card_images.py\" --apply",
     "data:fm2-ghost:duelist-images": "python \"scripts/fm2 ghost/normalize_ghost_duelist_images.py\" --apply"
   },

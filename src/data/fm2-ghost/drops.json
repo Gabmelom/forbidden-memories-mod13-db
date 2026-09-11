@@ -684,6 +684,13 @@
   },
   {
     "duelistId": 2,
+    "cardId": 524,
+    "rank": "SA_POW",
+    "weight": 8,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 2,
     "cardId": 628,
     "rank": "SA_POW",
     "weight": 9.875,
@@ -6055,6 +6062,13 @@
   },
   {
     "duelistId": 10,
+    "cardId": 222,
+    "rank": "SA_POW",
+    "weight": 8,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 10,
     "cardId": 260,
     "rank": "SA_POW",
     "weight": 49.625,
@@ -8727,6 +8741,13 @@
   },
   {
     "duelistId": 13,
+    "cardId": 647,
+    "rank": "SA_POW",
+    "weight": 8,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 13,
     "cardId": 681,
     "rank": "SA_POW",
     "weight": 9.46875,
@@ -9529,6 +9550,13 @@
     "cardId": 184,
     "rank": "SA_POW",
     "weight": 135.125,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 14,
+    "cardId": 261,
+    "rank": "SA_POW",
+    "weight": 8,
     "denominator": 2048
   },
   {
@@ -11368,6 +11396,13 @@
     "cardId": 189,
     "rank": "SA_POW",
     "weight": 11.8125,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 16,
+    "cardId": 231,
+    "rank": "SA_POW",
+    "weight": 8,
     "denominator": 2048
   },
   {
@@ -15377,6 +15412,13 @@
   },
   {
     "duelistId": 20,
+    "cardId": 631,
+    "rank": "SA_POW",
+    "weight": 8,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 20,
     "cardId": 633,
     "rank": "SA_POW",
     "weight": 11.84375,
@@ -16201,6 +16243,13 @@
     "cardId": 569,
     "rank": "SA_POW",
     "weight": 85.3125,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 21,
+    "cardId": 602,
+    "rank": "SA_POW",
+    "weight": 8,
     "denominator": 2048
   },
   {
@@ -18742,6 +18791,13 @@
   },
   {
     "duelistId": 24,
+    "cardId": 67,
+    "rank": "SA_POW",
+    "weight": 4,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 24,
     "cardId": 68,
     "rank": "SA_POW",
     "weight": 7.5625,
@@ -20662,6 +20718,13 @@
   },
   {
     "duelistId": 26,
+    "cardId": 667,
+    "rank": "SA_POW",
+    "weight": 2,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 26,
     "cardId": 712,
     "rank": "SA_POW",
     "weight": 32.25,
@@ -22490,6 +22553,13 @@
     "cardId": 242,
     "rank": "SA_POW",
     "weight": 85.3125,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 28,
+    "cardId": 270,
+    "rank": "SA_POW",
+    "weight": 2,
     "denominator": 2048
   },
   {
@@ -24543,6 +24613,13 @@
     "cardId": 15,
     "rank": "BCD",
     "weight": 25.0625,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 30,
+    "cardId": 18,
+    "rank": "BCD",
+    "weight": 2,
     "denominator": 2048
   },
   {
@@ -27221,6 +27298,13 @@
     "cardId": 169,
     "rank": "SA_POW",
     "weight": 53.8125,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 33,
+    "cardId": 180,
+    "rank": "SA_POW",
+    "weight": 4,
     "denominator": 2048
   },
   {
@@ -32483,6 +32567,13 @@
   },
   {
     "duelistId": 38,
+    "cardId": 697,
+    "rank": "SA_POW",
+    "weight": 3,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 38,
     "cardId": 707,
     "rank": "SA_POW",
     "weight": 20.09375,
@@ -33297,9 +33388,23 @@
   },
   {
     "duelistId": 39,
+    "cardId": 222,
+    "rank": "SA_POW",
+    "weight": 17,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
     "cardId": 230,
     "rank": "SA_POW",
     "weight": 154.21875,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
+    "cardId": 231,
+    "rank": "SA_POW",
+    "weight": 17,
     "denominator": 2048
   },
   {
@@ -33321,6 +33426,13 @@
     "cardId": 254,
     "rank": "SA_POW",
     "weight": 256.21875,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
+    "cardId": 261,
+    "rank": "SA_POW",
+    "weight": 17,
     "denominator": 2048
   },
   {
@@ -33411,6 +33523,13 @@
   },
   {
     "duelistId": 39,
+    "cardId": 524,
+    "rank": "SA_POW",
+    "weight": 17,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
     "cardId": 529,
     "rank": "SA_POW",
     "weight": 45.8125,
@@ -33463,6 +33582,13 @@
   },
   {
     "duelistId": 39,
+    "cardId": 602,
+    "rank": "SA_POW",
+    "weight": 17,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
     "cardId": 618,
     "rank": "SA_POW",
     "weight": 23.625,
@@ -33473,6 +33599,27 @@
     "cardId": 622,
     "rank": "SA_POW",
     "weight": 55.375,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
+    "cardId": 631,
+    "rank": "SA_POW",
+    "weight": 17,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
+    "cardId": 647,
+    "rank": "SA_POW",
+    "weight": 21,
+    "denominator": 2048
+  },
+  {
+    "duelistId": 39,
+    "cardId": 696,
+    "rank": "SA_POW",
+    "weight": 1,
     "denominator": 2048
   },
   {

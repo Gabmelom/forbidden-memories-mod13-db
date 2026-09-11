@@ -79,6 +79,17 @@ The importer joins records by numeric card ID and populates type, ATK/DEF, Guard
 npm run data:fm2-ghost:cards -- --check
 ```
 
+Backfill reward entries that are present in TEA but absent from the
+workbook-generated drop data:
+
+```bash
+npm run data:fm2-ghost:drops
+npm run data:fm2-ghost:drops -- --check
+```
+
+Existing workbook entries remain unchanged. The importer adds only entirely
+missing duelist/card/rank tuples and ignores TEA rank 0 opponent-deck rows.
+
 ## Import images
 
 Import a local directory of ID-named card images:
