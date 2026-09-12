@@ -12,6 +12,7 @@
     "validate:data": "node scripts/validate-data.mjs",
     "validate:images": "node scripts/validate-images.mjs",
     "validate:duelist-images": "node scripts/validate-duelist-images.mjs",
+    "validate:fm2-ghost:fusions": "node \"scripts/fm2 ghost/validate_fusion_rules.mjs\"",
     "data:extract": "python \"scripts/mod13/extract-mod13.py\"",
     "data:cards": "python \"scripts/mod13/import-card-metadata.py\"",
     "data:images": "python \"scripts/mod13/import-card-images.py\"",
@@ -21,6 +22,7 @@
     "data:fm2-ghost:rituals": "python \"scripts/fm2 ghost/import_tea_rituals.py\"",
     "data:fm2-ghost:equips": "python \"scripts/fm2 ghost/import_tea_equips.py\"",
     "data:fm2-ghost:fusions": "python \"scripts/fm2 ghost/import_tea_fusions.py\"",
+    "data:fm2-ghost:fusion-rules": "node \"scripts/fm2 ghost/infer_fusion_rules.mjs\"",
     "data:fm2-ghost:images": "python \"scripts/fm2 ghost/normalize_ghost_card_images.py\" --apply",
     "data:fm2-ghost:duelist-images": "python \"scripts/fm2 ghost/normalize_ghost_duelist_images.py\" --apply"
   },

@@ -61,6 +61,49 @@ export interface FusionRecipe {
   resultCardId: number
 }
 
+export interface FusionCardMatcher {
+  cardId?: number
+  type?: string
+  minAtkInclusive?: number
+  maxAtkExclusive?: number
+  minDefInclusive?: number
+  maxDefExclusive?: number
+  attribute?: string | null
+  excludeCardIds?: number[]
+}
+
+export interface FusionRule {
+  id: string
+  kind: 'exact-type' | 'type-type'
+  left: FusionCardMatcher
+  right: FusionCardMatcher
+  resultCardId: number
+  source: string
+  candidateRuleId?: string
+  validatedAgainstTea: boolean
+}
+
+export interface SpecificFusionGroup extends FusionGroup {
+  source: string
+  validatedAgainstTea: boolean
+}
+
+export interface FusionRuleDocument {
+  schemaVersion: number
+  sourceOfTruth: string
+  sourceGuide: string
+  ingredientsAreCommutative: boolean
+  precedence: string[]
+  rules: FusionRule[]
+  specificRecipes: SpecificFusionGroup[]
+}
+
+export interface FusionMatch {
+  resultCardId: number
+  source: 'specific-recipe' | 'rule'
+  ruleId?: string
+}
+
 export type RewardCount = 1 | 5 | 10 | 15
 export type DropSort = 'rate' | 'name' | 'id' | 'atk'
 export type CardTypeFilter = 'all' | 'monsters' | 'magic' | 'trap'

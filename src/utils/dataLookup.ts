@@ -1,5 +1,6 @@
-import type { Card, Drop, DropRank, DropSort, Duelist, EquipCompatibility, FusionGroup, FusionRecipe, RitualRecipe } from '../types'
+import type { Card, Drop, DropRank, DropSort, Duelist, EquipCompatibility, FusionGroup, FusionRecipe, FusionRule, RitualRecipe } from '../types'
 import type { ModDefinition } from '../mods/types'
+import { matchesFusionCard } from './fusionRules'
 
 export interface CardDropRow {
   card: Card
@@ -44,6 +45,7 @@ export interface DataLookup {
   rituals: RitualRecipe[]
   equips: EquipCompatibility[]
   fusions: FusionGroup[]
+  fusionRules: FusionRule[]
   getCardById: (cardId: number) => Card | undefined
   getDuelistById: (duelistId: number) => Duelist | undefined
   getDuelistBySlug: (slug: string) => Duelist | undefined
@@ -55,6 +57,8 @@ export interface DataLookup {
   getEquipsForCard: (cardId: number) => Card[]
   getFusionsForResult: (cardId: number) => FusionRecipe[]
   getFusionsUsingCard: (cardId: number) => FusionRecipe[]
+  getFusionRulesForResult: (cardId: number) => FusionRule[]
+  getFusionRulesUsingCard: (cardId: number) => FusionRule[]
   sortCardDropRows: typeof sortCardDropRows
 }
 
@@ -70,7 +74,8 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
   const ritualsByParticipant = new Map<number, RitualRecipe[]>()
   const equips = mod.equips ?? []
   const equipIdsByCardId = new Map(equips.map((entry) => [entry.cardId, entry.equipCardIds]))
-  const fusions = mod.fusions ?? []
+  const fusionRules = mod.fusionRules?.rules ?? []
+  const fusions = [...(mod.fusions ?? []), ...(mod.fusionRules?.specificRecipes ?? [])]
   const fusionsByResult = new Map<number, FusionRecipe[]>()
   const fusionsByMaterial = new Map<number, FusionRecipe[]>()
 
@@ -102,6 +107,7 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
     rituals,
     equips,
     fusions,
+    fusionRules,
     getCardById: (cardId) => cardsById.get(cardId),
     getDuelistById: (duelistId) => duelistsById.get(duelistId),
     getDuelistBySlug: (slug) => duelistsBySlug.get(slug),
@@ -115,6 +121,11 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
       .filter((card): card is Card => Boolean(card)),
     getFusionsForResult: (cardId) => fusionsByResult.get(cardId) ?? [],
     getFusionsUsingCard: (cardId) => fusionsByMaterial.get(cardId) ?? [],
+    getFusionRulesForResult: (cardId) => fusionRules.filter((rule) => rule.resultCardId === cardId),
+    getFusionRulesUsingCard: (cardId) => {
+      const card = cardsById.get(cardId)
+      return card ? fusionRules.filter((rule) => matchesFusionCard(card, rule.left) || matchesFusionCard(card, rule.right)) : []
+    },
     sortCardDropRows,
   }
 }

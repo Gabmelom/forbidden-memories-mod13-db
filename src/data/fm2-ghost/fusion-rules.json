@@ -1,0 +1,6902 @@
+{
+  "schemaVersion": 1,
+  "sourceOfTruth": "TEA data normalized in fusions.json",
+  "sourceGuide": "https://yugiohfmii.wordpress.com/fusion/",
+  "ingredientsAreCommutative": true,
+  "precedence": [
+    "specific-recipes",
+    "exact-type",
+    "type-type",
+    "no-fusion"
+  ],
+  "rules": [
+    {
+      "id": "exact-type-card-128-warrior-dark-eradicator-warlock-1",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 128
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2500
+      },
+      "resultCardId": 34,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dark-red-enchanter-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-53-warrior-javelin-beetle-2",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 53
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2450
+      },
+      "resultCardId": 717,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-533-warrior-javelin-beetle-3",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 533
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2450
+      },
+      "resultCardId": 717,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-605-warrior-divine-knight-ishzark-4",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 605
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2300
+      },
+      "resultCardId": 673,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-473-fiend-volcanic-doomfire-5",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 473
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 3000
+      },
+      "resultCardId": 208,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-582-fiend-mazera-deville-6",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 582
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2800
+      },
+      "resultCardId": 88,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-105-dragon-berserk-dragon-7",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 105
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 3500
+      },
+      "resultCardId": 270,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-doomkaiser-dragon",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-126-warrior-luminous-soldier-8",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 126
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 618,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-sage-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-54-fiend-hell-centipede-9",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 54
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2600
+      },
+      "resultCardId": 152,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aztekipede-fiend",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-80-fiend-gaiodiaz-10",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 80
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2600
+      },
+      "resultCardId": 354,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-109-fiend-multiple-piece-golem-11",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 109
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2600
+      },
+      "resultCardId": 649,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-74-warrior-millennium-golem-12",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 74
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 453,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-479-fiend-hell-centipede-13",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 479
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2600
+      },
+      "resultCardId": 152,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-7-warrior-paladin-of-white-dragon-14",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 7
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 383,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-winged-dragon-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-52-warrior-kwagar-hercules-15",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 52
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 533,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-508-machine-cyber-dinosaur-16",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 508
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 2500
+      },
+      "resultCardId": 419,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-cyber-saurus-machine",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-142-warrior-dark-red-enchanter-17",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 142
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 128,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-blast-magician-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-219-fiend-alien-mother-18",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 219
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2300
+      },
+      "resultCardId": 450,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-31-fiend-serpent-night-dragon-19",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 31
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2350
+      },
+      "resultCardId": 706,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-solar-flare-fiend",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-567-fiend-gigaplant-20",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 567
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 158,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-623-fiend-millennium-golem-21",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 623
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 453,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-medium-golem-fiend",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-622-fiend-reaper-of-prophecy-22",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 622
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 551,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-105-zombie-berserk-dragon-23",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 105
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 3500
+      },
+      "resultCardId": 270,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-doomkaiser-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-180-aqua-ferrylotus-24",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 180
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 2300,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 430,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-53-aqua-great-poseidon-beetle-25",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 53
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 2500,
+        "excludeCardIds": [
+          160,
+          250,
+          258,
+          435
+        ]
+      },
+      "resultCardId": 587,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-427-zombie-doomkaiser-dragon-26",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 427
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 2900
+      },
+      "resultCardId": 105,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-561-zombie-doomkaiser-dragon-27",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 561
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 2900
+      },
+      "resultCardId": 105,
+      "source": "wordpress-basic-corrected-by-tea",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-30-warrior-royal-keeper-28",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 30
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 351,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-479-rock-doom-dozer-29",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 479
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2800
+      },
+      "resultCardId": 536,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-71-aqua-leviair-the-sea-dragon-30",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 71
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 432,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-160-aqua-leviair-the-sea-dragon-31",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 160
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 432,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-250-aqua-leviair-the-sea-dragon-32",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 250
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 432,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-435-aqua-leviair-the-sea-dragon-33",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 435
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 432,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-448-aqua-leviair-the-sea-dragon-34",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 448
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 432,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-41-aqua-royal-knight-35",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 41
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 2000,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 621,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-507-aqua-warrior-of-atlantis-36",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 507
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1900,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 624,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-553-aqua-the-legendary-fisherman-37",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 553
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1850,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "resultCardId": 641,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-103-machine-the-fiend-megacyber-38",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 103
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 2200
+      },
+      "resultCardId": 607,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-54-rock-doom-dozer-39",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 54
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2800,
+        "excludeCardIds": [
+          156
+        ]
+      },
+      "resultCardId": 536,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-581-rock-hieracosphinx-40",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 581
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 632,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-55-aqua-akihiron-41",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 55
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1700,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "resultCardId": 150,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-542-machine-orca-mega-fortress-42",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 542
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 447,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-misairuzame-machine",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-260-rock-naturia-landoise-43",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 260
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2350
+      },
+      "resultCardId": 702,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-658-dragon-rare-metal-dragon-44",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 658
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 10,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-285-fiend-worm-drake-45",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 285
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 77,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-566-dragon-bitelon-46",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 566
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 248,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-111-dragon-victory-dragon-47",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 111
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 283,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-victoria-dragon",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-595-machine-sacred-phoenix-of-nephthys-48",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 595
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 465,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-545-zombie-curse-of-dragon-49",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 545
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 39,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-85-beast-beast-of-talwar-50",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 85
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 61,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-king-yamimakai-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-548-fiend-reaper-of-the-cards-51",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 548
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1380
+      },
+      "resultCardId": 84,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-509-beast-ghoulungulate-52",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 509
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2500
+      },
+      "resultCardId": 98,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-622-rock-mystical-sand-53",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 622
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 531,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-470-zombie-patrician-of-darkness-54",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 470
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 241,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-523-plant-windrose-55",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 523
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 2800
+      },
+      "resultCardId": 464,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-120-zombie-ghost-ship-56",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 120
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 526,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-205-zombie-ghost-ship-57",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 205
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 526,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-598-plant-naturia-exterio-58",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 598
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 2800
+      },
+      "resultCardId": 544,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-naturia-beast-plant",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-582-fairy-archlord-zerato-59",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 582
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 2800
+      },
+      "resultCardId": 106,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-272-beast-firewing-pegasus-60",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 272
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2250
+      },
+      "resultCardId": 714,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-552-beast-firewing-pegasus-61",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 552
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2250
+      },
+      "resultCardId": 714,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-595-beast-firewing-pegasus-62",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 595
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2250
+      },
+      "resultCardId": 714,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-165-zombie-dokurorider-63",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 165
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 719,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-146-spellcaster-ryu-kokki-64",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 146
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 2400,
+        "excludeCardIds": [
+          2,
+          16,
+          129,
+          142,
+          183,
+          190,
+          213,
+          284,
+          352,
+          428,
+          433,
+          525,
+          530,
+          532,
+          574,
+          619,
+          622
+        ]
+      },
+      "resultCardId": 279,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-11-dragon-ryu-ran-65",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 11
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2200
+      },
+      "resultCardId": 33,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-233-beast-king-of-yamimakai-66",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 233
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 85,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-berfomet-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-97-zombie-dragon-queen-of-tragic-67",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 97
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 561,
+      "source": "wordpress-basic-corrected-by-tea",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-246-fairy-wulf-lightsworn-beast-68",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 246
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 287,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-273-beast-naturia-beast-69",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 273
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 2200,
+        "excludeCardIds": [
+          404
+        ]
+      },
+      "resultCardId": 598,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-botanical-lion-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-588-dragon-b-dragon-jungle-king-70",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 588
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 571,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-41-fairy-airknight-parshath-71",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 41
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 605,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-celtic-guardian-fairy",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-151-fairy-zeradias-herald-of-heaven-72",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 151
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 2100
+      },
+      "resultCardId": 582,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-545-dragon-curse-of-dragon-73",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 545
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 39,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-396-beast-sunlight-unicorn-74",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 396
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 403,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-ocubeam-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-251-fairy-gyakutenno-megami-75",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 251
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 90,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-449-rock-boulder-tortoise-76",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 449
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1450
+      },
+      "resultCardId": 518,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-474-rock-boulder-tortoise-77",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 474
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1450
+      },
+      "resultCardId": 518,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-646-rock-boulder-tortoise-78",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 646
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1450
+      },
+      "resultCardId": 518,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-120-plant-blackship-of-corn-79",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 120
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          260
+        ]
+      },
+      "resultCardId": 180,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-205-plant-blackship-of-corn-80",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 205
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          260
+        ]
+      },
+      "resultCardId": 180,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-526-plant-blackship-of-corn-81",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 526
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          260
+        ]
+      },
+      "resultCardId": 180,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-89-rock-boulder-tortoise-82",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 89
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1450,
+        "excludeCardIds": [
+          156
+        ]
+      },
+      "resultCardId": 518,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-359-plant-pumpking-the-king-of-ghosts-83",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 359
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 99,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-555-machine-cyber-tech-alligator-84",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 555
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 2500
+      },
+      "resultCardId": 423,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-467-pyro-blaze-fenix-85",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 467
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2800,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 577,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-crimson-sunbird-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-162-fish-cranium-fish-86",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 162
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 2400,
+        "excludeCardIds": [
+          71,
+          447
+        ]
+      },
+      "resultCardId": 159,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-539-fish-terrorking-salmon-87",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 539
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 2400,
+        "excludeCardIds": [
+          71,
+          447
+        ]
+      },
+      "resultCardId": 452,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-corroding-shark-fish",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-581-thunder-thunder-lord-88",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 581
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 2600
+      },
+      "resultCardId": 363,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-435-dragon-atlantean-dragoons-89",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 435
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 384,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-31-dragon-meteor-dragon-90",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 31
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 712,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-272-pyro-crimson-sunbird-91",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 272
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2300,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 467,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-mavelus-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-409-pyro-power-tool-dragon-92",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 409
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2300,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 557,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-metal-dragon-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-447-fish-fortress-whale-93",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 447
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 2350,
+        "excludeCardIds": [
+          71,
+          447
+        ]
+      },
+      "resultCardId": 718,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-orca-fish",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-71-dragon-the-d-dwelling-in-the-deep-94",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 71
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 435,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-160-dragon-the-d-dwelling-in-the-deep-95",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 160
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 435,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-250-dragon-the-d-dwelling-in-the-deep-96",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 250
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 435,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-448-dragon-the-d-dwelling-in-the-deep-97",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 448
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 435,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-146-rock-fossil-tusker-98",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 146
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 517,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-637-dinosaur-d-driceratops-99",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 637
+      },
+      "right": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 2400
+      },
+      "resultCardId": 523,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-640-thunder-mist-wurm-100",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 640
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 2500
+      },
+      "resultCardId": 535,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-28-machine-steel-ogre-grotto-2-101",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 28
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 645,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-239-zombie-the-13th-grave-102",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 239
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 132,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-89-zombie-pyramid-turtle-103",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 89
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 228,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-474-zombie-pyramid-turtle-104",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 474
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 228,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-646-zombie-pyramid-turtle-105",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 646
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 228,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-91-beastwarrior-rabid-horseman-106",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 91
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 92,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-426-dragon-redox-d-ruler-of-boulders-107",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 426
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 255,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-133-pyro-mr-volcano-108",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 133
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 292,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-flame-ruler-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-112-fish-7-colored-fish-109",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 112
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          71
+        ]
+      },
+      "resultCardId": 440,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-552-pyro-hazy-flame-hyppogrif-110",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 552
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 466,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-404-pyro-flame-cerebrus-111",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 404
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 2100,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 529,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-282-thunder-voltic-kong-112",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 282
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 638,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-71-pyro-lavalval-chain-113",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 71
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 353,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-160-pyro-lavalval-chain-114",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 160
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 353,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-250-pyro-lavalval-chain-115",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 250
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 353,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-435-pyro-lavalval-chain-116",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 435
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 353,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-448-pyro-lavalval-chain-117",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 448
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 353,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-252-beastwarrior-nekogal-2-118",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 252
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 627,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-89-plant-island-turtle-119",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 89
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 1100
+      },
+      "resultCardId": 474,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-436-machine-misairuzame-120",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 436
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 542,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-205-warrior-skull-mariner-121",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 205
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 120,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-553-fish-the-legendary-fisherman-122",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 553
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 1850,
+        "excludeCardIds": [
+          71
+        ]
+      },
+      "resultCardId": 641,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-71-thunder-watthydra-123",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 71
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 45,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-160-thunder-watthydra-124",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 160
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 45,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-250-thunder-watthydra-125",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 250
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 45,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-300-dragon-harpie-s-pet-baby-dragon-126",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 300
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 49,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-397-beastwarrior-hercules-beetle-127",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 397
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 52,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-480-beastwarrior-hercules-beetle-128",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 480
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 52,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-562-beastwarrior-hercules-beetle-129",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 562
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 52,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-132-beastwarrior-bone-crusher-130",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 132
+      },
+      "right": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 153,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-thirteenth-grave-beast-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-298-zombie-skelgon-131",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 298
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 545,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-73-seaserpent-brionac-dragon-of-the-ice-barrier-132",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 73
+      },
+      "right": {
+        "type": "SeaSerpent",
+        "maxAtkExclusive": 2300,
+        "excludeCardIds": [
+          230,
+          432
+        ]
+      },
+      "resultCardId": 223,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-kairyu-shin-sea-serpent",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "exact-type-card-555-aqua-atlantean-dragoons-133",
+      "kind": "exact-type",
+      "left": {
+        "cardId": 555
+      },
+      "right": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 384,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-spellcaster-shock-troops-134",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 433,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-spellcaster",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-fiend-revival-jam-135",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 70,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-fiend",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fiend-zombie-immortal-ruler-136",
+      "kind": "type-type",
+      "left": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 379,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fiend-insect-aztekipede-137",
+      "kind": "type-type",
+      "left": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1900
+      },
+      "right": {
+        "type": "Insect",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 54,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fiend-insect",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fiend-rock-medium-piece-golem-138",
+      "kind": "type-type",
+      "left": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 623,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fiend-rock",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-warrior-blizzard-warrior-139",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1400,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 553,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-machine-warrior-giant-mech-soldier-140",
+      "kind": "type-type",
+      "left": {
+        "type": "Machine",
+        "maxAtkExclusive": 1750
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1750
+      },
+      "resultCardId": 408,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-machine-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-reptile-warrior-alien-warrior-141",
+      "kind": "type-type",
+      "left": {
+        "type": "Reptile",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 458,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fairy-spellcaster-sage-of-the-sky-142",
+      "kind": "type-type",
+      "left": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 126,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fairy-spellcaster",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-warrior-gaia-the-white-knight-143",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 234,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-dragon-kairyu-shin-144",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          160,
+          250,
+          435
+        ]
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 73,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-dragon",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-rock-stone-d-145",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 2000,
+        "excludeCardIds": [
+          255
+        ]
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 2000
+      },
+      "resultCardId": 426,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-rock",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-reptile-worm-tentacles-146",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1700,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Reptile",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 51,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-reptile",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-wingedbeast-zombie-skullbird-147",
+      "kind": "type-type",
+      "left": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1900
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1900
+      },
+      "resultCardId": 521,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-winged-beast-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-machine-metal-dragon-148",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1850
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1850
+      },
+      "resultCardId": 409,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-machine",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-plant-warrior-naturia-guardian-149",
+      "kind": "type-type",
+      "left": {
+        "type": "Plant",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 511,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-plant-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-beast-freezing-beast-150",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Beast",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          168
+        ]
+      },
+      "resultCardId": 599,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-spellcaster-warrior-blast-magician-151",
+      "kind": "type-type",
+      "left": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1400,
+        "excludeCardIds": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          42,
+          115,
+          184,
+          284,
+          352,
+          387,
+          612
+        ]
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 142,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-spellcaster-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-pyro-warrior-flame-swordsman-152",
+      "kind": "type-type",
+      "left": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 15,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-pyro-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-rock-warrior-giant-soldier-of-stone-153",
+      "kind": "type-type",
+      "left": {
+        "type": "Rock",
+        "maxAtkExclusive": 1300
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1300
+      },
+      "resultCardId": 74,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-fiend-berfomet-154",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1400
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 233,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-fiend",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fiend-wingedbeast-theban-nightmare-155",
+      "kind": "type-type",
+      "left": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 281,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-insect-bujingi-centipede-156",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1700
+      },
+      "right": {
+        "type": "Insect",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 479,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-insect",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-insect-numbing-grub-157",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1300,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Insect",
+        "maxAtkExclusive": 1300
+      },
+      "resultCardId": 55,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-insect",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-warrior-zombie-zombie-warrior-158",
+      "kind": "type-type",
+      "left": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1200
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 30,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-warrior-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fairy-warrior-celtic-guardian-159",
+      "kind": "type-type",
+      "left": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1400
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 41,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fairy-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-fairy-victoria-160",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 111,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-fairy",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-thunder-warrior-the-creator-incarnate-161",
+      "kind": "type-type",
+      "left": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 376,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-thunder-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-fairy-ocubeam-162",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1550
+      },
+      "right": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1550
+      },
+      "resultCardId": 396,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-fairy",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fish-warrior-ocean-s-keeper-163",
+      "kind": "type-type",
+      "left": {
+        "type": "Fish",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          71
+        ]
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 507,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-thunder-thunder-sea-horse-164",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1600,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 460,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-thunder",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-fiend-mefist-the-infernal-general-165",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Fiend",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 95,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-warrior-wolf-axwielder-166",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1650
+      },
+      "right": {
+        "type": "Warrior",
+        "maxAtkExclusive": 1650
+      },
+      "resultCardId": 246,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-warrior-warrior",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-plant-wingedbeast-bird-of-roses-167",
+      "kind": "type-type",
+      "left": {
+        "type": "Plant",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 637,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-plant-spellcaster-rose-witch-168",
+      "kind": "type-type",
+      "left": {
+        "type": "Plant",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1600,
+        "excludeCardIds": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          42,
+          44,
+          115,
+          184,
+          284,
+          352,
+          387,
+          417,
+          612
+        ]
+      },
+      "resultCardId": 75,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-machine-rock-tackle-crusader-169",
+      "kind": "type-type",
+      "left": {
+        "type": "Machine",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "Rock",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 456,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-aqua-dinosaur-hydrogeddon-170",
+      "kind": "type-type",
+      "left": {
+        "type": "Aqua",
+        "maxAtkExclusive": 1600,
+        "excludeCardIds": [
+          160,
+          250
+        ]
+      },
+      "right": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 81,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-aqua-dinosaur",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-spellcaster-frontier-wiseman-171",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 619,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-warrior-spellcaster",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-dinosaur-gladiator-beast-spartacus-172",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 2200
+      },
+      "right": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 2200
+      },
+      "resultCardId": 80,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-warrior-dinosaur",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-zombie-dragon-zombie-173",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 97,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-reptile-zombie-alien-skull-174",
+      "kind": "type-type",
+      "left": {
+        "type": "Reptile",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 219,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-plant-botanical-lion-175",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 273,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-plant",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-pyro-spellcaster-flame-ruler-176",
+      "kind": "type-type",
+      "left": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "Spellcaster",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 133,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-pyro-spellcaster",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-plant-pyro-blazing-inpachi-177",
+      "kind": "type-type",
+      "left": {
+        "type": "Plant",
+        "maxAtkExclusive": 1850
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1850,
+        "excludeCardIds": [
+          353
+        ]
+      },
+      "resultCardId": 451,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-plant-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-zombie-skull-dog-marron-178",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1350
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1350
+      },
+      "resultCardId": 46,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fairy-wingedbeast-cockadoodledoo-179",
+      "kind": "type-type",
+      "left": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 125,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fairy-winged-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dinosaur-machine-cyber-saurus-180",
+      "kind": "type-type",
+      "left": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 508,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dinosaur-machine",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-insect-wingedbeast-fliying-kamakiri-181",
+      "kind": "type-type",
+      "left": {
+        "type": "Insect",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 221,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-pyro-flame-tiger-182",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1800,
+        "excludeCardIds": [
+          404
+        ]
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 528,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-rock-zombie-stone-ghost-183",
+      "kind": "type-type",
+      "left": {
+        "type": "Rock",
+        "maxAtkExclusive": 1200
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 457,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-dragon-twin-headed-behemoth-184",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          168
+        ]
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 94,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-dragon",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dinosaur-dragon-sword-arm-of-dragon-185",
+      "kind": "type-type",
+      "left": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 1750
+      },
+      "right": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1750
+      },
+      "resultCardId": 11,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dinosaur-dragon",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-machine-spikebot-186",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 441,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-warrior-machine",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-machine-pyro-robotic-knight-187",
+      "kind": "type-type",
+      "left": {
+        "type": "Machine",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 172,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-machine-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-pyro-reptile-royal-firestorm-guards-188",
+      "kind": "type-type",
+      "left": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1700
+      },
+      "right": {
+        "type": "Reptile",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 291,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fish-thunder-royal-swamp-eel-189",
+      "kind": "type-type",
+      "left": {
+        "type": "Fish",
+        "maxAtkExclusive": 1700,
+        "excludeCardIds": [
+          71
+        ]
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1700
+      },
+      "resultCardId": 230,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fish-thunder",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dinosaur-pyro-volcanic-slicer-190",
+      "kind": "type-type",
+      "left": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 166,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dinosaur-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-pyro-thunder-topaz-191",
+      "kind": "type-type",
+      "left": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 462,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-pyro-thunder",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beastwarrior-wingedbeast-lanista-192",
+      "kind": "type-type",
+      "left": {
+        "type": "BeastWarrior",
+        "maxAtkExclusive": 1800
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1800
+      },
+      "resultCardId": 581,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-thunder-thunder-dragon-193",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1600
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1600
+      },
+      "resultCardId": 425,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-thunder-gusto-thunbolt-194",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1500,
+        "excludeCardIds": [
+          168
+        ]
+      },
+      "right": {
+        "type": "Thunder",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 459,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-wingedbeast-winged-dragon-1-195",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1400
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 7,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-winged-beast",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-machine-wingedbeast-daigusto-falcos-196",
+      "kind": "type-type",
+      "left": {
+        "type": "Machine",
+        "maxAtkExclusive": 1400
+      },
+      "right": {
+        "type": "WingedBeast",
+        "maxAtkExclusive": 1400
+      },
+      "resultCardId": 124,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fairy-plant-nekogal-1-197",
+      "kind": "type-type",
+      "left": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1100
+      },
+      "right": {
+        "type": "Plant",
+        "maxAtkExclusive": 1100
+      },
+      "resultCardId": 252,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fairy-pyro-rasetsu-198",
+      "kind": "type-type",
+      "left": {
+        "type": "Fairy",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 608,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fairy-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-plant-zombie-p-the-princess-of-ghosts-199",
+      "kind": "type-type",
+      "left": {
+        "type": "Plant",
+        "maxAtkExclusive": 900
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 900
+      },
+      "resultCardId": 359,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dragon-pyro-solar-flare-dragon-200",
+      "kind": "type-type",
+      "left": {
+        "type": "Dragon",
+        "maxAtkExclusive": 1500
+      },
+      "right": {
+        "type": "Pyro",
+        "maxAtkExclusive": 1500
+      },
+      "resultCardId": 31,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dragon-pyro",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-fish-spined-gillman-201",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1300
+      },
+      "right": {
+        "type": "Fish",
+        "maxAtkExclusive": 1300
+      },
+      "resultCardId": 71,
+      "source": "tea-inferred",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-fish-zombie-corroding-shark-202",
+      "kind": "type-type",
+      "left": {
+        "type": "Fish",
+        "maxAtkExclusive": 1100
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1100
+      },
+      "resultCardId": 539,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-fish-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-dinosaur-zombie-fossil-dyna-pachycephalo-203",
+      "kind": "type-type",
+      "left": {
+        "type": "Dinosaur",
+        "maxAtkExclusive": 1200
+      },
+      "right": {
+        "type": "Zombie",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 455,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-dinosaur-zombie",
+      "validatedAgainstTea": true
+    },
+    {
+      "id": "type-type-beast-machine-giga-tech-wolf-204",
+      "kind": "type-type",
+      "left": {
+        "type": "Beast",
+        "maxAtkExclusive": 1200
+      },
+      "right": {
+        "type": "Machine",
+        "maxAtkExclusive": 1200
+      },
+      "resultCardId": 412,
+      "source": "wordpress-basic-validated-by-tea",
+      "candidateRuleId": "wp-beast-machine",
+      "validatedAgainstTea": true
+    }
+  ],
+  "specificRecipes": [
+    {
+      "resultCardId": 16,
+      "materialCardPairs": [
+        [
+          61,
+          98
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 22,
+      "materialCardPairs": [
+        [
+          16,
+          254
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 37,
+      "materialCardPairs": [
+        [
+          38,
+          39
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 39,
+      "materialCardPairs": [
+        [
+          545,
+          561
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 47,
+      "materialCardPairs": [
+        [
+          82,
+          692
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 53,
+      "materialCardPairs": [
+        [
+          480,
+          576
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 56,
+      "materialCardPairs": [
+        [
+          72,
+          278
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 57,
+      "materialCardPairs": [
+        [
+          56,
+          72
+        ],
+        [
+          72,
+          576
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 61,
+      "materialCardPairs": [
+        [
+          85,
+          479
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 62,
+      "materialCardPairs": [
+        [
+          395,
+          429
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 65,
+      "materialCardPairs": [
+        [
+          345,
+          599
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 67,
+      "materialCardPairs": [
+        [
+          57,
+          72
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 68,
+      "materialCardPairs": [
+        [
+          44,
+          80
+        ],
+        [
+          55,
+          74
+        ],
+        [
+          71,
+          72
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 69,
+      "materialCardPairs": [
+        [
+          4,
+          16
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 70,
+      "materialCardPairs": [
+        [
+          243,
+          345
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 73,
+      "materialCardPairs": [
+        [
+          70,
+          555
+        ],
+        [
+          89,
+          555
+        ],
+        [
+          150,
+          555
+        ],
+        [
+          199,
+          555
+        ],
+        [
+          205,
+          555
+        ],
+        [
+          206,
+          555
+        ],
+        [
+          243,
+          555
+        ],
+        [
+          249,
+          555
+        ],
+        [
+          289,
+          555
+        ],
+        [
+          361,
+          555
+        ],
+        [
+          393,
+          555
+        ],
+        [
+          444,
+          555
+        ],
+        [
+          446,
+          555
+        ],
+        [
+          449,
+          555
+        ],
+        [
+          468,
+          555
+        ],
+        [
+          474,
+          555
+        ],
+        [
+          503,
+          555
+        ],
+        [
+          518,
+          555
+        ],
+        [
+          519,
+          555
+        ],
+        [
+          520,
+          555
+        ],
+        [
+          524,
+          555
+        ],
+        [
+          555,
+          599
+        ],
+        [
+          555,
+          602
+        ],
+        [
+          555,
+          606
+        ],
+        [
+          555,
+          615
+        ],
+        [
+          555,
+          634
+        ],
+        [
+          555,
+          639
+        ],
+        [
+          555,
+          646
+        ],
+        [
+          555,
+          647
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 76,
+      "materialCardPairs": [
+        [
+          6,
+          331
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 79,
+      "materialCardPairs": [
+        [
+          16,
+          570
+        ],
+        [
+          274,
+          570
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 82,
+      "materialCardPairs": [
+        [
+          16,
+          47
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 83,
+      "materialCardPairs": [
+        [
+          74,
+          410
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 85,
+      "materialCardPairs": [
+        [
+          233,
+          479
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 87,
+      "materialCardPairs": [
+        [
+          82,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 96,
+      "materialCardPairs": [
+        [
+          16,
+          104
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 97,
+      "materialCardPairs": [
+        [
+          9,
+          298
+        ],
+        [
+          24,
+          298
+        ],
+        [
+          30,
+          298
+        ],
+        [
+          108,
+          298
+        ],
+        [
+          132,
+          298
+        ],
+        [
+          146,
+          298
+        ],
+        [
+          154,
+          298
+        ],
+        [
+          215,
+          298
+        ],
+        [
+          228,
+          298
+        ],
+        [
+          298,
+          359
+        ],
+        [
+          298,
+          434
+        ],
+        [
+          298,
+          470
+        ],
+        [
+          298,
+          539
+        ],
+        [
+          298,
+          548
+        ],
+        [
+          298,
+          556
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 101,
+      "materialCardPairs": [
+        [
+          314,
+          395
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 109,
+      "materialCardPairs": [
+        [
+          85,
+          623
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 116,
+      "materialCardPairs": [
+        [
+          16,
+          711
+        ],
+        [
+          658,
+          711
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 120,
+      "materialCardPairs": [
+        [
+          41,
+          205
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 124,
+      "materialCardPairs": [
+        [
+          83,
+          595
+        ],
+        [
+          410,
+          595
+        ],
+        [
+          412,
+          595
+        ],
+        [
+          420,
+          595
+        ],
+        [
+          421,
+          595
+        ],
+        [
+          422,
+          595
+        ],
+        [
+          580,
+          595
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 131,
+      "materialCardPairs": [
+        [
+          8,
+          130
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 136,
+      "materialCardPairs": [
+        [
+          2,
+          137
+        ],
+        [
+          12,
+          95
+        ],
+        [
+          15,
+          59
+        ],
+        [
+          16,
+          48
+        ],
+        [
+          26,
+          127
+        ],
+        [
+          39,
+          54
+        ],
+        [
+          63,
+          119
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 137,
+      "materialCardPairs": [
+        [
+          31,
+          31
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 159,
+      "materialCardPairs": [
+        [
+          162,
+          230
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 170,
+      "materialCardPairs": [
+        [
+          376,
+          462
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 173,
+      "materialCardPairs": [
+        [
+          1,
+          313
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 174,
+      "materialCardPairs": [
+        [
+          33,
+          313
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 180,
+      "materialCardPairs": [
+        [
+          120,
+          156
+        ],
+        [
+          526,
+          567
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 181,
+      "materialCardPairs": [
+        [
+          16,
+          66
+        ],
+        [
+          66,
+          274
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 190,
+      "materialCardPairs": [
+        [
+          16,
+          96
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 192,
+      "materialCardPairs": [
+        [
+          214,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 206,
+      "materialCardPairs": [
+        [
+          232,
+          314
+        ],
+        [
+          232,
+          345
+        ],
+        [
+          232,
+          346
+        ],
+        [
+          232,
+          347
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 209,
+      "materialCardPairs": [
+        [
+          200,
+          203
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 214,
+      "materialCardPairs": [
+        [
+          301,
+          323
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 216,
+      "materialCardPairs": [
+        [
+          36,
+          313
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 217,
+      "materialCardPairs": [
+        [
+          22,
+          82
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 223,
+      "materialCardPairs": [
+        [
+          71,
+          73
+        ],
+        [
+          73,
+          160
+        ],
+        [
+          73,
+          250
+        ],
+        [
+          73,
+          353
+        ],
+        [
+          73,
+          435
+        ],
+        [
+          73,
+          447
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 227,
+      "materialCardPairs": [
+        [
+          141,
+          141
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 232,
+      "materialCardPairs": [
+        [
+          70,
+          243
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 240,
+      "materialCardPairs": [
+        [
+          335,
+          400
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 245,
+      "materialCardPairs": [
+        [
+          240,
+          335
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 257,
+      "materialCardPairs": [
+        [
+          90,
+          582
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 265,
+      "materialCardPairs": [
+        [
+          334,
+          691
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 267,
+      "materialCardPairs": [
+        [
+          141,
+          227
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 271,
+      "materialCardPairs": [
+        [
+          351,
+          418
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 275,
+      "materialCardPairs": [
+        [
+          89,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 277,
+      "materialCardPairs": [
+        [
+          13,
+          119
+        ],
+        [
+          13,
+          126
+        ],
+        [
+          62,
+          119
+        ],
+        [
+          62,
+          126
+        ],
+        [
+          117,
+          119
+        ],
+        [
+          117,
+          126
+        ],
+        [
+          119,
+          125
+        ],
+        [
+          119,
+          186
+        ],
+        [
+          119,
+          207
+        ],
+        [
+          119,
+          272
+        ],
+        [
+          119,
+          300
+        ],
+        [
+          119,
+          538
+        ],
+        [
+          119,
+          552
+        ],
+        [
+          119,
+          595
+        ],
+        [
+          119,
+          636
+        ],
+        [
+          125,
+          126
+        ],
+        [
+          125,
+          198
+        ],
+        [
+          125,
+          229
+        ],
+        [
+          125,
+          251
+        ],
+        [
+          125,
+          264
+        ],
+        [
+          125,
+          276
+        ],
+        [
+          125,
+          277
+        ],
+        [
+          125,
+          395
+        ],
+        [
+          125,
+          396
+        ],
+        [
+          125,
+          429
+        ],
+        [
+          125,
+          540
+        ],
+        [
+          125,
+          592
+        ],
+        [
+          125,
+          601
+        ],
+        [
+          125,
+          608
+        ],
+        [
+          125,
+          616
+        ],
+        [
+          126,
+          186
+        ],
+        [
+          126,
+          207
+        ],
+        [
+          126,
+          272
+        ],
+        [
+          126,
+          300
+        ],
+        [
+          126,
+          538
+        ],
+        [
+          126,
+          552
+        ],
+        [
+          126,
+          595
+        ],
+        [
+          126,
+          636
+        ],
+        [
+          198,
+          636
+        ],
+        [
+          229,
+          636
+        ],
+        [
+          251,
+          636
+        ],
+        [
+          264,
+          636
+        ],
+        [
+          276,
+          636
+        ],
+        [
+          277,
+          636
+        ],
+        [
+          395,
+          636
+        ],
+        [
+          396,
+          636
+        ],
+        [
+          429,
+          636
+        ],
+        [
+          540,
+          636
+        ],
+        [
+          592,
+          636
+        ],
+        [
+          601,
+          636
+        ],
+        [
+          608,
+          636
+        ],
+        [
+          616,
+          636
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 282,
+      "materialCardPairs": [
+        [
+          321,
+          431
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 286,
+      "materialCardPairs": [
+        [
+          405,
+          406
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 293,
+      "materialCardPairs": [
+        [
+          1,
+          307
+        ],
+        [
+          1,
+          668
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 301,
+      "materialCardPairs": [
+        [
+          100,
+          653
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 302,
+      "materialCardPairs": [
+        [
+          301,
+          303
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 303,
+      "materialCardPairs": [
+        [
+          335,
+          335
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 306,
+      "materialCardPairs": [
+        [
+          305,
+          305
+        ],
+        [
+          305,
+          658
+        ],
+        [
+          345,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 307,
+      "materialCardPairs": [
+        [
+          395,
+          681
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 308,
+      "materialCardPairs": [
+        [
+          65,
+          345
+        ],
+        [
+          168,
+          345
+        ],
+        [
+          201,
+          345
+        ],
+        [
+          345,
+          528
+        ],
+        [
+          345,
+          575
+        ],
+        [
+          345,
+          597
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 309,
+      "materialCardPairs": [
+        [
+          334,
+          334
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 311,
+      "materialCardPairs": [
+        [
+          134,
+          337
+        ],
+        [
+          134,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 312,
+      "materialCardPairs": [
+        [
+          277,
+          301
+        ],
+        [
+          301,
+          307
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 314,
+      "materialCardPairs": [
+        [
+          214,
+          345
+        ],
+        [
+          214,
+          346
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 316,
+      "materialCardPairs": [
+        [
+          337,
+          352
+        ],
+        [
+          337,
+          387
+        ],
+        [
+          337,
+          686
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 318,
+      "materialCardPairs": [
+        [
+          319,
+          319
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 319,
+      "materialCardPairs": [
+        [
+          51,
+          345
+        ],
+        [
+          76,
+          345
+        ],
+        [
+          77,
+          345
+        ],
+        [
+          219,
+          345
+        ],
+        [
+          240,
+          345
+        ],
+        [
+          245,
+          345
+        ],
+        [
+          248,
+          345
+        ],
+        [
+          262,
+          345
+        ],
+        [
+          285,
+          345
+        ],
+        [
+          345,
+          355
+        ],
+        [
+          345,
+          381
+        ],
+        [
+          345,
+          398
+        ],
+        [
+          345,
+          400
+        ],
+        [
+          345,
+          450
+        ],
+        [
+          345,
+          458
+        ],
+        [
+          345,
+          475
+        ],
+        [
+          345,
+          550
+        ],
+        [
+          345,
+          566
+        ],
+        [
+          345,
+          569
+        ],
+        [
+          345,
+          630
+        ],
+        [
+          346,
+          550
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 320,
+      "materialCardPairs": [
+        [
+          362,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 321,
+      "materialCardPairs": [
+        [
+          282,
+          657
+        ],
+        [
+          308,
+          657
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 322,
+      "materialCardPairs": [
+        [
+          24,
+          301
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 323,
+      "materialCardPairs": [
+        [
+          36,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 325,
+      "materialCardPairs": [
+        [
+          217,
+          345
+        ],
+        [
+          217,
+          346
+        ],
+        [
+          217,
+          347
+        ],
+        [
+          303,
+          315
+        ],
+        [
+          345,
+          571
+        ],
+        [
+          346,
+          571
+        ],
+        [
+          347,
+          571
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 326,
+      "materialCardPairs": [
+        [
+          314,
+          559
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 327,
+      "materialCardPairs": [
+        [
+          13,
+          683
+        ],
+        [
+          25,
+          683
+        ],
+        [
+          117,
+          683
+        ],
+        [
+          125,
+          683
+        ],
+        [
+          186,
+          683
+        ],
+        [
+          207,
+          683
+        ],
+        [
+          272,
+          683
+        ],
+        [
+          465,
+          683
+        ],
+        [
+          467,
+          683
+        ],
+        [
+          522,
+          683
+        ],
+        [
+          538,
+          683
+        ],
+        [
+          552,
+          683
+        ],
+        [
+          581,
+          683
+        ],
+        [
+          595,
+          683
+        ],
+        [
+          636,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 328,
+      "materialCardPairs": [
+        [
+          214,
+          334
+        ],
+        [
+          334,
+          663
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 329,
+      "materialCardPairs": [
+        [
+          315,
+          352
+        ],
+        [
+          315,
+          387
+        ],
+        [
+          315,
+          661
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 330,
+      "materialCardPairs": [
+        [
+          310,
+          657
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 331,
+      "materialCardPairs": [
+        [
+          314,
+          330
+        ],
+        [
+          333,
+          345
+        ],
+        [
+          333,
+          346
+        ],
+        [
+          333,
+          347
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 336,
+      "materialCardPairs": [
+        [
+          303,
+          684
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 337,
+      "materialCardPairs": [
+        [
+          316,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 338,
+      "materialCardPairs": [
+        [
+          303,
+          339
+        ],
+        [
+          303,
+          558
+        ],
+        [
+          335,
+          339
+        ],
+        [
+          335,
+          558
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 339,
+      "materialCardPairs": [
+        [
+          307,
+          558
+        ],
+        [
+          558,
+          668
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 341,
+      "materialCardPairs": [
+        [
+          2,
+          340
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 342,
+      "materialCardPairs": [
+        [
+          341,
+          341
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 343,
+      "materialCardPairs": [
+        [
+          323,
+          345
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 344,
+      "materialCardPairs": [
+        [
+          349,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 346,
+      "materialCardPairs": [
+        [
+          345,
+          345
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 347,
+      "materialCardPairs": [
+        [
+          282,
+          346
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 348,
+      "materialCardPairs": [
+        [
+          307,
+          669
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 350,
+      "materialCardPairs": [
+        [
+          303,
+          307
+        ],
+        [
+          303,
+          671
+        ],
+        [
+          335,
+          671
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 355,
+      "materialCardPairs": [
+        [
+          245,
+          265
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 365,
+      "materialCardPairs": [
+        [
+          385,
+          385
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 369,
+      "materialCardPairs": [
+        [
+          366,
+          368
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 370,
+      "materialCardPairs": [
+        [
+          412,
+          512
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 371,
+      "materialCardPairs": [
+        [
+          337,
+          453
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 373,
+      "materialCardPairs": [
+        [
+          334,
+          453
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 375,
+      "materialCardPairs": [
+        [
+          366,
+          640
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 378,
+      "materialCardPairs": [
+        [
+          169,
+          226
+        ],
+        [
+          169,
+          294
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 381,
+      "materialCardPairs": [
+        [
+          313,
+          398
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 384,
+      "materialCardPairs": [
+        [
+          71,
+          555
+        ],
+        [
+          448,
+          555
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 385,
+      "materialCardPairs": [
+        [
+          16,
+          379
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 386,
+      "materialCardPairs": [
+        [
+          16,
+          49
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 390,
+      "materialCardPairs": [
+        [
+          367,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 392,
+      "materialCardPairs": [
+        [
+          391,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 400,
+      "materialCardPairs": [
+        [
+          335,
+          398
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 407,
+      "materialCardPairs": [
+        [
+          442,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 409,
+      "materialCardPairs": [
+        [
+          83,
+          555
+        ],
+        [
+          124,
+          555
+        ],
+        [
+          172,
+          555
+        ],
+        [
+          275,
+          555
+        ],
+        [
+          297,
+          555
+        ],
+        [
+          388,
+          555
+        ],
+        [
+          405,
+          555
+        ],
+        [
+          406,
+          555
+        ],
+        [
+          408,
+          555
+        ],
+        [
+          410,
+          555
+        ],
+        [
+          412,
+          555
+        ],
+        [
+          415,
+          555
+        ],
+        [
+          420,
+          555
+        ],
+        [
+          421,
+          555
+        ],
+        [
+          422,
+          555
+        ],
+        [
+          438,
+          555
+        ],
+        [
+          441,
+          555
+        ],
+        [
+          508,
+          555
+        ],
+        [
+          512,
+          555
+        ],
+        [
+          555,
+          580
+        ],
+        [
+          555,
+          643
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 413,
+      "materialCardPairs": [
+        [
+          89,
+          168
+        ],
+        [
+          89,
+          201
+        ],
+        [
+          89,
+          202
+        ],
+        [
+          89,
+          528
+        ],
+        [
+          168,
+          290
+        ],
+        [
+          168,
+          512
+        ],
+        [
+          201,
+          290
+        ],
+        [
+          201,
+          512
+        ],
+        [
+          202,
+          290
+        ],
+        [
+          202,
+          512
+        ],
+        [
+          290,
+          528
+        ],
+        [
+          512,
+          528
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 415,
+      "materialCardPairs": [
+        [
+          291,
+          420
+        ],
+        [
+          291,
+          421
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 427,
+      "materialCardPairs": [
+        [
+          7,
+          603
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 430,
+      "materialCardPairs": [
+        [
+          180,
+          432
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 434,
+      "materialCardPairs": [
+        [
+          24,
+          24
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 438,
+      "materialCardPairs": [
+        [
+          211,
+          580
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 440,
+      "materialCardPairs": [
+        [
+          112,
+          230
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 447,
+      "materialCardPairs": [
+        [
+          71,
+          542
+        ],
+        [
+          73,
+          542
+        ],
+        [
+          160,
+          542
+        ],
+        [
+          250,
+          542
+        ],
+        [
+          353,
+          542
+        ],
+        [
+          384,
+          542
+        ],
+        [
+          435,
+          542
+        ],
+        [
+          448,
+          542
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 452,
+      "materialCardPairs": [
+        [
+          230,
+          539
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 456,
+      "materialCardPairs": [
+        [
+          28,
+          83
+        ],
+        [
+          28,
+          124
+        ],
+        [
+          28,
+          275
+        ],
+        [
+          28,
+          410
+        ],
+        [
+          28,
+          412
+        ],
+        [
+          28,
+          420
+        ],
+        [
+          28,
+          421
+        ],
+        [
+          28,
+          422
+        ],
+        [
+          28,
+          512
+        ],
+        [
+          28,
+          580
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 457,
+      "materialCardPairs": [
+        [
+          28,
+          146
+        ],
+        [
+          146,
+          167
+        ],
+        [
+          146,
+          237
+        ],
+        [
+          146,
+          260
+        ],
+        [
+          146,
+          366
+        ],
+        [
+          146,
+          505
+        ],
+        [
+          146,
+          515
+        ],
+        [
+          146,
+          516
+        ],
+        [
+          146,
+          558
+        ],
+        [
+          146,
+          591
+        ],
+        [
+          215,
+          260
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 461,
+      "materialCardPairs": [
+        [
+          316,
+          643
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 463,
+      "materialCardPairs": [
+        [
+          285,
+          316
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 468,
+      "materialCardPairs": [
+        [
+          70,
+          698
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 473,
+      "materialCardPairs": [
+        [
+          16,
+          210
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 476,
+      "materialCardPairs": [
+        [
+          587,
+          658
+        ],
+        [
+          658,
+          717
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 478,
+      "materialCardPairs": [
+        [
+          477,
+          576
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 481,
+      "materialCardPairs": [
+        [
+          666,
+          683
+        ],
+        [
+          680,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 483,
+      "materialCardPairs": [
+        [
+          307,
+          336
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 484,
+      "materialCardPairs": [
+        [
+          483,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 485,
+      "materialCardPairs": [
+        [
+          324,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 486,
+      "materialCardPairs": [
+        [
+          345,
+          652
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 487,
+      "materialCardPairs": [
+        [
+          334,
+          644
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 488,
+      "materialCardPairs": [
+        [
+          327,
+          337
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 489,
+      "materialCardPairs": [
+        [
+          685,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 490,
+      "materialCardPairs": [
+        [
+          658,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 492,
+      "materialCardPairs": [
+        [
+          303,
+          400
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 494,
+      "materialCardPairs": [
+        [
+          214,
+          661
+        ],
+        [
+          342,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 496,
+      "materialCardPairs": [
+        [
+          240,
+          343
+        ],
+        [
+          240,
+          346
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 497,
+      "materialCardPairs": [
+        [
+          490,
+          669
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 498,
+      "materialCardPairs": [
+        [
+          657,
+          695
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 499,
+      "materialCardPairs": [
+        [
+          124,
+          124
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 500,
+      "materialCardPairs": [
+        [
+          334,
+          686
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 503,
+      "materialCardPairs": [
+        [
+          199,
+          313
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 506,
+      "materialCardPairs": [
+        [
+          576,
+          609
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 507,
+      "materialCardPairs": [
+        [
+          40,
+          553
+        ],
+        [
+          247,
+          553
+        ],
+        [
+          431,
+          553
+        ],
+        [
+          436,
+          553
+        ],
+        [
+          542,
+          553
+        ],
+        [
+          543,
+          553
+        ],
+        [
+          546,
+          553
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 513,
+      "materialCardPairs": [
+        [
+          297,
+          406
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 518,
+      "materialCardPairs": [
+        [
+          89,
+          260
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 522,
+      "materialCardPairs": [
+        [
+          16,
+          538
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 535,
+      "materialCardPairs": [
+        [
+          576,
+          640
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 536,
+      "materialCardPairs": [
+        [
+          54,
+          260
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 541,
+      "materialCardPairs": [
+        [
+          333,
+          334
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 549,
+      "materialCardPairs": [
+        [
+          292,
+          453
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 553,
+      "materialCardPairs": [
+        [
+          100,
+          205
+        ],
+        [
+          110,
+          205
+        ],
+        [
+          138,
+          205
+        ],
+        [
+          147,
+          205
+        ],
+        [
+          161,
+          205
+        ],
+        [
+          195,
+          205
+        ],
+        [
+          205,
+          224
+        ],
+        [
+          205,
+          226
+        ],
+        [
+          205,
+          231
+        ],
+        [
+          205,
+          235
+        ],
+        [
+          205,
+          266
+        ],
+        [
+          205,
+          290
+        ],
+        [
+          205,
+          294
+        ],
+        [
+          205,
+          299
+        ],
+        [
+          205,
+          362
+        ],
+        [
+          205,
+          399
+        ],
+        [
+          205,
+          416
+        ],
+        [
+          205,
+          469
+        ],
+        [
+          205,
+          502
+        ],
+        [
+          205,
+          559
+        ],
+        [
+          205,
+          586
+        ],
+        [
+          205,
+          635
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 555,
+      "materialCardPairs": [
+        [
+          4,
+          189
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 561,
+      "materialCardPairs": [
+        [
+          557,
+          660
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 564,
+      "materialCardPairs": [
+        [
+          22,
+          313
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 565,
+      "materialCardPairs": [
+        [
+          51,
+          60
+        ],
+        [
+          51,
+          437
+        ],
+        [
+          51,
+          439
+        ],
+        [
+          51,
+          546
+        ],
+        [
+          51,
+          625
+        ],
+        [
+          60,
+          361
+        ],
+        [
+          60,
+          519
+        ],
+        [
+          60,
+          647
+        ],
+        [
+          361,
+          437
+        ],
+        [
+          361,
+          439
+        ],
+        [
+          361,
+          546
+        ],
+        [
+          361,
+          625
+        ],
+        [
+          437,
+          519
+        ],
+        [
+          437,
+          647
+        ],
+        [
+          439,
+          519
+        ],
+        [
+          439,
+          647
+        ],
+        [
+          519,
+          546
+        ],
+        [
+          519,
+          625
+        ],
+        [
+          546,
+          647
+        ],
+        [
+          625,
+          647
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 572,
+      "materialCardPairs": [
+        [
+          521,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 573,
+      "materialCardPairs": [
+        [
+          15,
+          462
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 583,
+      "materialCardPairs": [
+        [
+          35,
+          579
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 585,
+      "materialCardPairs": [
+        [
+          16,
+          35
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 587,
+      "materialCardPairs": [
+        [
+          52,
+          55
+        ],
+        [
+          53,
+          432
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 589,
+      "materialCardPairs": [
+        [
+          286,
+          297
+        ],
+        [
+          405,
+          513
+        ],
+        [
+          406,
+          629
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 590,
+      "materialCardPairs": [
+        [
+          413,
+          589
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 593,
+      "materialCardPairs": [
+        [
+          323,
+          352
+        ],
+        [
+          323,
+          387
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 605,
+      "materialCardPairs": [
+        [
+          41,
+          126
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 609,
+      "materialCardPairs": [
+        [
+          478,
+          576
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 613,
+      "materialCardPairs": [
+        [
+          425,
+          425
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 617,
+      "materialCardPairs": [
+        [
+          89,
+          520
+        ],
+        [
+          249,
+          520
+        ],
+        [
+          449,
+          520
+        ],
+        [
+          474,
+          520
+        ],
+        [
+          518,
+          520
+        ],
+        [
+          520,
+          602
+        ],
+        [
+          520,
+          646
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 621,
+      "materialCardPairs": [
+        [
+          41,
+          432
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 623,
+      "materialCardPairs": [
+        [
+          169,
+          260
+        ],
+        [
+          222,
+          260
+        ],
+        [
+          254,
+          260
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 624,
+      "materialCardPairs": [
+        [
+          432,
+          507
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 629,
+      "materialCardPairs": [
+        [
+          297,
+          405
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 631,
+      "materialCardPairs": [
+        [
+          301,
+          403
+        ],
+        [
+          302,
+          403
+        ],
+        [
+          304,
+          403
+        ],
+        [
+          326,
+          689
+        ],
+        [
+          403,
+          651
+        ],
+        [
+          403,
+          661
+        ],
+        [
+          403,
+          694
+        ],
+        [
+          661,
+          714
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 641,
+      "materialCardPairs": [
+        [
+          230,
+          553
+        ],
+        [
+          432,
+          553
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 645,
+      "materialCardPairs": [
+        [
+          28,
+          658
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 651,
+      "materialCardPairs": [
+        [
+          301,
+          302
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 652,
+      "materialCardPairs": [
+        [
+          334,
+          433
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 653,
+      "materialCardPairs": [
+        [
+          301,
+          661
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 654,
+      "materialCardPairs": [
+        [
+          301,
+          345
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 655,
+      "materialCardPairs": [
+        [
+          320,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 656,
+      "materialCardPairs": [
+        [
+          322,
+          661
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 657,
+      "materialCardPairs": [
+        [
+          342,
+          342
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 658,
+      "materialCardPairs": [
+        [
+          172,
+          682
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 659,
+      "materialCardPairs": [
+        [
+          334,
+          657
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 660,
+      "materialCardPairs": [
+        [
+          316,
+          334
+        ],
+        [
+          327,
+          684
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 662,
+      "materialCardPairs": [
+        [
+          327,
+          340
+        ],
+        [
+          330,
+          661
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 663,
+      "materialCardPairs": [
+        [
+          327,
+          331
+        ],
+        [
+          687,
+          688
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 664,
+      "materialCardPairs": [
+        [
+          331,
+          334
+        ],
+        [
+          334,
+          336
+        ],
+        [
+          334,
+          346
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 665,
+      "materialCardPairs": [
+        [
+          15,
+          127
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 668,
+      "materialCardPairs": [
+        [
+          307,
+          394
+        ],
+        [
+          394,
+          671
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 669,
+      "materialCardPairs": [
+        [
+          349,
+          349
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 672,
+      "materialCardPairs": [
+        [
+          62,
+          62
+        ],
+        [
+          63,
+          683
+        ],
+        [
+          300,
+          683
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 675,
+      "materialCardPairs": [
+        [
+          453,
+          643
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 679,
+      "materialCardPairs": [
+        [
+          406,
+          643
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 680,
+      "materialCardPairs": [
+        [
+          320,
+          661
+        ],
+        [
+          362,
+          661
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 681,
+      "materialCardPairs": [
+        [
+          398,
+          567
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 682,
+      "materialCardPairs": [
+        [
+          334,
+          619
+        ],
+        [
+          652,
+          657
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 684,
+      "materialCardPairs": [
+        [
+          336,
+          660
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 685,
+      "materialCardPairs": [
+        [
+          346,
+          472
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 687,
+      "materialCardPairs": [
+        [
+          327,
+          663
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 688,
+      "materialCardPairs": [
+        [
+          341,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 690,
+      "materialCardPairs": [
+        [
+          686,
+          689
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 692,
+      "materialCardPairs": [
+        [
+          326,
+          694
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 697,
+      "materialCardPairs": [
+        [
+          364,
+          380
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 701,
+      "materialCardPairs": [
+        [
+          301,
+          395
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 707,
+      "materialCardPairs": [
+        [
+          162,
+          175
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 711,
+      "materialCardPairs": [
+        [
+          16,
+          296
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 713,
+      "materialCardPairs": [
+        [
+          82,
+          712
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 717,
+      "materialCardPairs": [
+        [
+          52,
+          576
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    },
+    {
+      "resultCardId": 718,
+      "materialCardPairs": [
+        [
+          230,
+          447
+        ]
+      ],
+      "source": "tea-explicit",
+      "validatedAgainstTea": true
+    }
+  ]
+}

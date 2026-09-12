@@ -1,15 +1,19 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import type { Card, FusionRecipe } from '../types'
+import type { Card, FusionCardMatcher, FusionRecipe, FusionRule } from '../types'
+import { matchesFusionCard } from '../utils/fusionRules'
 import { CardImage } from './CardImage'
+import { CardTypeLabel } from './CardTypeLabel'
 
-const INITIAL_RECIPE_COUNT = 12
+const INITIAL_SPECIFIC_RECIPE_COUNT = 8
 
 interface FusionInformationProps {
   card: Card
   modId: string
   recipesForResult: FusionRecipe[]
   recipesUsingCard: FusionRecipe[]
+  rulesForResult: FusionRule[]
+  rulesUsingCard: FusionRule[]
   getCardById: (cardId: number) => Card | undefined
 }
 
@@ -23,14 +27,87 @@ function FusionCardLink({ card, currentCardId, modId }: { card: Card; currentCar
   )
 }
 
-function FusionRecipeRow({ recipe, currentCardId, modId, getCardById }: { recipe: FusionRecipe; currentCardId: number; modId: string; getCardById: FusionInformationProps['getCardById'] }) {
+function matcherConditions(matcher: FusionCardMatcher, getCardById: FusionInformationProps['getCardById']): { text: string; title?: string } {
+  const conditions: string[] = []
+  if (matcher.minAtkInclusive !== undefined) conditions.push(`ATK ≥ ${matcher.minAtkInclusive}`)
+  if (matcher.maxAtkExclusive !== undefined) conditions.push(`ATK < ${matcher.maxAtkExclusive}`)
+  if (matcher.minDefInclusive !== undefined) conditions.push(`DEF ≥ ${matcher.minDefInclusive}`)
+  if (matcher.maxDefExclusive !== undefined) conditions.push(`DEF < ${matcher.maxDefExclusive}`)
+  if (matcher.attribute !== undefined) conditions.push(matcher.attribute ? `${matcher.attribute} attribute` : 'No attribute')
+  if (matcher.excludeCardIds?.length) conditions.push(`except ${matcher.excludeCardIds.length} ${matcher.excludeCardIds.length === 1 ? 'card' : 'cards'}`)
+  const excludedNames = matcher.excludeCardIds
+    ?.map((cardId) => getCardById(cardId)?.name)
+    .filter((name): name is string => Boolean(name))
+  return {
+    text: conditions.length ? conditions.join(' · ') : 'Any card of this type',
+    ...(excludedNames?.length ? { title: `Excluded: ${excludedNames.join(', ')}` } : {}),
+  }
+}
+
+function FusionMatcherBlock({ matcher, currentCard, highlightCurrent, modId, getCardById }: {
+  matcher: FusionCardMatcher
+  currentCard: Card
+  highlightCurrent: boolean
+  modId: string
+  getCardById: FusionInformationProps['getCardById']
+}) {
+  if (matcher.cardId !== undefined) {
+    const exactCard = getCardById(matcher.cardId)
+    return exactCard ? <FusionCardLink card={exactCard} currentCardId={highlightCurrent ? currentCard.id : -1} modId={modId} /> : null
+  }
+  if (!matcher.type) return null
+  const conditions = matcherConditions(matcher, getCardById)
+  const isCurrent = highlightCurrent && matchesFusionCard(currentCard, matcher)
+  return (
+    <div className={`fusion-rule-matcher${isCurrent ? ' current' : ''}`} title={conditions.title}>
+      <CardTypeLabel cardType={matcher.type} />
+      <span className="fusion-rule-conditions">{conditions.text}</span>
+      {isCurrent && <span className="fusion-current-match">This card</span>}
+    </div>
+  )
+}
+
+function FusionRuleRow({ rule, currentCard, currentAsMaterial, modId, getCardById }: {
+  rule: FusionRule
+  currentCard: Card
+  currentAsMaterial: boolean
+  modId: string
+  getCardById: FusionInformationProps['getCardById']
+}) {
+  const result = getCardById(rule.resultCardId)
+  if (!result) return null
+  const currentMatchesLeft = currentAsMaterial && matchesFusionCard(currentCard, rule.left)
+  const currentMatchesRight = currentAsMaterial && matchesFusionCard(currentCard, rule.right)
+  const [firstMatcher, secondMatcher] = currentMatchesRight && !currentMatchesLeft
+    ? [rule.right, rule.left]
+    : [rule.left, rule.right]
+
+  return (
+    <article className="fusion-recipe-card fusion-rule-card" data-rule-id={rule.id}>
+      <span className="fusion-entry-kind">Rule</span>
+      <FusionMatcherBlock matcher={firstMatcher} currentCard={currentCard} highlightCurrent={currentAsMaterial} modId={modId} getCardById={getCardById} />
+      <span className="fusion-operator" aria-hidden="true">+</span>
+      <FusionMatcherBlock matcher={secondMatcher} currentCard={currentCard} highlightCurrent={currentAsMaterial} modId={modId} getCardById={getCardById} />
+      <span className="fusion-operator fusion-arrow" aria-hidden="true">→</span>
+      <FusionCardLink card={result} currentCardId={currentAsMaterial ? -1 : currentCard.id} modId={modId} />
+    </article>
+  )
+}
+
+function FusionRecipeRow({ recipe, currentCardId, modId, getCardById }: {
+  recipe: FusionRecipe
+  currentCardId: number
+  modId: string
+  getCardById: FusionInformationProps['getCardById']
+}) {
   const firstMaterial = getCardById(recipe.materialCardIds[0])
   const secondMaterial = getCardById(recipe.materialCardIds[1])
   const result = getCardById(recipe.resultCardId)
   if (!firstMaterial || !secondMaterial || !result) return null
 
   return (
-    <article className="fusion-recipe-card">
+    <article className="fusion-recipe-card fusion-specific-card">
+      <span className="fusion-entry-kind specific">Specific</span>
       <FusionCardLink card={firstMaterial} currentCardId={currentCardId} modId={modId} />
       <span className="fusion-operator" aria-hidden="true">+</span>
       <FusionCardLink card={secondMaterial} currentCardId={currentCardId} modId={modId} />
@@ -40,95 +117,60 @@ function FusionRecipeRow({ recipe, currentCardId, modId, getCardById }: { recipe
   )
 }
 
-function FusionRecipeGroup({ title, recipes, currentCardId, modId, getCardById }: { title: string; recipes: FusionRecipe[]; currentCardId: number; modId: string; getCardById: FusionInformationProps['getCardById'] }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const visibleRecipes = isExpanded ? recipes : recipes.slice(0, INITIAL_RECIPE_COUNT)
+function FusionEntryGroup({ title, rules, recipes, currentCard, currentAsMaterial, modId, getCardById }: {
+  title: string
+  rules: FusionRule[]
+  recipes: FusionRecipe[]
+  currentCard: Card
+  currentAsMaterial: boolean
+  modId: string
+  getCardById: FusionInformationProps['getCardById']
+}) {
+  const [specificExpanded, setSpecificExpanded] = useState(false)
+  const visibleRecipes = specificExpanded ? recipes : recipes.slice(0, INITIAL_SPECIFIC_RECIPE_COUNT)
   return (
     <div className="fusion-recipe-group">
-      <div className="fusion-group-heading"><h3>{title}</h3><span>{recipes.length}</span></div>
+      <div className="fusion-group-heading">
+        <h3>{title}</h3>
+        <span>{rules.length ? `${rules.length} ${rules.length === 1 ? 'rule' : 'rules'}` : ''}{rules.length && recipes.length ? ' · ' : ''}{recipes.length ? `${recipes.length} specific` : ''}</span>
+      </div>
       <div className="fusion-recipe-list">
+        {rules.map((rule) => (
+          <FusionRuleRow key={rule.id} rule={rule} currentCard={currentCard} currentAsMaterial={currentAsMaterial} modId={modId} getCardById={getCardById} />
+        ))}
         {visibleRecipes.map((recipe) => (
-          <FusionRecipeRow
-            key={`${recipe.materialCardIds.join('-')}-${recipe.resultCardId}`}
-            recipe={recipe}
-            currentCardId={currentCardId}
-            modId={modId}
-            getCardById={getCardById}
-          />
+          <FusionRecipeRow key={`${recipe.materialCardIds.join('-')}-${recipe.resultCardId}`} recipe={recipe} currentCardId={currentCard.id} modId={modId} getCardById={getCardById} />
         ))}
       </div>
-      {recipes.length > INITIAL_RECIPE_COUNT && (
-        <button type="button" className="fusion-show-more" onClick={() => setIsExpanded((expanded) => !expanded)}>
-          {isExpanded ? 'Show fewer' : `Show all ${recipes.length} recipes`}
+      {recipes.length > INITIAL_SPECIFIC_RECIPE_COUNT && (
+        <button type="button" className="fusion-show-more" onClick={() => setSpecificExpanded((expanded) => !expanded)}>
+          {specificExpanded ? 'Show fewer specific recipes' : `Show all ${recipes.length} specific recipes`}
         </button>
       )}
     </div>
   )
 }
 
-function getOtherMaterials(recipe: FusionRecipe, currentCardId: number, getCardById: FusionInformationProps['getCardById']): Card[] {
-  const currentIsMaterial = recipe.materialCardIds.includes(currentCardId)
-  let otherMaterialIds = currentIsMaterial
-    ? recipe.materialCardIds.filter((cardId) => cardId !== currentCardId)
-    : [...recipe.materialCardIds]
-  if (currentIsMaterial && otherMaterialIds.length === 0) otherMaterialIds = [currentCardId]
-  return otherMaterialIds.map(getCardById).filter((material): material is Card => Boolean(material))
-}
-
-function parseMinimum(value: string): number | null {
-  if (value.trim() === '') return null
-  const parsed = Number(value)
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : null
-}
-
-export function FusionInformation({ card, modId, recipesForResult, recipesUsingCard, getCardById }: FusionInformationProps) {
-  const recipeCount = recipesForResult.length + recipesUsingCard.length
-  const allRecipes = [...recipesForResult, ...recipesUsingCard]
-  const materialTypes = [...new Set(allRecipes.flatMap((recipe) =>
-    getOtherMaterials(recipe, card.id, getCardById).map((material) => material.type).filter((type): type is string => Boolean(type)),
-  ))].sort((left, right) => left.localeCompare(right))
-  const [materialType, setMaterialType] = useState('')
-  const [minimumAtk, setMinimumAtk] = useState<number | null>(null)
-  const [minimumDef, setMinimumDef] = useState<number | null>(null)
-  const hasFilters = Boolean(materialType) || minimumAtk !== null || minimumDef !== null
-  const filterRecipes = (recipes: FusionRecipe[]) => recipes.filter((recipe) => {
-    if (materialType && !getOtherMaterials(recipe, card.id, getCardById).some((material) => material.type === materialType)) return false
-    const result = getCardById(recipe.resultCardId)
-    if (!result) return false
-    if (minimumAtk !== null && (result.atk === null || result.atk < minimumAtk)) return false
-    if (minimumDef !== null && (result.def === null || result.def < minimumDef)) return false
-    return true
-  })
-  const filteredForResult = filterRecipes(recipesForResult)
-  const filteredUsingCard = filterRecipes(recipesUsingCard)
-  const filteredCount = filteredForResult.length + filteredUsingCard.length
-  const resetFilters = () => {
-    setMaterialType('')
-    setMinimumAtk(null)
-    setMinimumDef(null)
-  }
+export function FusionInformation({ card, modId, recipesForResult, recipesUsingCard, rulesForResult, rulesUsingCard, getCardById }: FusionInformationProps) {
+  const ruleCount = rulesForResult.length + rulesUsingCard.length
+  const specificCount = recipesForResult.length + recipesUsingCard.length
+  const entryCount = ruleCount + specificCount
   return (
     <section className="detail-section fusion-information" aria-labelledby="fusion-information-heading">
       <div className="section-heading">
         <div><p className="eyebrow">Card combinations</p><h2 id="fusion-information-heading">Fusions</h2></div>
-        <span>{hasFilters ? `${filteredCount} / ${recipeCount}` : recipeCount} {recipeCount === 1 ? 'recipe' : 'recipes'}</span>
+        <span>{ruleCount ? `${ruleCount} ${ruleCount === 1 ? 'rule' : 'rules'}` : ''}{ruleCount && specificCount ? ' · ' : ''}{specificCount ? `${specificCount} specific` : ''}</span>
       </div>
-      {recipeCount ? (
-        <>
-          <div className="fusion-filters" aria-label="Fusion filters">
-            <label><span>Other material</span><select aria-label="Other material type" value={materialType} onChange={(event) => setMaterialType(event.target.value)}><option value="">All types</option>{materialTypes.map((type) => <option key={type} value={type}>{type}</option>)}</select></label>
-            <label><span>Result ATK</span><input aria-label="Minimum result ATK" type="number" min="0" step="50" placeholder="Min" value={minimumAtk ?? ''} onChange={(event) => setMinimumAtk(parseMinimum(event.target.value))} /></label>
-            <label><span>Result DEF</span><input aria-label="Minimum result DEF" type="number" min="0" step="50" placeholder="Min" value={minimumDef ?? ''} onChange={(event) => setMinimumDef(parseMinimum(event.target.value))} /></label>
-            {hasFilters && <button type="button" onClick={resetFilters}>Clear</button>}
-          </div>
-          {filteredCount ? (
-            <div className="fusion-recipe-groups">
-              {filteredForResult.length > 0 && <FusionRecipeGroup key={`result-${materialType}-${minimumAtk}-${minimumDef}`} title="How to form this card" recipes={filteredForResult} currentCardId={card.id} modId={modId} getCardById={getCardById} />}
-              {filteredUsingCard.length > 0 && <FusionRecipeGroup key={`material-${materialType}-${minimumAtk}-${minimumDef}`} title="Used to form other cards" recipes={filteredUsingCard} currentCardId={card.id} modId={modId} getCardById={getCardById} />}
-            </div>
-          ) : <div className="empty-state fusion-filter-empty">No fusion recipes match these filters.</div>}
-        </>
-      ) : <div className="empty-state fusion-empty-state">This card is not part of a known fusion recipe.</div>}
+      {entryCount ? (
+        <div className="fusion-recipe-groups">
+          {(rulesForResult.length > 0 || recipesForResult.length > 0) && (
+            <FusionEntryGroup title="How to form this card" rules={rulesForResult} recipes={recipesForResult} currentCard={card} currentAsMaterial={false} modId={modId} getCardById={getCardById} />
+          )}
+          {(rulesUsingCard.length > 0 || recipesUsingCard.length > 0) && (
+            <FusionEntryGroup title="Used to form other cards" rules={rulesUsingCard} recipes={recipesUsingCard} currentCard={card} currentAsMaterial modId={modId} getCardById={getCardById} />
+          )}
+        </div>
+      ) : <div className="empty-state fusion-empty-state">This card is not part of a known fusion rule or specific recipe.</div>}
     </section>
   )
 }

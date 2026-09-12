@@ -11,8 +11,11 @@ Generated:
 - drops.json: 4,860 compact drop records (workbook rows plus TEA fallbacks)
 - drop-unlock-requirements.json: 9 alternate unlock-pool definitions
 - rituals.json: 47 unique TEA ritual recipes
+- fusions.json: 18,124 authoritative normalized TEA recipes grouped under 350 results; validation-only and not imported by the app
+- fusion-rule-candidates.json: WordPress Basic Fusion candidates with source provenance
+- fusion-rules.json: compact TEA-validated rules used by the app
+- fusion-rule-audit.md: generated candidate and inferred-rule audit
 - equips.json: 4,082 equip relations across 604 cards
-- fusions.json: 18,124 unique fusion recipes grouped under 350 result cards
 
 TEA handling:
 - all 722 cards currently have a complete TEA card object
@@ -43,3 +46,9 @@ Name corrections needed to map Drop Pools to Cards List:
 - Giga Plant -> Gigaplant
 
 All workbook-authored default and unlock pool totals were validated to equal 2048.
+
+Fusion rules:
+- Run `npm run data:fm2-ghost:fusion-rules` after updating cards or normalized TEA fusions.
+- Run `npm run validate:fm2-ghost:fusions` to compare every unordered card pair against raw TEA.
+- Specific recipes take precedence over exact-card + type rules, which take precedence over type + type rules.
+- Fusion matching is commutative; raw TEA records both directions for every non-self fusion pair without conflicts.
