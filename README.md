@@ -105,6 +105,13 @@ npm run data:fm2-ghost:equips
 npm run data:fm2-ghost:equips -- --check
 ```
 
+Normalize the distinct fusion recipes, grouped by their result card:
+
+```bash
+npm run data:fm2-ghost:fusions
+npm run data:fm2-ghost:fusions -- --check
+```
+
 ## Import images
 
 Import a local directory of ID-named card images:

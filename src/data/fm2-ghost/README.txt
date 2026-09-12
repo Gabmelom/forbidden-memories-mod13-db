@@ -12,6 +12,7 @@ Generated:
 - drop-unlock-requirements.json: 9 alternate unlock-pool definitions
 - rituals.json: 47 unique TEA ritual recipes
 - equips.json: 4,082 equip relations across 604 cards
+- fusions.json: 18,124 unique fusion recipes grouped under 350 result cards
 
 TEA handling:
 - all 722 cards currently have a complete TEA card object
@@ -26,7 +27,7 @@ TEA handling:
 - special requirements from TEA, workbook conditions, and the documented
   Kuriboh chest progression are normalized into drop-row requirements for wins,
   Library registration, chest inventory, and pool state
-- fusion, initial-deck, and tower sections remain in the raw TEA file
+- initial-deck and tower sections remain in the raw TEA file
   until dedicated normalized datasets and UI are introduced
 
 Drop handling:

@@ -218,4 +218,33 @@ describe('Duelists workspace', () => {
     expect((search as HTMLInputElement).value).toBe('pegasus')
     expect(screen.getByRole('tab', { name: 'S/A TEC' }).getAttribute('aria-selected')).toBe('true')
   })
+
+  it('shows card metadata columns and sorts drops from their headers', async () => {
+    const user = userEvent.setup()
+    renderWorkspace('/mod13/duelists/seto-2nd?rank=SA_POW')
+    const detail = screen.getByRole('region', { name: 'Duelist details' })
+    const table = within(detail).getByRole('table')
+    for (const name of ['Card', 'Type', 'ATK', 'DEF', 'Weight', 'Per duel']) {
+      expect(within(table).getByRole('columnheader', { name })).toBeTruthy()
+    }
+    expect(within(detail).queryByRole('combobox', { name: 'Sort' })).toBeNull()
+    expect(within(table).getAllByRole('button')).toHaveLength(6)
+    expect(within(table).getByRole('columnheader', { name: 'Weight' }).getAttribute('aria-sort')).toBe('descending')
+    expect(within(table).getByRole('columnheader', { name: 'ATK' }).querySelector('.card-fact-icon-sword')).toBeTruthy()
+    expect(within(table).getByRole('columnheader', { name: 'DEF' }).querySelector('.card-fact-icon-shield')).toBeTruthy()
+    expect(table.querySelector('td[data-label="Type"] .card-type-icon')).toBeTruthy()
+
+    const attackHeader = within(table).getByRole('columnheader', { name: 'ATK' })
+    await user.click(within(attackHeader).getByRole('button'))
+    expect(attackHeader.getAttribute('aria-sort')).toBe('descending')
+    const descendingAttack = Array.from(table.querySelectorAll<HTMLTableCellElement>('td[data-label="ATK"]'))
+      .map((cell) => Number(cell.textContent)).filter(Number.isFinite)
+    expect(descendingAttack).toEqual([...descendingAttack].sort((left, right) => right - left))
+
+    await user.click(within(attackHeader).getByRole('button'))
+    expect(attackHeader.getAttribute('aria-sort')).toBe('ascending')
+    const ascendingAttack = Array.from(table.querySelectorAll<HTMLTableCellElement>('td[data-label="ATK"]'))
+      .map((cell) => Number(cell.textContent)).filter(Number.isFinite)
+    expect(ascendingAttack).toEqual([...ascendingAttack].sort((left, right) => left - right))
+  })
 })

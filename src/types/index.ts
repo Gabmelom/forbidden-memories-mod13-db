@@ -51,6 +51,16 @@ export interface EquipCompatibility {
   equipCardIds: number[]
 }
 
+export interface FusionGroup {
+  resultCardId: number
+  materialCardPairs: [number, number][]
+}
+
+export interface FusionRecipe {
+  materialCardIds: [number, number]
+  resultCardId: number
+}
+
 export type RewardCount = 1 | 5 | 10 | 15
 export type DropSort = 'rate' | 'name' | 'id' | 'atk'
 export type CardTypeFilter = 'all' | 'monsters' | 'magic' | 'trap'

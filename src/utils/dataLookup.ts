@@ -1,4 +1,4 @@
-import type { Card, Drop, DropRank, DropSort, Duelist, EquipCompatibility, RitualRecipe } from '../types'
+import type { Card, Drop, DropRank, DropSort, Duelist, EquipCompatibility, FusionGroup, FusionRecipe, RitualRecipe } from '../types'
 import type { ModDefinition } from '../mods/types'
 
 export interface CardDropRow {
@@ -31,12 +31,19 @@ function appendRitualToIndex(index: Map<number, RitualRecipe[]>, cardId: number,
   else index.set(cardId, [ritual])
 }
 
+function appendFusionToIndex(index: Map<number, FusionRecipe[]>, cardId: number, fusion: FusionRecipe) {
+  const indexedFusions = index.get(cardId)
+  if (indexedFusions) indexedFusions.push(fusion)
+  else index.set(cardId, [fusion])
+}
+
 export interface DataLookup {
   cards: Card[]
   duelists: Duelist[]
   drops: Drop[]
   rituals: RitualRecipe[]
   equips: EquipCompatibility[]
+  fusions: FusionGroup[]
   getCardById: (cardId: number) => Card | undefined
   getDuelistById: (duelistId: number) => Duelist | undefined
   getDuelistBySlug: (slug: string) => Duelist | undefined
@@ -46,6 +53,8 @@ export interface DataLookup {
   getRitualsForResult: (cardId: number) => RitualRecipe[]
   getRitualsUsingCard: (cardId: number) => RitualRecipe[]
   getEquipsForCard: (cardId: number) => Card[]
+  getFusionsForResult: (cardId: number) => FusionRecipe[]
+  getFusionsUsingCard: (cardId: number) => FusionRecipe[]
   sortCardDropRows: typeof sortCardDropRows
 }
 
@@ -61,6 +70,9 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
   const ritualsByParticipant = new Map<number, RitualRecipe[]>()
   const equips = mod.equips ?? []
   const equipIdsByCardId = new Map(equips.map((entry) => [entry.cardId, entry.equipCardIds]))
+  const fusions = mod.fusions ?? []
+  const fusionsByResult = new Map<number, FusionRecipe[]>()
+  const fusionsByMaterial = new Map<number, FusionRecipe[]>()
 
   for (const drop of mod.drops) {
     appendToIndex(dropsByCardId, drop.cardId, drop)
@@ -75,12 +87,21 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
     }
   }
 
+  for (const fusionGroup of fusions) {
+    for (const materialCardIds of fusionGroup.materialCardPairs) {
+      const fusion = { materialCardIds, resultCardId: fusionGroup.resultCardId }
+      appendFusionToIndex(fusionsByResult, fusion.resultCardId, fusion)
+      for (const cardId of new Set(materialCardIds)) appendFusionToIndex(fusionsByMaterial, cardId, fusion)
+    }
+  }
+
   return {
     cards: mod.cards,
     duelists: mod.duelists,
     drops: mod.drops,
     rituals,
     equips,
+    fusions,
     getCardById: (cardId) => cardsById.get(cardId),
     getDuelistById: (duelistId) => duelistsById.get(duelistId),
     getDuelistBySlug: (slug) => duelistsBySlug.get(slug),
@@ -92,6 +113,8 @@ export function createDataLookup(mod: ModDefinition): DataLookup {
     getEquipsForCard: (cardId) => (equipIdsByCardId.get(cardId) ?? [])
       .map((equipCardId) => cardsById.get(equipCardId))
       .filter((card): card is Card => Boolean(card)),
+    getFusionsForResult: (cardId) => fusionsByResult.get(cardId) ?? [],
+    getFusionsUsingCard: (cardId) => fusionsByMaterial.get(cardId) ?? [],
     sortCardDropRows,
   }
 }

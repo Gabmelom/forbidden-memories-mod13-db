@@ -243,6 +243,33 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .equip-card-text > span { color: var(--gold); font: 700 .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .equip-card-text strong { font-size: .72rem; line-height: 1.25; overflow-wrap: anywhere; }
 .equip-empty-state { margin-top: 0; }
+.fusion-filters { margin-bottom: 16px; display: flex; align-items: end; flex-wrap: wrap; gap: 7px; }
+.fusion-filters label { min-width: 0; display: flex; flex-direction: column; gap: 3px; color: var(--muted); font-size: .57rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.fusion-filters select, .fusion-filters input { width: 118px; min-width: 0; height: 30px; padding: 0 7px; color: var(--text); border: 1px solid var(--border); border-radius: 5px; background: var(--panel); font-size: .68rem; }
+.fusion-filters select { width: 132px; padding-right: 24px; cursor: pointer; }
+.fusion-filters input { width: 82px; }
+.fusion-filters select:hover, .fusion-filters select:focus, .fusion-filters input:hover, .fusion-filters input:focus { border-color: #566270; }
+.fusion-filters button { height: 30px; padding: 0 9px; color: var(--gold); border: 1px solid #665329; border-radius: 5px; background: var(--gold-soft); font-size: .64rem; font-weight: 800; cursor: pointer; }
+.fusion-filters button:hover { border-color: var(--gold); }
+.fusion-recipe-groups { display: grid; gap: 28px; }
+.fusion-group-heading { margin-bottom: 10px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.fusion-group-heading h3 { margin: 0; color: var(--text); font-size: .92rem; }
+.fusion-group-heading > span { color: var(--muted); font-size: .68rem; font-weight: 750; }
+.fusion-recipe-list { display: grid; gap: 8px; }
+.fusion-recipe-card { padding: 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 7px; border: 1px solid var(--border); border-radius: 8px; background: var(--panel); }
+.fusion-card-link { min-width: 0; min-height: 58px; padding: 7px; display: flex; align-items: center; gap: 9px; color: var(--text); border: 1px solid var(--border-soft); border-radius: 6px; background: #0f141b; text-decoration: none; }
+.fusion-card-link:hover { color: var(--gold); border-color: #566270; background: var(--panel-raised); }
+.fusion-card-link.current { border-color: #665329; background: var(--gold-soft); }
+.fusion-card-link .card-image-small { width: 34px; }
+.fusion-card-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.fusion-card-text > span { color: var(--gold); font: 700 .61rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+.fusion-card-text strong { font-size: .72rem; line-height: 1.25; overflow-wrap: anywhere; }
+.fusion-operator { color: var(--muted); font-size: .9rem; font-weight: 850; }
+.fusion-arrow { color: var(--gold); }
+.fusion-show-more { margin-top: 10px; min-height: 34px; padding: 6px 12px; color: var(--gold); border: 1px solid #665329; border-radius: 6px; background: var(--gold-soft); font-size: .72rem; font-weight: 800; cursor: pointer; }
+.fusion-show-more:hover { border-color: var(--gold); background: #2c2514; }
+.fusion-empty-state { margin-top: 0; }
+.fusion-filter-empty { margin-top: 0; padding-block: 28px; }
 
 .duelist-heading { margin-top: 22px; display: flex; align-items: center; gap: 30px; }
 .rank-tabs { margin-top: 28px; display: flex; gap: 6px; border-bottom: 1px solid var(--border); }
@@ -255,6 +282,14 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .filter-row { display: flex; gap: 10px; }
 .select-control { display: flex; flex-direction: column; gap: 5px; color: var(--muted); font-size: .66rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .select-control select { min-width: 130px; min-height: 42px; padding: 0 34px 0 11px; color: var(--text); border: 1px solid var(--border); border-radius: 6px; background: var(--panel); cursor: pointer; }
+.duelist-drops th { padding: 0; }
+.duelist-drops th > button { width: 100%; min-height: 42px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 6px; color: var(--muted); border: 0; background: transparent; font-size: inherit; font-weight: inherit; letter-spacing: inherit; text-align: left; text-transform: inherit; cursor: pointer; }
+.duelist-drops th > button:hover, .duelist-drops th > button.active { color: var(--text); background: var(--panel-raised); }
+.sortable-column-label { display: inline-flex; align-items: center; gap: 5px; }
+.sortable-column-label .card-fact-icon { width: 14px; height: 14px; }
+.sort-direction { color: #657181; font-size: .72rem; }
+.duelist-drops th > button.active .sort-direction { color: var(--gold); }
+.duelist-card-stat { font-variant-numeric: tabular-nums; }
 .table-card-link { display: flex; align-items: center; gap: 12px; }
 .table-card-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .table-card-name { font-weight: 750; }

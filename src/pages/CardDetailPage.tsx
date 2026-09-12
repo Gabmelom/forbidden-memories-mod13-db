@@ -7,6 +7,7 @@ import { DropRate } from '../components/DropRate'
 import { DropNotes } from '../components/DropNotes'
 import { DuelistImage } from '../components/DuelistImage'
 import { EquipInformation } from '../components/EquipInformation'
+import { FusionInformation } from '../components/FusionInformation'
 import { RankBadge } from '../components/RankBadge'
 import { RitualInformation } from '../components/RitualInformation'
 import { useMod } from '../context/ModContext'
@@ -14,7 +15,7 @@ import { useMod } from '../context/ModContext'
 export function CardDetailPage() {
   const { cardId } = useParams()
   const { mod, data } = useMod()
-  const { getCardById, getDropsForCard, getDuelistById, getRitualsForResult, getRitualsUsingCard, getEquipsForCard } = data
+  const { getCardById, getDropsForCard, getDuelistById, getRitualsForResult, getRitualsUsingCard, getEquipsForCard, getFusionsForResult, getFusionsUsingCard } = data
   const [isPreviewOpen, setIsPreviewOpen] = useState(false)
   const previewTriggerRef = useRef<HTMLButtonElement>(null)
   const card = getCardById(Number(cardId))
@@ -71,6 +72,16 @@ export function CardDetailPage() {
         />
       )}
       {mod.equips && <EquipInformation cards={getEquipsForCard(card.id)} modId={mod.id} />}
+      {mod.fusions && (
+        <FusionInformation
+          key={card.id}
+          card={card}
+          modId={mod.id}
+          recipesForResult={getFusionsForResult(card.id)}
+          recipesUsingCard={getFusionsUsingCard(card.id)}
+          getCardById={getCardById}
+        />
+      )}
       {isPreviewOpen && <CardImagePreview cardId={card.id} cardName={card.name} onClose={closePreview} />}
     </article>
   )

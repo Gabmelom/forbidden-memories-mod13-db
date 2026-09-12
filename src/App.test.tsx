@@ -68,6 +68,10 @@ describe('mod routing', () => {
     const equips = screen.getByRole('region', { name: 'Equips' })
     expect(within(equips).getByRole('link', { name: /Dragon Treasure/ })).toBeTruthy()
     expect(within(equips).getAllByRole('link')).toHaveLength(6)
+    const fusions = screen.getByRole('region', { name: 'Fusions' })
+    expect(within(fusions).getByRole('heading', { name: 'Used to form other cards' })).toBeTruthy()
+    expect(within(fusions).getByRole('link', { name: /Doomkaiser Dragon/ })).toBeTruthy()
+    expect(within(fusions).getByRole('link', { name: /Berserk Dragon/ })).toBeTruthy()
   }, 10_000)
 
   it('loads Ghost duelist artwork from a slug-based path', () => {
@@ -89,6 +93,38 @@ describe('mod routing', () => {
     expect(within(rituals).getByRole('heading', { name: 'Used to form other cards' })).toBeTruthy()
     expect(within(rituals).getByRole('link', { name: /Polymerization/ })).toBeTruthy()
     expect(within(rituals).getByRole('link', { name: /Horakhty/ })).toBeTruthy()
+  }, 10_000)
+
+  it('expands large Ghost fusion recipe groups on demand', async () => {
+    const user = userEvent.setup()
+    renderApp('/fm2-ghost/cards/45')
+    const fusions = screen.getByRole('region', { name: 'Fusions' })
+    const resultHeading = within(fusions).getByRole('heading', { name: 'How to form this card' })
+    const resultGroup = resultHeading.closest('.fusion-recipe-group') as HTMLElement
+    expect(resultGroup.querySelectorAll('.fusion-recipe-card')).toHaveLength(12)
+    await user.click(within(resultGroup).getByRole('button', { name: 'Show all 15 recipes' }))
+    expect(resultGroup.querySelectorAll('.fusion-recipe-card')).toHaveLength(15)
+    expect(within(resultGroup).getByRole('button', { name: 'Show fewer' })).toBeTruthy()
+  }, 10_000)
+
+  it('filters Ghost fusions by partner type and result stats', async () => {
+    const user = userEvent.setup()
+    renderApp('/fm2-ghost/cards/1')
+    const fusions = screen.getByRole('region', { name: 'Fusions' })
+    const materialType = within(fusions).getByRole('combobox', { name: 'Other material type' })
+    await user.selectOptions(materialType, 'Equip')
+    expect(within(fusions).getByText('3 / 4 recipes')).toBeTruthy()
+    expect(within(fusions).queryByRole('link', { name: /Doomkaiser Dragon/ })).toBeNull()
+    expect(within(fusions).queryByRole('link', { name: /Berserk Dragon/ })).toBeNull()
+
+    await user.selectOptions(materialType, '')
+    await user.type(within(fusions).getByRole('spinbutton', { name: 'Minimum result ATK' }), '3200')
+    expect(within(fusions).getByText('1 / 4 recipes')).toBeTruthy()
+    expect(within(fusions).getByRole('link', { name: /Berserk Dragon/ })).toBeTruthy()
+    await user.type(within(fusions).getByRole('spinbutton', { name: 'Minimum result DEF' }), '100')
+    expect(within(fusions).getByText('No fusion recipes match these filters.')).toBeTruthy()
+    await user.click(within(fusions).getByRole('button', { name: 'Clear' }))
+    expect(within(fusions).getByText('4 recipes')).toBeTruthy()
   }, 10_000)
 
   it('switches mods from a card detail to the target card catalog', async () => {

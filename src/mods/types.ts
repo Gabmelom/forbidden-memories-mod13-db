@@ -1,4 +1,4 @@
-import type { Card, Drop, Duelist, EquipCompatibility, RitualRecipe } from '../types'
+import type { Card, Drop, Duelist, EquipCompatibility, FusionGroup, RitualRecipe } from '../types'
 
 export interface ModDefinition {
   id: string
@@ -11,6 +11,7 @@ export interface ModDefinition {
   drops: Drop[]
   rituals?: RitualRecipe[]
   equips?: EquipCompatibility[]
+  fusions?: FusionGroup[]
   emptyDataMessage?: string
   metadata?: Record<string, unknown>
 }

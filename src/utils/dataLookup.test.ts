@@ -78,6 +78,18 @@ describe('data lookups', () => {
     expect(ghostData.getRitualsUsingCard(695)).toHaveLength(46)
     expect(ghostData.equips).toHaveLength(604)
     expect(ghostData.getEquipsForCard(1).map((card) => card.id)).toEqual([307, 315, 657, 668, 678, 693])
+    expect(ghostData.fusions).toHaveLength(350)
+    expect(ghostData.fusions.reduce((total, group) => total + group.materialCardPairs.length, 0)).toBe(18_124)
+    expect(ghostData.getFusionsForResult(270)).toContainEqual({
+      materialCardIds: [1, 105],
+      resultCardId: 270,
+    })
+    expect(ghostData.getFusionsUsingCard(1)).toEqual([
+      { materialCardIds: [1, 313], resultCardId: 173 },
+      { materialCardIds: [1, 105], resultCardId: 270 },
+      { materialCardIds: [1, 307], resultCardId: 293 },
+      { materialCardIds: [1, 668], resultCardId: 293 },
+    ])
   })
   it('sorts card drops by descending weight', () => {
     const lower = { card: data.getCardById(337)!, drop: { duelistId: 1, cardId: 337, rank: 'SA_TEC' as const, weight: 40 } }
