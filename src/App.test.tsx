@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, render, screen, within } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, useLocation } from 'react-router-dom'
 import App from './App'
@@ -145,11 +145,31 @@ describe('mod routing', () => {
     const result = screen.getByRole('region', { name: 'Projected duel rank' })
     expect(within(result).getByText('S POW')).toBeTruthy()
     expect(within(result).getByText('101')).toBeTruthy()
+    const turnScale = screen.getByLabelText('Turns scoring ranges')
+    expect(turnScale.classList.contains('tec-score-scale')).toBe(true)
+    expect(turnScale.querySelectorAll('.tec-score-scale-track > span')).toHaveLength(5)
+    expect(turnScale.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toMatch(/0.+4 turns: \+12 points/)
+    expect(screen.getByRole('slider', { name: 'Set turns' })).toBeTruthy()
+    const cardScale = screen.getByLabelText('Cards used scoring ranges')
+    expect(cardScale.classList.contains('tec-score-scale')).toBe(true)
+    expect(cardScale.querySelectorAll('.tec-score-scale-track > span')).toHaveLength(5)
+    expect(Array.from(cardScale.querySelectorAll('.tec-score-scale-axis > span'), (tick) => tick.textContent)).toEqual(['9', '13', '33', '37+'])
+    expect(cardScale.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toMatch(/0.+8 cards used: \+15 points/)
+    expect(cardScale.querySelector('[aria-current="true"]')?.classList.contains('active')).toBe(true)
+    expect(Array.from(cardScale.querySelectorAll('.tec-score-scale-axis > span.active'), (tick) => tick.textContent)).toEqual(['9'])
+    const cardSlider = screen.getByRole('slider', { name: 'Set cards used' }) as HTMLInputElement
+    expect(cardSlider.value).toBe('0')
+    fireEvent.pointerDown(cardSlider)
+    fireEvent.change(cardSlider, { target: { value: '8.4' } })
+    expect(cardSlider.value).toBe('8.4')
+    expect((screen.getByRole('spinbutton', { name: 'Cards used' }) as HTMLInputElement).value).toBe('8')
+    fireEvent.pointerUp(cardSlider, { target: { value: '8.4' } })
+    expect(cardSlider.value).toBe('8')
     const trapRanges = screen.getByLabelText('Traps triggered scoring ranges')
-    expect(trapRanges.children).toHaveLength(5)
-    expect(trapRanges.querySelector('[aria-current="true"]')?.textContent).toBe('0+2')
+    expect(trapRanges.querySelectorAll('.tec-score-scale-track > span')).toHaveLength(5)
+    expect(trapRanges.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toBe('0 traps triggered: +2 points')
     expect(trapRanges.querySelector('[aria-current="true"] em')?.classList.contains('positive')).toBe(true)
-    expect(screen.getByLabelText('Face-down plays score modifier').classList.contains('neutral')).toBe(true)
+    expect(screen.getByLabelText('Face-down plays scoring ranges').querySelector('[aria-current="true"] em')?.classList.contains('neutral')).toBe(true)
 
     for (const label of [
       'Turns', 'Cards used', 'Effective attacks', 'Defensive wins', 'Face-down plays',
@@ -158,17 +178,33 @@ describe('mod routing', () => {
       expect(screen.getByRole('spinbutton', { name: label })).toBeTruthy()
       expect(screen.getByRole('button', { name: `Increase ${label}` })).toBeTruthy()
       expect(screen.getByRole('button', { name: `Decrease ${label}` })).toBeTruthy()
+      expect(screen.getByRole('slider', { name: `Set ${label.toLocaleLowerCase()}` })).toBeTruthy()
     }
 
     await user.click(screen.getByRole('button', { name: 'Increase Traps triggered' }))
     expect(within(result).getByText('91')).toBeTruthy()
-    expect(screen.getByLabelText('Traps triggered score modifier').textContent).toBe('-8')
-    expect(screen.getByLabelText('Traps triggered score modifier').classList.contains('negative')).toBe(true)
-    expect(trapRanges.querySelector('[aria-current="true"]')?.textContent).toBe('1–2-8')
+    expect(trapRanges.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toMatch(/1.+2 traps triggered: -8 points/)
+
+    expect(trapRanges.querySelector('[aria-current="true"] em')?.classList.contains('negative')).toBe(true)
+
+    for (let turn = 0; turn < 5; turn += 1) {
+      await user.click(screen.getByRole('button', { name: 'Increase Turns' }))
+    }
+    expect(turnScale.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toMatch(/5.+8 turns: \+8 points/)
+
+    fireEvent.change(cardSlider, { target: { value: '13' } })
+    expect((screen.getByRole('spinbutton', { name: 'Cards used' }) as HTMLInputElement).value).toBe('13')
+    expect(cardScale.querySelector('[aria-current="true"]')?.getAttribute('aria-label')).toMatch(/13.+32 cards used: \+0 points/)
+    expect(Array.from(cardScale.querySelectorAll('.tec-score-scale-axis > span.active'), (tick) => tick.textContent)).toEqual(['13', '33'])
+
+    await user.click(screen.getByRole('button', { name: 'Decrease Remaining LP' }))
+    expect((screen.getByRole('spinbutton', { name: 'Remaining LP' }) as HTMLInputElement).value).toBe('7950')
 
     await user.click(screen.getByRole('button', { name: 'Reset duel' }))
     expect(within(result).getByText('101')).toBeTruthy()
     expect((screen.getByRole('spinbutton', { name: 'Traps triggered' }) as HTMLInputElement).value).toBe('0')
+    expect((screen.getByRole('spinbutton', { name: 'Cards used' }) as HTMLInputElement).value).toBe('0')
+    expect(cardSlider.value).toBe('0')
     expect((screen.getByRole('spinbutton', { name: 'Remaining LP' }) as HTMLInputElement).value).toBe('8000')
   })
 
