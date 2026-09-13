@@ -1,6 +1,6 @@
 # Forbidden Memories DB
 
-An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. The app currently includes Mod 13 and FM2 Ghost data and is built with React, TypeScript, and Vite.
+An unofficial multi-mod static database for browsing Yu-Gi-Oh! Forbidden Memories cards, duelists, and drop rates. It also includes a manual TEC rank tracker. The app currently includes Mod 13 and FM2 Ghost data and is built with React, TypeScript, and Vite.
 
 Browse the Forbidden Memories database online: **[Forbidden Memories DB](https://gabmelom.github.io/forbidden-memories-mod13-db/#/mod13/cards)**
 

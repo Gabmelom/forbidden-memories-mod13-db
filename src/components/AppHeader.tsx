@@ -7,7 +7,8 @@ export function AppHeader() {
   const { mod } = useMod()
   const location = useLocation()
   const navigate = useNavigate()
-  const section = location.pathname.split('/')[2] === 'duelists' ? 'duelists' : 'cards'
+  const routeSection = location.pathname.split('/')[2]
+  const section = routeSection === 'duelists' || routeSection === 'tec-tracker' ? routeSection : 'cards'
   const switchMod = (modId: string) => navigate(`/${modId}/${section}`)
 
   return (
@@ -28,6 +29,7 @@ export function AppHeader() {
         <nav aria-label="Primary navigation">
           <NavLink to={`/${mod.id}/cards`} className={({ isActive }) => isActive ? 'active' : ''}>Cards</NavLink>
           <NavLink to={`/${mod.id}/duelists`} className={({ isActive }) => isActive ? 'active' : ''}>Duelists</NavLink>
+          <NavLink to={`/${mod.id}/tec-tracker`} className={({ isActive }) => isActive ? 'active' : ''}>TEC Tracker</NavLink>
         </nav>
         <RewardCountSelector />
       </div>

@@ -136,6 +136,49 @@ describe('mod routing', () => {
     expect(screen.getByTestId('location').textContent).toBe('/fm2-ghost/duelists')
   })
 
+  it('provides a manual TEC Tracker for every rank value and resets the duel', async () => {
+    const user = userEvent.setup()
+    renderApp('/mod13/tec-tracker')
+
+    expect(screen.getByRole('link', { name: 'TEC Tracker' }).getAttribute('aria-current')).toBe('page')
+    expect(screen.getByRole('heading', { name: 'TEC Tracker', level: 1 })).toBeTruthy()
+    const result = screen.getByRole('region', { name: 'Projected duel rank' })
+    expect(within(result).getByText('S POW')).toBeTruthy()
+    expect(within(result).getByText('101')).toBeTruthy()
+    const trapRanges = screen.getByLabelText('Traps triggered scoring ranges')
+    expect(trapRanges.children).toHaveLength(5)
+    expect(trapRanges.querySelector('[aria-current="true"]')?.textContent).toBe('0+2')
+    expect(trapRanges.querySelector('[aria-current="true"] em')?.classList.contains('positive')).toBe(true)
+    expect(screen.getByLabelText('Face-down plays score modifier').classList.contains('neutral')).toBe(true)
+
+    for (const label of [
+      'Turns', 'Cards used', 'Effective attacks', 'Defensive wins', 'Face-down plays',
+      'Fusions', 'Equip magic', 'Spell cards', 'Traps triggered', 'Remaining LP',
+    ]) {
+      expect(screen.getByRole('spinbutton', { name: label })).toBeTruthy()
+      expect(screen.getByRole('button', { name: `Increase ${label}` })).toBeTruthy()
+      expect(screen.getByRole('button', { name: `Decrease ${label}` })).toBeTruthy()
+    }
+
+    await user.click(screen.getByRole('button', { name: 'Increase Traps triggered' }))
+    expect(within(result).getByText('91')).toBeTruthy()
+    expect(screen.getByLabelText('Traps triggered score modifier').textContent).toBe('-8')
+    expect(screen.getByLabelText('Traps triggered score modifier').classList.contains('negative')).toBe(true)
+    expect(trapRanges.querySelector('[aria-current="true"]')?.textContent).toBe('1–2-8')
+
+    await user.click(screen.getByRole('button', { name: 'Reset duel' }))
+    expect(within(result).getByText('101')).toBeTruthy()
+    expect((screen.getByRole('spinbutton', { name: 'Traps triggered' }) as HTMLInputElement).value).toBe('0')
+    expect((screen.getByRole('spinbutton', { name: 'Remaining LP' }) as HTMLInputElement).value).toBe('8000')
+  })
+
+  it('keeps the TEC Tracker selected when switching databases', async () => {
+    const user = userEvent.setup()
+    renderApp('/mod13/tec-tracker')
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Database' }), 'fm2-ghost')
+    expect(screen.getByTestId('location').textContent).toBe('/fm2-ghost/tec-tracker')
+  })
+
   it('keeps detail assets and cross-links inside the active mod', () => {
     renderApp('/mod13/cards/337')
     expect(screen.getByRole('img', { name: 'Raigeki' }).getAttribute('src')).toBe('/mods/mod13/cards/337.webp')

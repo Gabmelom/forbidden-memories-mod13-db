@@ -6,6 +6,7 @@ import { RewardCountProvider } from './context/RewardCountProvider'
 import { DEFAULT_MOD_ID, getMod } from './mods/registry'
 import { CardsPage } from './pages/CardsPage'
 import { DuelistsPage } from './pages/DuelistsPage'
+import { TecTrackerPage } from './pages/TecTrackerPage'
 
 function ModLayout() {
   const { modId } = useParams()
@@ -34,6 +35,7 @@ export default function App() {
           <Route index element={<ModDefaultRoute />} />
           <Route path="cards/:cardId?" element={<CardsPage />} />
           <Route path="duelists/:duelistSlug?" element={<DuelistsPage />} />
+          <Route path="tec-tracker" element={<TecTrackerPage />} />
           <Route path="*" element={<ModDefaultRoute />} />
         </Route>
         <Route path="*" element={<Navigate to={`/${DEFAULT_MOD_ID}/cards`} replace />} />

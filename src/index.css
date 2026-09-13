@@ -306,6 +306,52 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .image-dialog-close { position: absolute; z-index: 1; top: 8px; right: 8px; width: 42px; height: 42px; color: var(--text); border: 1px solid var(--border); border-radius: 50%; background: rgba(11, 14, 19, .9); font-size: 1.5rem; line-height: 1; cursor: pointer; }
 .image-dialog-close:hover { color: var(--gold); border-color: var(--gold); }
 
+.tec-tracker-page { height: 100%; padding: 34px clamp(18px, 4vw, 64px) 48px; overflow-y: auto; }
+.tec-tracker-page > * { width: min(1120px, 100%); margin-inline: auto; }
+.tec-tracker-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+.tec-tracker-heading h1 { margin-top: 5px; }
+.tec-tracker-heading > div > p:last-child { max-width: 620px; margin: 12px 0 0; color: var(--muted); line-height: 1.55; }
+.tec-reset-button { min-height: 42px; padding: 0 16px; flex: 0 0 auto; color: var(--gold); border: 1px solid #665329; border-radius: 6px; background: var(--gold-soft); font-size: .76rem; font-weight: 800; cursor: pointer; }
+.tec-reset-button:hover { color: #15120a; background: var(--gold); }
+.tec-result-card { margin-top: 28px; padding: 22px 26px; display: grid; grid-template-columns: auto auto minmax(220px, 1fr); align-items: center; gap: 28px; border: 1px solid #554725; border-radius: 9px; background: linear-gradient(135deg, #1c1b13, var(--panel) 68%); box-shadow: 0 16px 40px rgba(0, 0, 0, .2); }
+.tec-rank-emblem { min-width: 150px; padding-right: 26px; display: flex; flex-direction: column; border-right: 1px solid #554725; }
+.tec-rank-emblem span, .tec-score-summary span { color: var(--muted); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.tec-rank-emblem strong { margin-top: 3px; color: var(--gold); font-size: clamp(2rem, 5vw, 3rem); line-height: 1; letter-spacing: -.045em; }
+.tec-rank-emblem.tec-rank-s-tec strong, .tec-rank-emblem.tec-rank-a-tec strong { color: #9ec8ed; }
+.tec-score-summary { min-width: 105px; display: flex; flex-direction: column; }
+.tec-score-summary strong { margin-top: 2px; color: var(--text); font-size: 2rem; font-variant-numeric: tabular-nums; line-height: 1; }
+.tec-score-summary small { margin-top: 6px; color: #76818f; font-size: .67rem; }
+.tec-target { justify-self: end; margin: 0; color: var(--muted); font-size: .82rem; text-align: right; }
+.tec-target.reached { color: var(--blue); font-weight: 750; }
+.tec-controls { margin-top: 28px; }
+.tec-section-heading { margin-bottom: 12px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.tec-section-heading h2 { margin-top: 4px; }
+.tec-section-heading > span { padding-right: 12px; color: var(--muted); font-size: .63rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.tec-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tec-stat-card { min-width: 0; min-height: 82px; padding: 13px 13px 13px 16px; display: grid; grid-template-columns: minmax(130px, 1fr) auto 48px; align-items: center; gap: 14px; border: 1px solid var(--border); border-radius: 7px; background: var(--panel); }
+.tec-stat-card:hover { border-color: #3a4553; background: var(--panel-raised); }
+.tec-stat-copy { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.tec-stat-copy label { color: var(--text); font-size: .86rem; font-weight: 800; }
+.tec-stat-copy span { color: var(--muted); font-size: .68rem; line-height: 1.35; }
+.tec-stepper { display: grid; grid-template-columns: 34px 64px 34px; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #0e1218; }
+.tec-stepper button { width: 34px; height: 38px; padding: 0; color: var(--gold); border: 0; background: transparent; font-size: 1.15rem; font-weight: 800; cursor: pointer; }
+.tec-stepper button:hover:not(:disabled) { color: #15120a; background: var(--gold); }
+.tec-stepper button:disabled { color: #46505d; cursor: default; }
+.tec-stepper input { width: 64px; height: 38px; padding: 0 3px; color: var(--text); border: 0; border-inline: 1px solid var(--border); background: var(--panel); font-size: .86rem; font-weight: 750; text-align: center; font-variant-numeric: tabular-nums; -moz-appearance: textfield; }
+.tec-stepper input::-webkit-inner-spin-button, .tec-stepper input::-webkit-outer-spin-button { margin: 0; -webkit-appearance: none; }
+.tec-stat-card output { min-width: 48px; font: 800 .78rem ui-monospace, SFMono-Regular, Consolas, monospace; text-align: right; }
+.tec-tier-list { grid-column: 1 / -1; padding-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; border-top: 1px solid var(--border-soft); }
+.tec-tier-list span { min-height: 24px; padding: 0 7px; display: inline-flex; align-items: center; gap: 5px; color: #778290; border: 1px solid var(--border-soft); border-radius: 4px; background: #0e1218; font-size: .62rem; font-variant-numeric: tabular-nums; }
+.tec-tier-list b { color: inherit; font-weight: 750; }
+.tec-tier-list em { color: #66717f; font-style: normal; font-weight: 800; }
+.tec-tier-list span.active { color: var(--text); border-color: #665329; background: var(--gold-soft); }
+.tec-stat-card output.positive, .tec-tier-list em.positive { color: #78d69a; }
+.tec-stat-card output.negative, .tec-tier-list em.negative { color: #ef8585; }
+.tec-stat-card output.neutral, .tec-tier-list em.neutral { color: var(--gold); }
+.tec-source-note { margin-top: 18px; color: #6f7986; font-size: .68rem; text-align: center; }
+.tec-source-note a { color: var(--muted); text-underline-offset: 2px; }
+.tec-source-note a:hover { color: var(--gold); }
+
 @media (max-width: 780px) {
   .header-inner { padding: 9px 14px; grid-template-columns: 1fr auto; gap: 8px 14px; }
   .brand-block { grid-column: 1; }
@@ -317,6 +363,9 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .segmented-control button { min-width: 34px; min-height: 36px; }
   .page-shell { padding: 30px 14px 60px; }
   .drop-tools { grid-template-columns: 1fr; }
+  .tec-tracker-page { padding: 26px 14px 44px; }
+  .tec-result-card { grid-template-columns: auto auto 1fr; gap: 18px; }
+  .tec-stat-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -364,6 +413,11 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .fusion-recipe-card > .fusion-card-link:last-child { width: min(260px, 100%); grid-column: 1 / -1; justify-self: center; }
   .image-dialog-backdrop { padding: 12px; }
   .image-dialog { max-height: calc(100vh - 24px); padding: 22px 14px 18px; }
+  .tec-tracker-heading { align-items: stretch; flex-direction: column; gap: 18px; }
+  .tec-reset-button { align-self: flex-start; }
+  .tec-result-card { padding: 18px; grid-template-columns: 1fr 1fr; }
+  .tec-rank-emblem { min-width: 0; }
+  .tec-target { grid-column: 1 / -1; justify-self: start; text-align: left; }
 }
 
 @media (max-width: 410px) {
@@ -375,6 +429,12 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
   .card-meta { flex-direction: column; gap: 2px; }
   .result-row { padding-inline: 13px; }
   .advanced-range-inputs { grid-template-columns: 1fr; }
+  .tec-stat-card { padding: 14px; grid-template-columns: 1fr 44px; gap: 12px; }
+  .tec-stepper { grid-column: 1; grid-row: 2; grid-template-columns: 38px minmax(72px, 1fr) 38px; }
+  .tec-stepper button { width: 38px; }
+  .tec-stepper input { width: 100%; }
+  .tec-stat-card output { grid-column: 2; grid-row: 1 / span 2; }
+  .tec-tier-list { grid-column: 1 / -1; grid-row: 3; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
