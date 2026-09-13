@@ -313,16 +313,24 @@ h2 { margin: 3px 0 0; font-size: 1.35rem; letter-spacing: -.02em; }
 .tec-tracker-heading > div > p:last-child { max-width: 620px; margin: 12px 0 0; color: var(--muted); line-height: 1.55; }
 .tec-reset-button { min-height: 42px; padding: 0 16px; flex: 0 0 auto; color: var(--gold); border: 1px solid #665329; border-radius: 6px; background: var(--gold-soft); font-size: .76rem; font-weight: 800; cursor: pointer; }
 .tec-reset-button:hover { color: #15120a; background: var(--gold); }
-.tec-result-card { margin-top: 28px; padding: 22px 26px; display: grid; grid-template-columns: auto auto minmax(220px, 1fr); align-items: center; gap: 28px; border: 1px solid #554725; border-radius: 9px; background: linear-gradient(135deg, #1c1b13, var(--panel) 68%); box-shadow: 0 16px 40px rgba(0, 0, 0, .2); }
-.tec-rank-emblem { min-width: 150px; padding-right: 26px; display: flex; flex-direction: column; border-right: 1px solid #554725; }
-.tec-rank-emblem span, .tec-score-summary span { color: var(--muted); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.tec-rank-emblem strong { margin-top: 3px; color: var(--gold); font-size: clamp(2rem, 5vw, 3rem); line-height: 1; letter-spacing: -.045em; }
-.tec-rank-emblem.tec-rank-s-tec strong, .tec-rank-emblem.tec-rank-a-tec strong { color: #9ec8ed; }
+.tec-result-card { --rank-color: #d2aa52; --rank-rgb: 210 170 82; --victory-color: #73abc9; --victory-rgb: 115 171 201; margin-top: 28px; padding: 22px 26px; display: grid; grid-template-columns: auto auto minmax(220px, 1fr); align-items: center; gap: 28px; border: 1px solid rgb(var(--rank-rgb) / .42); border-radius: 9px; background: radial-gradient(ellipse at 8% 10%, rgb(var(--rank-rgb) / .19), transparent 44%), radial-gradient(ellipse at 100% 115%, rgb(var(--victory-rgb) / .14), transparent 46%), linear-gradient(135deg, #151820, var(--panel) 70%); box-shadow: inset 0 1px 0 rgb(var(--rank-rgb) / .08), 0 16px 40px rgba(0, 0, 0, .24); transition: border-color .22s ease, background .22s ease; }
+.tec-result-rank-s { --rank-color: #cf79c7; --rank-rgb: 207 121 199; }
+.tec-result-rank-a { --rank-color: #dc6c66; --rank-rgb: 220 108 102; }
+.tec-result-rank-b { --rank-color: #d2aa52; --rank-rgb: 210 170 82; }
+.tec-result-rank-c { --rank-color: #70bd72; --rank-rgb: 112 189 114; }
+.tec-result-rank-d { --rank-color: #5e8fd0; --rank-rgb: 94 143 208; }
+.tec-result-victory-pow { --victory-color: #c85e68; --victory-rgb: 200 94 104; }
+.tec-result-victory-tec { --victory-color: #73abc9; --victory-rgb: 115 171 201; }
+.tec-rank-emblem { min-width: 150px; padding-right: 26px; display: flex; flex-direction: column; border-right: 1px solid rgb(var(--rank-rgb) / .34); }
+.tec-rank-emblem > span, .tec-score-summary > span { color: var(--muted); font-size: .64rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.tec-rank-emblem strong { margin-top: 3px; display: flex; align-items: baseline; gap: 8px; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; }
+.tec-rank-letter { color: var(--rank-color); font-weight: 900; letter-spacing: -.045em; text-shadow: 0 0 16px rgb(var(--rank-rgb) / .18); }
+.tec-rank-category { color: var(--victory-color); font-size: .47em; font-weight: 850; letter-spacing: .08em; text-shadow: 0 0 12px rgb(var(--victory-rgb) / .18); }
 .tec-score-summary { min-width: 105px; display: flex; flex-direction: column; }
 .tec-score-summary strong { margin-top: 2px; color: var(--text); font-size: 2rem; font-variant-numeric: tabular-nums; line-height: 1; }
 .tec-score-summary small { margin-top: 6px; color: #76818f; font-size: .67rem; }
 .tec-target { justify-self: end; margin: 0; color: var(--muted); font-size: .82rem; text-align: right; }
-.tec-target.reached { color: var(--blue); font-weight: 750; }
+.tec-target.reached { color: var(--victory-color); font-weight: 750; text-shadow: 0 0 10px rgb(var(--victory-rgb) / .16); }
 .tec-controls { margin-top: 28px; }
 .tec-section-heading { margin-bottom: 12px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
 .tec-section-heading h2 { margin-top: 4px; }

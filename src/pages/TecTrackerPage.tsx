@@ -172,6 +172,8 @@ export function TecTrackerPage() {
   const [stats, setStats] = useState<DuelRankStats>({ ...DEFAULT_DUEL_RANK_STATS })
   const score = useMemo(() => calculateDuelRankScore(stats), [stats])
   const rank = getDuelRank(score)
+  const rankLetter = rank[0].toLocaleLowerCase()
+  const victoryType = rank.endsWith('TEC') ? 'tec' : 'pow'
   const pointsToSTec = Math.max(0, score - 9)
 
   const setStat = (key: DuelRankStat, value: number) => {
@@ -195,10 +197,17 @@ export function TecTrackerPage() {
         <button className="tec-reset-button" type="button" onClick={reset}>Reset duel</button>
       </header>
 
-      <section className="tec-result-card" aria-label="Projected duel rank" aria-live="polite">
-        <div className={`tec-rank-emblem tec-rank-${rank.toLowerCase().replace(' ', '-')}`}>
+      <section
+        className={`tec-result-card tec-result-rank-${rankLetter} tec-result-victory-${victoryType}`}
+        aria-label="Projected duel rank"
+        aria-live="polite"
+      >
+        <div className="tec-rank-emblem">
           <span>Projected rank</span>
-          <strong>{rank}</strong>
+          <strong aria-label={rank}>
+            <span className="tec-rank-letter">{rank[0]}</span>
+            <span className="tec-rank-category">{victoryType.toLocaleUpperCase()}</span>
+          </strong>
         </div>
         <div className="tec-score-summary">
           <span>Rank score</span>
